@@ -6,8 +6,8 @@ Komunikacja z użytkownikiem: po polsku. Treść strony: po polsku.
 
 ## Stack i uruchamianie
 
-- Czysty statyczny HTML/CSS/JS, **bez build stepu i bez zależności**. Na maszynie nie ma Node ani Pythona; jeśli kiedyś pojawi się potrzeba (np. podstrony, CMS), migracja do Astro jest naturalnym krokiem.
-- **Bez testów automatycznych i bez Playwright** – decyzja użytkownika. Weryfikacja: ręcznie w podglądzie przeglądarki (desktop + 375 px).
+- Czysty statyczny HTML/CSS/JS, **bez build stepu i bez zależności**. Node.js jest na maszynie tylko dla narzędzi (Playwright MCP), strona go nie używa; Pythona brak. Jeśli kiedyś pojawi się potrzeba (np. podstrony, CMS), migracja do Astro jest naturalnym krokiem.
+- **Bez testów automatycznych** – decyzja użytkownika. **Playwright MCP** (`.mcp.json`) służy wyłącznie do podglądu: zrzuty całej strony na 1280 px i 375 px, konsola. Wbudowana przeglądarka aplikacji też działa, ale jej zrzuty mają rozmiar panelu.
 - Podgląd lokalny: `.claude/launch.json` → konfiguracja `amea` uruchamia `tools/serve.ps1` (serwer statyczny w PowerShellu) na http://localhost:5500. Ręcznie: `powershell -NoProfile -ExecutionPolicy Bypass -File tools/serve.ps1`.
 
 ## Struktura
@@ -20,6 +20,8 @@ assets/img/brand/          logo-original.png + maski: logo-full, logo-word, embl
 assets/img/photos/         zdjęcia robocze (do wymiany po sesji)
 tools/serve.ps1            lokalny serwer
 tools/logo-masks.ps1       generuje maski logo z logo-original.png
+tools/color-match.ps1      dopasowuje kolorystykę zdjęcia do zdjęć referencyjnych
+.mcp.json                  Playwright MCP (podgląd, nie testy)
 docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania techniczne
 ```
 
@@ -47,3 +49,5 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 Obecne zdjęcia są robocze; będzie selekcja lub profesjonalna sesja. Hero: portret właścicielki `renata.webp` (poziomy, kadrowany do 4:5 przez `object-position` w `.hero .photo img`). Lista ujęć w `docs/TODO.md`. Przy podmianie zachowaj `width`/`height` w `<img>` zgodne z plikiem i `loading="lazy"` poza hero.
 
 `joga-grupa.jpg` ma skorygowaną kolorystykę (było mocno pomarańczowe): `tools/color-match.ps1` z referencjami `joga.jpg` + `medytacja-prowadzaca.jpg`, siła `-StrengthL 0.5 -StrengthAB 0.7`. Ten sam skrypt przyda się do ujednolicenia zdjęć z sesji.
+
+Na maszynie są **ImageMagick** (`magick`: kadrowanie, WebP/AVIF, wersje do `srcset`) i **ffmpeg** (klatki z wideo). Surowe pliki trzymaj poza repo, do `assets/img/photos/` trafiają tylko gotowe.
