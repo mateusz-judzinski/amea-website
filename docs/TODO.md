@@ -11,7 +11,7 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`.
 - [ ] **Makijaż permanentny i henna pudrowa** – 6 usług: nazwy, ceny
 - [ ] **Stylizacja paznokci** – jest w opisie salonu na Booksy, brak w cenniku: pokazywać?
 - [ ] **Zajęcia**: grafik (dni/godziny), ceny/karnety, sposób zapisów, prowadzące
-- [ ] **Zespół**: zdjęcia portretowe, nazwiska, krótkie bio; specjalizacja Ani
+- [ ] **Zespół**: zdjęcia portretowe Katarzyny i Ani (Renata jest), nazwiska, krótkie bio; specjalizacja Ani
 - [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online)
 - [ ] **Polityka prywatności** (link w stopce)
 
