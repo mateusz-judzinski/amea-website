@@ -153,6 +153,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .hero .logo-full { width: min(100%, 460px); }
 .hero .lead { color: var(--ink); }
 .hero .photo { aspect-ratio: 4 / 5; max-width: 480px; width: 100%; justify-self: end; }
+.hero .photo img { object-position: 46% 0; } /* portret jest poziomy: kadr na twarz */
 .facts { display: flex; flex-wrap: wrap; gap: 8px 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--muted); width: 100%; }
 .facts strong { color: var(--ink); font-weight: 500; }
 @media (max-width: 820px) {

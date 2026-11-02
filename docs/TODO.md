@@ -21,7 +21,7 @@ Jasne, miękkie światło, tony porcelany i karmelu (paleta strony).
 
 | Miejsce na stronie | Ujęcie |
 |---|---|
-| Hero (pion, łuk) | Portret właścicielki w gabinecie lub sali, spokojne jasne tło |
+| Hero (pion, łuk) | ~~Portret właścicielki~~ – jest (`renata.webp`); z sesji ewentualnie wersja pionowa |
 | O nas (pion, łuk) | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku |
 | Diagnostyka (opcjonalnie) | Analiza skóry 3D: urządzenie, ekran z wynikiem, rozmowa z klientką |
 | Przestrzeń – duże (pion) | Sala ruchu: łukowe lustro, pufy, maty, symetrycznie |
