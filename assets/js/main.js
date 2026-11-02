@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, nav highlight, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -42,6 +42,27 @@
       });
     });
     select(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0], false);
+
+    // Links with data-tab (philosophy pillars) open that tab; the anchor then scrolls to the offer
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('[data-tab]');
+      var tab = link && document.getElementById(link.getAttribute('data-tab'));
+      if (tab) select(tab, false);
+    });
+  }
+
+  // Highlight the nav link of the section in the middle of the viewport
+  if (nav && 'IntersectionObserver' in window) {
+    var links = {};
+    Array.prototype.forEach.call(nav.querySelectorAll('a[href^="#"]'), function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        Object.keys(links).forEach(function (id) { links[id].removeAttribute('aria-current'); });
+        if (links[entry.target.id]) links[entry.target.id].setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('main > section[id]'), function (s) { spy.observe(s); });
   }
 
   // Current year in the footer

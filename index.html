@@ -77,11 +77,11 @@
           <a class="btn btn-ghost" href="#oferta">Poznaj ofertę</a>
         </div>
         <div class="facts">
-          <span><strong>5.0</strong> · 48 opinii na Booksy</span>
+          <span><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · 48 opinii na Booksy</span>
           <span>ul. Piłsudskiego 65, Bytom</span>
         </div>
       </div>
-      <figure class="photo arch">
+      <figure class="photo arch studio">
         <img src="assets/img/photos/renata.webp" width="1195" height="896" alt="Renata Judzińska, właścicielka AMÉA" fetchpriority="high">
       </figure>
     </div>
@@ -113,27 +113,36 @@
         <div class="divider" aria-hidden="true"><span class="mask emblem"></span></div>
         <p class="lead">Tworzymy AMÉA we współpracy ze specjalistami z różnych dziedzin. Tam, gdzie to uzasadnione, ich działania wzajemnie się uzupełniają, a każda usługa zachowuje indywidualny charakter.</p>
       </div>
+      <!-- Filary prowadzą do odpowiedniej zakładki oferty (data-tab = id zakładki) -->
       <div class="pillars">
-        <div class="pillar">
+        <a class="pillar" href="#oferta" data-tab="t-skora">
+          <span class="num" aria-hidden="true">I</span>
           <p class="eyebrow">Skóra</p>
           <h3>Pielęgnacja i technologie</h3>
           <p>Zaawansowane zabiegi i nowoczesne urządzenia do pracy nad kondycją skóry.</p>
-        </div>
-        <div class="pillar">
+          <span class="link">Zobacz ofertę</span>
+        </a>
+        <a class="pillar" href="#oferta" data-tab="t-fizjo">
+          <span class="num" aria-hidden="true">II</span>
           <p class="eyebrow">Ciało</p>
           <h3>Fizjoterapia</h3>
           <p>Wsparcie sprawności i prawidłowego funkcjonowania ciała.</p>
-        </div>
-        <div class="pillar">
+          <span class="link">Zobacz ofertę</span>
+        </a>
+        <a class="pillar" href="#oferta" data-tab="t-ruch">
+          <span class="num" aria-hidden="true">III</span>
           <p class="eyebrow">Ruch</p>
           <h3>Zajęcia ruchowe</h3>
           <p>Siła, mobilność i świadomość ciała w kameralnych grupach.</p>
-        </div>
-        <div class="pillar">
+          <span class="link">Zobacz ofertę</span>
+        </a>
+        <a class="pillar" href="#oferta" data-tab="t-masaze">
+          <span class="num" aria-hidden="true">IV</span>
           <p class="eyebrow">Regeneracja</p>
           <h3>Masaże i rytuały</h3>
           <p>Odprężenie, uwolnienie od napięć i czas na regenerację.</p>
-        </div>
+          <span class="link">Zobacz ofertę</span>
+        </a>
       </div>
       <div class="longevity">
         <span class="word">Longevity</span>
@@ -413,7 +422,7 @@
       </div>
       <div class="team">
         <div class="person">
-          <div class="portrait"><img class="renata" src="assets/img/photos/renata.webp" width="1195" height="896" alt="" loading="lazy" decoding="async"></div>
+          <div class="portrait studio"><img class="renata" src="assets/img/photos/renata.webp" width="1195" height="896" alt="" loading="lazy" decoding="async"></div>
           <h3>Renata Judzińska</h3>
           <p>Kosmetolog, założycielka AMÉA</p>
         </div>
@@ -439,7 +448,7 @@
           <p class="eyebrow">Opinie</p>
           <h2>Co mówią nasze klientki</h2>
         </div>
-        <div class="score"><b>5.0</b><span>48 opinii na Booksy</span></div>
+        <div class="score"><b>5.0</b><div><span class="stars" aria-hidden="true">★★★★★</span><span>48 opinii na Booksy</span></div></div>
       </div>
       <div class="quotes">
         <blockquote><p>Piękna przestrzeń w sercu Bytomia. Serdecznie polecam!</p><footer>Olga · Vampire Glow</footer></blockquote>
@@ -456,6 +465,7 @@
   <section class="band" id="bon">
     <div class="wrap">
       <div class="voucher">
+        <span class="mask emblem voucher-mark" aria-hidden="true"></span>
         <div class="stack">
           <p class="eyebrow">Bon upominkowy</p>
           <h2>Podaruj chwilę dla siebie</h2>

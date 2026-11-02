@@ -30,7 +30,10 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 - Paleta **„Karmel”**: porcelana `#FCF9F6`, blush `#F5EDE6`, espresso `#3A2E28`, karmel `#9A6B42` (przyciski/akcenty), jasny karmel `#DDBF9F`. Tylko jasny motyw.
 - Fonty: **Playfair Display** (nagłówki, nawiązuje do liter logo) + **Jost 300** (tekst; rozstrzelone wersaliki jak hasło w logo).
 - Logo: pliki w `brand/` to **maski alfa** – kolor nadaje CSS (`.mask` + `background: var(--ink)`). Nie wstawiać ich jako `<img>`. Po zmianie logo uruchom `tools/logo-masks.ps1` (współrzędne wycięć są w skrypcie).
-- Motyw graficzny: łukowe kadry zdjęć (`.photo.arch`, `--arch`), linia z emblematem jako przerywnik (`.divider`).
+- Motyw graficzny: łukowe kadry zdjęć (`.photo.arch`, `--arch`), linia z emblematem jako przerywnik (`.divider`). Hero ma dodatkowo cienką linię łuku (`outline` + `outline-offset`).
+- Zdjęcia na białym tle studyjnym dostają klasę `.studio` na ramce: `mix-blend-mode: multiply` zamienia biel w ciepły kolor ramki.
+- Filary w Filozofii to linki `href="#oferta"` z `data-tab="<id zakładki>"`; `main.js` przełącza wtedy zakładkę oferty.
+- Panele i inne elementy chowamy atrybutem `hidden` (w CSS jest `[hidden] { display: none !important }`, bo reguły `display` w klasach go nadpisywały).
 - Szkic do porównań: https://claude.ai/artifact/QTXtHeLnmK9uoLAdXrfBeb (wersja z przełącznikiem palet; nie jest źródłem prawdy).
 
 ## Treść – zasady
