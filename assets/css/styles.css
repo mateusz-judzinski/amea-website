@@ -244,6 +244,9 @@ a.pillar:hover, a.pillar:focus-visible { border-color: var(--soft); box-shadow: 
 /* ---------- Offer ---------- */
 
 .offer-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; }
+/* Closing row under the cards, shared by all tabs: a note on prices + the full price list on Booksy */
+.offer-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px 32px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.offer-foot p { color: var(--muted); max-width: 52ch; }
 .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--head-gap); }
 .tab {
   flex: none; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line);

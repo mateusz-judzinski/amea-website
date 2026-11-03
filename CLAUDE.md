@@ -47,7 +47,7 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 ## Treść – zasady
 
 - Oferta skóry pogrupowana **wg problemu** (odwodniona, poszarzała, problematyczna, zwiotczała, przebarwienia, melasma), ścieżki START / ADVANCED / PREMIUM; Diagnostyka 3D + Beauty Plan jako osobna sekcja „od czego zacząć”.
-- Ceny jako **„od X zł”** = ceny regularne z Booksy, bez czasowych promocji (−15% itp.). Pełny cennik zostaje na Booksy. Przy zmianach cen edytuj `index.html` (sekcja OFERTA).
+- Ceny jako **„od X zł”** = ceny regularne z Booksy, bez czasowych promocji (−15% itp.). Pełny cennik zostaje na Booksy; link do niego jest w `.offer-foot` pod kartami (jeden dla wszystkich zakładek, z dopiskiem o cenach regularnych), nie przy nagłówku. Przy zmianach cen edytuj `index.html` (sekcja OFERTA).
 - Wszystkie przyciski rezerwacji → profil Booksy:
   `https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom`
   (docelowo można podpiąć linki do konkretnych usług).
