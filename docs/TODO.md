@@ -4,7 +4,7 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`.
 
 ## Treści od salonu
 
-- [ ] **Kontakt**: telefon, e-mail, Instagram / Facebook (telefon pilny: makijaż permanentny umawia się telefonicznie)
+- [ ] **Kontakt**: e-mail (telefon 791 103 551, Instagram i Facebook są już na stronie, 3.11.2026)
 - [ ] **Godziny otwarcia**: wpisane z Booksy (pon.–sob. 8:00–21:00, niedz. nieczynne) – potwierdzić, czy to godziny salonu, a nie tylko kalendarza
 - [x] **AMÉA Women's Ritual** – 7 rytuałów z Booksy wpisane (3.11.2026)
 - [x] **AMÉ Men's Skin** (3) i **AMÉ Men's Ritual** (3) – wpisane z Booksy (3.11.2026)

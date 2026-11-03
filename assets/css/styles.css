@@ -53,6 +53,9 @@ h3 { font-size: var(--step-2); }
 p { margin: 0; }
 p, li, dd { text-wrap: pretty; }
 a { color: inherit; }
+/* Inline links in running text (phone, social, cross-links): light hairline, darker on hover */
+p a:not([class]), dd a:not([class]) { text-decoration-color: var(--soft); text-underline-offset: 4px; text-decoration-thickness: 1px; transition: text-decoration-color .2s; }
+p a:not([class]):hover, dd a:not([class]):hover { text-decoration-color: var(--ink); }
 img { display: block; max-width: 100%; height: auto; }
 [hidden] { display: none !important; } /* author display rules (e.g. .panel) must not override hidden */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -387,6 +390,7 @@ details.more[open] summary::after { content: "–"; }
 .site-footer { background: var(--surface); }
 .site-footer .wrap { display: grid; gap: 28px; justify-items: center; text-align: center; padding-block: 56px calc(48px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: .9rem; }
 .site-footer .logo-full { width: min(100%, 340px); }
+.site-footer p > span, .site-footer p > a { white-space: nowrap; } /* break only between the parts */
 .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
 .footer-links a { text-decoration: none; }
 .footer-links a:hover { color: var(--ink); }
