@@ -39,6 +39,6 @@ Jasne, miękkie światło, tony porcelany i karmelu (paleta strony).
 - [ ] Po domenie: `<link rel="canonical">`, absolutne `og:url` i `og:image`, `sitemap.xml`, `robots.txt`
 - [ ] Self-hosting fontów (RODO) zamiast Google Fonts
 - [ ] Optymalizacja zdjęć po sesji (WebP/AVIF, ~1600 px dłuższy bok, `srcset`)
-- [ ] Favicon w kilku rozmiarach + `apple-touch-icon`
+- [x] Favicon (`favicon.ico` 16–48 px, `favicon-32.png`) + `apple-touch-icon` 180 px: czarny emblemat na białym tle
 - [ ] Ewentualnie linki „Umów” do konkretnych usług na Booksy
 - [ ] Analityka? Jeśli tak – baner zgód cookies
