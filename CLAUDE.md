@@ -1,6 +1,6 @@
 # AMÉA – strona one-page
 
-Strona dla **AMÉA – Przestrzeń Piękna i Harmonii** (Beauty & Wellbeing, ul. Marszałka Józefa Piłsudskiego 65, 41-902 Bytom; właścicielka Renata Judzińska). Jedna strona: kosmetologia, fizjoterapia, zajęcia ruchowe, masaże i rytuały. Rezerwacje wyłącznie przez Booksy.
+Strona dla **AMÉA – Przestrzeń Piękna i Harmonii** (Beauty & Wellbeing, ul. Marszałka Józefa Piłsudskiego 65, 41-902 Bytom; właścicielka Renata Judzińska). Jedna strona: kosmetologia, fizjoterapia, zajęcia ruchowe, masaże i rytuały. Rezerwacje zabiegów przez Booksy, zapisy na zajęcia ruchowe przez Fitssey; strona sama niczego nie rezerwuje.
 
 Komunikacja z użytkownikiem: po polsku. Treść strony: po polsku.
 
@@ -36,7 +36,7 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 - Zdjęcia na białym tle studyjnym dostają klasę `.studio` na ramce: `mix-blend-mode: multiply` zamienia biel w ciepły kolor ramki.
 - Filary w Filozofii to linki `href="#oferta"` z `data-tab="<id zakładki>"`; `main.js` przełącza wtedy zakładkę oferty.
 - **Ruch** (sekcja „Motion” na końcu `styles.css`): jeden zaplanowany moment, czyli wejście hero przy załadowaniu (samo CSS). Niżej ruszają się tylko zdjęcia (osiadają w ramce) i linie przerywnika: `main.js` dodaje im `.reveal`, a po wejściu w widok `.is-in`. Każde `.photo`/`.portrait` z `<img>` jako bezpośrednim dzieckiem dostaje to automatycznie. Tekstu, kart i cen nie animujemy; ruch w odpowiedzi na kliknięcie (zakładka, menu, `details`) jest w porządku. Wszystko pod `prefers-reduced-motion: no-preference`, a bez JS nic nie jest ukryte.
-- Rogi: zdjęcia 8 px (jak dół `--arch`), karty `--radius`. Odstęp nagłówek sekcji → treść: `--head-gap`. `.eyebrow` przyklejony do tytułu. Pas wokół pojedynczej karty (Bon): `.band-tight`.
+- Rogi: zdjęcia 8 px (jak dół `--arch`), karty `--radius`. Odstęp nagłówek sekcji → treść: `--head-gap`. `.eyebrow` przyklejony do tytułu. Pas wokół pojedynczej karty (Bon): `.band-tight`. `.card-foot` (cena + link) jest przyklejony do dołu karty, żeby w rzędzie kart ceny stały na jednej linii; sam link bez ceny trzyma się prawej. Dwa przyciski w `.btn-row` na telefonie (≤ 520 px) układają się jeden pod drugim na pełną szerokość.
 - Pełny przycisk na hover **ciemnieje** (rozjaśniony karmel daje białemu tekstowi < 4,5:1). `.link` ma podkreślenie z tła; hover rysuje na nim linię espresso.
 - Odrzucone przez użytkownika (3.11.2026), nie proponować ponownie: w Przestrzeni nagłówek w dwóch kolumnach i podpisy pod zdjęciami (zostają nagłówek nad galerią i „pigułki” na zdjęciach); w Zajęciach obniżony łuk nachodzący na szerokie zdjęcie (zostają dwa równe łuki obok siebie); w O nas łuk złożony z dwóch zdjęć Beauty | Wellbeing.
 - O nas: zdjęcie po lewej, bo hero tuż wyżej ma układ tekst | łuk; pierwszy akapit większy jako wstęp. Na telefonie tekst przed zdjęciem.
@@ -47,10 +47,11 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 ## Treść – zasady
 
 - Oferta skóry pogrupowana **wg problemu** (odwodniona, poszarzała, problematyczna, zwiotczała, przebarwienia, melasma), ścieżki START / ADVANCED / PREMIUM; Diagnostyka 3D + Beauty Plan jako osobna sekcja „od czego zacząć”.
-- Ceny jako **„od X zł”** = ceny regularne z Booksy, bez czasowych promocji (−15% itp.). Pełny cennik zostaje na Booksy; link do niego jest w `.offer-foot` pod kartami (jeden dla wszystkich zakładek, z dopiskiem o cenach regularnych), nie przy nagłówku. Przy zmianach cen edytuj `index.html` (sekcja OFERTA).
+- Ceny jako **„od X zł”** = ceny regularne z Booksy, bez czasowych promocji (−15% itp.). Pełny cennik zostaje na Booksy; link do niego jest w `.offer-foot` pod kartami (z dopiskiem o cenach regularnych), nie przy nagłówku. Stopek jest kilka: `data-foot="default"` (Booksy) i `data-foot="<id zakładki>"` dla zakładki z własną (Ruch → Fitssey); `main.js` pokazuje tę dla aktywnej zakładki. Przy zmianach cen edytuj `index.html` (sekcja OFERTA).
 - Wszystkie przyciski rezerwacji → profil Booksy:
   `https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom`
   (docelowo można podpiąć linki do konkretnych usług).
+- **Zajęcia ruchowe → Fitssey** (wymaganie klientki): grafik `https://app.fitssey.com/3329969456/frontoffice`, cennik i karnety `…/frontoffice/pricing/classes`. Linki są w sekcji Zajęcia (przyciski), w zakładce Ruch (karty + stopka), w Kontakcie, w stopce strony i w JSON-LD. **Dni i godzin zajęć nie przepisujemy na stronę** – grafik zmienia się w Fitssey i by się rozjeżdżał; strona opisuje rodzaje zajęć. „od 50 zł” na kartach = wejście jednorazowe w Fitssey (karnet x4 180 zł; stan z 3.11.2026). Sprawdzanie: Playwright MCP na grafiku (kilka tygodni) i cenniku. Aktualny grafik na stronie możliwy tylko przez widżet Fitssey (kod z panelu właścicielki, patrz `docs/TODO.md`): osadzić pod `.class-list` w `#zajecia`, skrypt ładować dopiero przy zbliżeniu do sekcji, styl nadpisać tokenami z `:root`, przyciski zostają jako fallback, dopisać zewnętrzny skrypt do polityki prywatności.
 - Zakładka Masaże: karty masaży + blok **AMÉA Women's Ritual** (`.mini-cards`). Rytuały sezonowe (np. halloweenowe) dodawać jako osobny blok `.mini-cards` i usuwać, gdy znikną z Booksy.
 - Opinie i liczba opinii (5.0 / 49, stan z 3.11.2026; liczba jest w hero i w sekcji Opinie) przepisane ręcznie z Booksy, cytaty **dosłownie** (najwyżej skrócone na granicy zdania).
 - Cała oferta, godziny (pon.–sob. 8–21, potwierdzone przez salon) i realizacja bonów zsynchronizowane z Booksy 3.11.2026. Odświeżanie: Playwright MCP na profilu Booksy, rozwinąć zwinięte kategorie (część jest domyślnie zamknięta), porównać z `index.html`. Na Booksy w opisie usługi bywa „po umówionym terminie tel” – to informacja o rezerwacji, nie część nazwy.
@@ -59,7 +60,7 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 
 ## Zdjęcia
 
-Obecne zdjęcia są robocze; będzie selekcja lub profesjonalna sesja. Hero: portret właścicielki `renata.webp` (poziomy, kadrowany do 4:5 przez `object-position` w `.hero .photo img`). Zespół: osobne zdjęcie `renata-zespol.webp`, przycięte w pliku do 3:4 (do bioder), żeby nie powtarzać portretu z hero. Lista ujęć w `docs/TODO.md`. Przy podmianie zachowaj `width`/`height` w `<img>` zgodne z plikiem i `loading="lazy"` poza hero.
+Obecne zdjęcia są robocze; będzie selekcja lub profesjonalna sesja. Hero: portret właścicielki `renata.webp` (poziomy, kadrowany do 4:5 przez `object-position` w `.hero .photo img`). Zespół: osobne zdjęcie `renata-zespol.webp`, przycięte w pliku do 3:4 (do bioder), żeby nie powtarzać portretu z hero. Katarzyna: `katarzyna-zespol.webp`, zdjęcie przy szyldzie AMÉA w całym kadrze (oryginał był 3:4), bo przy ciaśniejszym kadrze łuk ucina literę „A”. Pozostałe osoby mają na razie pusty łuk z emblematem. Lista ujęć w `docs/TODO.md`. Przy podmianie zachowaj `width`/`height` w `<img>` zgodne z plikiem i `loading="lazy"` poza hero.
 
 `joga-grupa.jpg` ma skorygowaną kolorystykę (było mocno pomarańczowe): `tools/color-match.ps1` z referencjami `joga.jpg` + `medytacja-prowadzaca.jpg`, siła `-StrengthL 0.5 -StrengthAB 0.7`. Ten sam skrypt przyda się do ujednolicenia zdjęć z sesji.
 

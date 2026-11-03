@@ -22,6 +22,7 @@
   var tablist = document.querySelector('[role="tablist"]');
   if (tablist) {
     var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    var feet = Array.prototype.slice.call(document.querySelectorAll('.offer-foot[data-foot]'));
     var select = function (tab, focus) {
       tabs.forEach(function (t) {
         var on = t === tab;
@@ -29,6 +30,9 @@
         t.tabIndex = on ? 0 : -1;
         document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
+      // Offer footer: the tab's own one if it has it (classes → Fitssey), otherwise the default (Booksy)
+      var own = feet.some(function (f) { return f.getAttribute('data-foot') === tab.id; });
+      feet.forEach(function (f) { f.hidden = f.getAttribute('data-foot') !== (own ? tab.id : 'default'); });
       if (focus) tab.focus();
     };
     tabs.forEach(function (tab, i) {

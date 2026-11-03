@@ -188,7 +188,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .hero .wrap { grid-template-columns: 1fr; }
   .hero .photo { justify-self: center; max-width: min(380px, calc(100% - 28px)); } /* room for the .framed line */
 }
-@media (max-width: 520px) { .hero .btn-row .btn { flex: 1 1 100%; } }
+@media (max-width: 520px) { .btn-row:has(> .btn + .btn) > .btn { flex: 1 1 100%; } } /* two buttons wrap anyway: stack them full width */
 
 /* ---------- About ---------- */
 
@@ -244,7 +244,7 @@ a.pillar:hover, a.pillar:focus-visible { border-color: var(--soft); box-shadow: 
 /* ---------- Offer ---------- */
 
 .offer-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; }
-/* Closing row under the cards, shared by all tabs: a note on prices + the full price list on Booksy */
+/* Closing row under the cards: a note on prices + the full price list on Booksy (classes tab: Fitssey; switched in main.js) */
 .offer-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px 32px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
 .offer-foot p { color: var(--muted); max-width: 52ch; }
 .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--head-gap); }
@@ -261,10 +261,12 @@ a.pillar:hover, a.pillar:focus-visible { border-color: var(--soft); box-shadow: 
 .panel-intro p { max-width: 62ch; color: var(--muted); }
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .card h3 { font-size: 1.4rem; }
 .card .for { color: var(--muted); font-size: .92rem; }
-.card-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 4px; }
+/* Pinned to the bottom so prices and links line up across a row of cards with different text lengths */
+.card-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: auto; padding-top: 4px; }
+.card-foot > .link:only-child { margin-left: auto; } /* no price: the link keeps its place on the right */
 
 .tiers { list-style: none; margin: 0; padding: 0; display: grid; }
 .tiers li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); font-size: .92rem; }

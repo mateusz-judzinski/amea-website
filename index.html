@@ -49,6 +49,7 @@
     "email": "kontakt@amea-beauty.pl",
     "sameAs": [
       "https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom",
+      "https://app.fitssey.com/3329969456/frontoffice",
       "https://www.instagram.com/beauty_amea/",
       "https://www.facebook.com/BeautyAmea"
     ]
@@ -353,17 +354,18 @@
         </div>
       </div>
 
-      <!-- Ruch i wellbeing -->
-      <!-- TODO(oferta): ceny / karnety zajęć -->
+      <!-- Ruch i wellbeing: zapisy w Fitssey (nie Booksy). „od 50 zł” = wejście jednorazowe w Fitssey, stan z 3.11.2026 -->
       <div class="panel" role="tabpanel" id="p-ruch" aria-labelledby="t-ruch" hidden>
         <div class="panel-intro">
-          <p>Kameralne zajęcia rozwijające siłę, mobilność i świadomość ciała. Więcej w sekcji <a href="#zajecia">Zajęcia i wydarzenia</a>.</p>
+          <p>Kameralne zajęcia rozwijające siłę, mobilność i świadomość ciała. Grafik i zapisy prowadzimy w Fitssey, a więcej o zajęciach przeczytasz w sekcji <a href="#zajecia">Zajęcia i wydarzenia</a>.</p>
         </div>
         <div class="cards">
-          <article class="card"><h3>Joga</h3><p class="for">Praktyka dla różnych poziomów zaawansowania.</p></article>
-          <article class="card"><h3>Pilates</h3><p class="for">Siła głębokich mięśni, stabilizacja i postawa.</p></article>
+          <article class="card"><h3>Joga</h3><p class="for">Praktyka dla różnych poziomów zaawansowania.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
+          <article class="card"><h3>Pilates</h3><p class="for">Siła głębokich mięśni, stabilizacja i postawa.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
+          <article class="card"><h3>Zdrowy kręgosłup</h3><p class="for">Joga ze stretchingiem i ćwiczeniami wzmacniającymi na napięcia i ból pleców. Także dla kobiet w ciąży.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
+          <!-- TODO(zajęcia): zajęć sensualnych nie ma teraz w Fitssey – dopytać salon, czy są prowadzone -->
           <article class="card"><h3>Zajęcia sensualne</h3><p class="for">Świadomość ciała i kobieca energia.</p></article>
-          <article class="card"><h3>Warsztaty dla kobiet</h3><p class="for">Spotkania wokół ciała, piękna i równowagi.</p></article>
+          <article class="card"><h3>Warsztaty dla kobiet</h3><p class="for">Spotkania wokół ciała, piękna i równowagi.</p><div class="card-foot"><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zobacz terminy</a></div></article>
         </div>
       </div>
 
@@ -439,10 +441,14 @@
         </div>
       </div>
 
-      <!-- Wspólne dla wszystkich zakładek: link do pełnego cennika zamyka ofertę -->
-      <div class="offer-foot">
+      <!-- Stopka zamyka ofertę: domyślnie Booksy; zakładka z własną stopką (data-foot = id zakładki) pokazuje swoją, przełącza main.js -->
+      <div class="offer-foot" data-foot="default">
         <p>Ceny „od” to ceny regularne. Wolne terminy i wszystkie usługi znajdziesz na Booksy.</p>
         <a class="link" href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Pełny cennik na Booksy</a>
+      </div>
+      <div class="offer-foot" data-foot="t-ruch" hidden>
+        <p>Grafik zajęć, karnety i zapisy prowadzimy w Fitssey.</p>
+        <a class="link" href="https://app.fitssey.com/3329969456/frontoffice/pricing/classes" target="_blank" rel="noopener">Grafik i cennik w Fitssey</a>
       </div>
     </div>
   </section>
@@ -464,7 +470,7 @@
   </section>
 
   <!-- ZAJĘCIA I WYDARZENIA -->
-  <!-- TODO(zajęcia): grafik (dni/godziny) i sposób zapisów -->
+  <!-- Grafik, karnety i zapisy tylko w Fitssey. Dni i godzin nie przepisujemy na stronę, bo grafik zmienia się w Fitssey. -->
   <section class="classes" id="zajecia">
     <div class="wrap">
       <div class="classes-photos">
@@ -475,14 +481,19 @@
       <div class="stack">
         <p class="eyebrow">Zajęcia i wydarzenia</p>
         <h2>Ruch, wyciszenie i spotkania w kameralnym gronie</h2>
-        <p class="lead">Regularne zajęcia wellbeing oraz warsztaty i spotkania dla kobiet.</p>
+        <p class="lead">Regularne zajęcia wellbeing oraz warsztaty i spotkania dla kobiet. Aktualny grafik, karnety i zapisy znajdziesz w Fitssey, w&nbsp;przeglądarce lub aplikacji.</p>
         <ul class="class-list">
           <li><b>Joga</b><span>zajęcia regularne</span></li>
           <li><b>Pilates</b><span>zajęcia regularne</span></li>
+          <li><b>Zdrowy kręgosłup</b><span>także w ciąży</span></li>
           <li><b>Zajęcia sensualne</b><span>zajęcia regularne</span></li>
-          <li><b>Warsztaty i spotkania</b><span>wg kalendarza wydarzeń</span></li>
+          <li><b>Warsztaty i spotkania</b><span>terminy w Fitssey</span></li>
         </ul>
-        <div class="btn-row"><a class="btn btn-ghost" href="#kontakt">Zapytaj o zajęcia</a></div>
+        <!-- TODO(zajęcia): widżet grafiku Fitssey, kod z panelu (docs/TODO.md); miejsce pod .class-list -->
+        <div class="btn-row">
+          <a class="btn btn-solid" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Grafik i zapisy</a>
+          <a class="btn btn-ghost" href="https://app.fitssey.com/3329969456/frontoffice/pricing/classes" target="_blank" rel="noopener">Cennik i karnety</a>
+        </div>
       </div>
     </div>
   </section>
@@ -501,12 +512,12 @@
           <h3>Renata Judzińska</h3>
           <p>Kosmetolog, założycielka AMÉA</p>
         </div>
-        <!-- Bez zdjęcia: pusty łuk z emblematem; po dodaniu zdjęcia wstaw <img> jak u Renaty -->
         <div class="person">
-          <div class="portrait" aria-hidden="true"><span class="mask emblem"></span></div>
+          <div class="portrait"><img src="assets/img/photos/katarzyna-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></div>
           <h3>Katarzyna</h3>
           <p>Fizjoterapeutka</p>
         </div>
+        <!-- Bez zdjęcia: pusty łuk z emblematem; po dodaniu zdjęcia wstaw <img> jak u Renaty -->
         <div class="person">
           <div class="portrait" aria-hidden="true"><span class="mask emblem"></span></div>
           <h3>Aleksandra</h3>
@@ -570,7 +581,7 @@
           <dt>Telefon</dt><dd><a href="tel:+48791103551">791 103 551</a></dd>
           <dt>E-mail</dt><dd><a href="mailto:kontakt@amea-beauty.pl">kontakt@amea-beauty.pl</a></dd>
           <dt>Godziny</dt><dd>Poniedziałek – sobota: 8:00–21:00<br>Niedziela: nieczynne</dd>
-          <dt>Rezerwacje</dt><dd>Online przez Booksy, z podglądem wolnych terminów. Makijaż permanentny telefonicznie.</dd>
+          <dt>Rezerwacje</dt><dd>Zabiegi online przez Booksy, z podglądem wolnych terminów. Zajęcia ruchowe w <a href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Fitssey</a>. Makijaż permanentny telefonicznie.</dd>
           <dt>Obserwuj</dt><dd><a href="https://www.instagram.com/beauty_amea/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/BeautyAmea" target="_blank" rel="noopener">Facebook</a></dd>
         </dl>
         <div class="btn-row">
@@ -599,6 +610,7 @@
       <a href="#zajecia">Zajęcia</a>
       <a href="#kontakt">Kontakt</a>
       <a href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Booksy</a>
+      <a href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Fitssey</a>
       <a href="https://www.instagram.com/beauty_amea/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/BeautyAmea" target="_blank" rel="noopener">Facebook</a>
     </nav>
