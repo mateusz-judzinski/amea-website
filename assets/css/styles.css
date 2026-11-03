@@ -186,11 +186,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* ---------- About ---------- */
 
-.about .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
-.about .photo { aspect-ratio: 4 / 5; max-width: 440px; width: 100%; justify-self: end; }
+/* Photo on the left so the section does not repeat the hero (text | arch) right above it */
+.about .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.about .photo { order: -1; aspect-ratio: 4 / 5; max-width: 440px; width: 100%; justify-self: start; }
+.about .prose p:first-child { font-size: var(--step-1); line-height: 1.6; } /* opening paragraph reads as the intro */
 @media (max-width: 820px) {
   .about .wrap { grid-template-columns: 1fr; }
-  .about .photo { justify-self: center; max-width: 380px; }
+  .about .photo { order: 0; justify-self: center; max-width: 380px; } /* phones: text first, as before */
 }
 
 /* ---------- Philosophy ---------- */
