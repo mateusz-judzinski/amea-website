@@ -21,6 +21,7 @@ assets/img/photos/         zdjęcia robocze (do wymiany po sesji)
 tools/serve.ps1            lokalny serwer
 tools/logo-masks.ps1       generuje maski logo z logo-original.png
 tools/color-match.ps1      dopasowuje kolorystykę zdjęcia do zdjęć referencyjnych
+tools/photo-look.ps1       wspólny wygląd zdjęć: balans bieli z neutralnego fragmentu + CLUT, kadr, WebP
 .mcp.json                  Playwright MCP (podgląd, nie testy)
 docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania techniczne
 ```
@@ -38,8 +39,9 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 - **Ruch** (sekcja „Motion” na końcu `styles.css`): jeden zaplanowany moment, czyli wejście hero przy załadowaniu (samo CSS). Niżej ruszają się tylko zdjęcia (osiadają w ramce) i linie przerywnika: `main.js` dodaje im `.reveal`, a po wejściu w widok `.is-in`. Każde `.photo`/`.portrait` z `<img>` jako bezpośrednim dzieckiem dostaje to automatycznie. Tekstu, kart i cen nie animujemy; ruch w odpowiedzi na kliknięcie (zakładka, menu, `details`) jest w porządku. Wszystko pod `prefers-reduced-motion: no-preference`, a bez JS nic nie jest ukryte.
 - Rogi: zdjęcia 8 px (jak dół `--arch`), karty `--radius`. Odstęp nagłówek sekcji → treść: `--head-gap`. `.eyebrow` przyklejony do tytułu. Pas wokół pojedynczej karty (Bon): `.band-tight`. `.card-foot` (cena + link) jest przyklejony do dołu karty, żeby w rzędzie kart ceny stały na jednej linii; sam link bez ceny trzyma się prawej. Dwa przyciski w `.btn-row` na telefonie (≤ 520 px) układają się jeden pod drugim na pełną szerokość.
 - Pełny przycisk na hover **ciemnieje** (rozjaśniony karmel daje białemu tekstowi < 4,5:1). `.link` ma podkreślenie z tła; hover rysuje na nim linię espresso.
-- Odrzucone przez użytkownika (3.11.2026), nie proponować ponownie: w Przestrzeni nagłówek w dwóch kolumnach i podpisy pod zdjęciami (zostają nagłówek nad galerią i „pigułki” na zdjęciach); w Zajęciach obniżony łuk nachodzący na szerokie zdjęcie (zostają dwa równe łuki obok siebie); w O nas łuk złożony z dwóch zdjęć Beauty | Wellbeing.
+- Odrzucone przez użytkownika (3.11.2026), nie proponować ponownie: w Przestrzeni nagłówek w dwóch kolumnach i podpisy pod zdjęciami (zostają nagłówek nad galerią i „pigułki” na zdjęciach); w Zajęciach obniżony łuk nachodzący na szerokie zdjęcie (zostają dwa równe łuki obok siebie); w O nas łuk złożony z dwóch zdjęć Beauty | Wellbeing; w Diagnostyce zdjęcie (zostaje sam tekst i kroki).
 - O nas: zdjęcie po lewej, bo hero tuż wyżej ma układ tekst | łuk; pierwszy akapit większy jako wstęp. Na telefonie tekst przed zdjęciem.
+- Przestrzeń: pionowe zdjęcie w wysokim łuku (`.g-tall`), poziome w szerokich kafelkach (`.g-wide`, 16:9). Każdy kafelek pokazuje inne miejsce: strefa relaksu, gabinety zabiegowe, sala ruchu i medytacji (recepcja z szyldem to ta sama strefa co kanapa, sala z płaskorzeźbą to ta sama sala co ściana z matami). Zdjęcie sali z płaskorzeźbą (`sala-wieczor.jpg`) usunięte 3.11.2026, bo było mocno przerobione przez AI – nie wracać do niego.
 - Kontakt: karta trasy `.map-card` to łuk ze zdjęciem szyldu `szyld.jpg` (okrągła tablica wpisana w łuk, kadr `object-position: 0 50%`) z tabliczką adresu; link do Google Maps, bez iframe. Dane kontaktowe jako lista z cienkimi liniami, jak lista zajęć.
 - Panele i inne elementy chowamy atrybutem `hidden` (w CSS jest `[hidden] { display: none !important }`, bo reguły `display` w klasach go nadpisywały).
 - Szkic do porównań: https://claude.ai/artifact/QTXtHeLnmK9uoLAdXrfBeb (wersja z przełącznikiem palet; nie jest źródłem prawdy).
@@ -62,6 +64,13 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 
 Obecne zdjęcia są robocze; będzie selekcja lub profesjonalna sesja. Hero: portret właścicielki `renata.webp` (poziomy, kadrowany do 4:5 przez `object-position` w `.hero .photo img`). Zespół: osobne zdjęcie `renata-zespol.webp`, przycięte w pliku do 3:4 (do bioder), żeby nie powtarzać portretu z hero. Katarzyna: `katarzyna-zespol.webp`, zdjęcie przy szyldzie AMÉA w całym kadrze (oryginał był 3:4), bo przy ciaśniejszym kadrze łuk ucina literę „A”. Pozostałe osoby mają na razie pusty łuk z emblematem. Lista ujęć w `docs/TODO.md`. Przy podmianie zachowaj `width`/`height` w `<img>` zgodne z plikiem i `loading="lazy"` poza hero.
 
-`joga-grupa.jpg` ma skorygowaną kolorystykę (było mocno pomarańczowe): `tools/color-match.ps1` z referencjami `joga.jpg` + `medytacja-prowadzaca.jpg`, siła `-StrengthL 0.5 -StrengthAB 0.7`. Ten sam skrypt przyda się do ujednolicenia zdjęć z sesji.
+`joga-grupa.jpg` ma skorygowaną kolorystykę (było mocno pomarańczowe): `tools/color-match.ps1` z referencjami `joga.jpg` + `medytacja-prowadzaca.jpg`, siła `-StrengthL 0.5 -StrengthAB 0.7`.
+
+Zdjęcia od klientki (3.11.2026, 37 plików z telefonu, przesłane przez WhatsApp: 2048 px, JPEG q70, wszystkie pionowe; część w dwóch wersjach, z ciepłym filtrem i bez – brać neutralne). Na stronę trafiły cztery, każde przez `tools/photo-look.ps1` (wspólny wygląd: biel ciepłego kremu, przygaszone pomarańcze i błękity, miękki kontrast). Źródło i parametry, gdyby trzeba było powtórzyć:
+- `strefa-relaksu.webp` ← WA0021: `-Patch 480x200+960+1790 -WB 0.4 -Size 1200x1600` (podłoga w świetle z okna, więc słaba korekta). Wersja z szyldem (WA0037) była sprawdzona w tym łuku 3.11.2026 i użytkownik wolał tę
+- `gabinet-mural.webp` ← WA0038: `-Patch 440x140+540+20 -WB 0.65 -Crop 1536x1920+0+64 -Size 1000x1250`
+- `sala-joga.webp` ← WA0035: `-Patch 200x400+668+102 -WB 0.6 -Crop 1536x864+0+734 -Size 1440x810` (w galerii jako „Sala ruchu i medytacji”)
+- `gabinet-zaslona.webp` ← WA0022: `-Crop 1536x864+0+758 -Size 1440x810` (bez `-Patch`, zdjęcie jest już neutralne)
+Pozostałe dobre ujęcia (recepcja z szyldem WA0037, `-Patch 340x200+40+40 -WB 0.8`; sala z łóżkiem do masażu WA0024) są w zapasie. Odrzucone: duplikaty, łazienka i WC, ujęcia z bałaganem na biurku. `sala-lustro.jpg` nie jest w treści strony, ale to `og:image`.
 
 Na maszynie są **ImageMagick** (`magick`: kadrowanie, WebP/AVIF, wersje do `srcset`) i **ffmpeg** (klatki z wideo). Surowe pliki trzymaj poza repo, do `assets/img/photos/` trafiają tylko gotowe.

@@ -4,7 +4,7 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione
 
 ## Treści od salonu
 
-- [ ] **Stylizacja paznokci** – jest w opisie salonu na Booksy, brak w cenniku: pokazywać? Strefa przy oknie (zdjęcie `strefa-eventowa.jpg`, podpis „Strefa spotkań”) na co dzień to chyba stanowisko do paznokci; od odpowiedzi zależy podpis i opis w sekcji Przestrzeń
+- [ ] **Stylizacja paznokci** – jest w opisie salonu na Booksy, brak w cenniku: pokazywać? (Strefa przy oknie ze starego zdjęcia `strefa-eventowa.jpg` to jednak biurko konsultacji z analizatorem 3D, nie stanowisko do paznokci – widać na zdjęciach od klientki.) Na zdjęciach jest też kącik z fotelem i misą do stóp za zasłoną: czy to pedicure / rytuały stóp i czy pokazać?
 - [ ] **Kod widżetu grafiku Fitssey** (opcjonalnie, daje aktualny grafik na stronie). Renata w panelu Fitssey:
   1. Studio → Integracje → Widżety;
   2. skopiować „kod bazowy”;
@@ -20,16 +20,20 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione
 
 ## Lista ujęć do sesji zdjęciowej
 
-Jasne, miękkie światło, tony porcelany i karmelu (paleta strony).
+Jasne, miękkie światło, tony porcelany i karmelu (paleta strony). Na stronie są już zdjęcia od klientki z telefonu (O nas, trzy w Przestrzeni); sesja może je zastąpić, ale nie jest już pilna.
+
+Wskazówki, gdy klientka robi kolejne zdjęcia telefonem (z jej paczki z 3.11.2026):
+- przesyłać oryginały (Dysk, AirDrop, e-mail jako plik), nie przez WhatsApp – zmniejsza do 2048 px i mocno kompresuje;
+- robić też zdjęcia **poziome**: szerokie kafelki w Przestrzeni i Zajęciach są 16:9, a wszystkie zdjęcia z paczki są pionowe;
+- obiektyw 1×, nie szeroki 0,5× (krzywi pionowe linie); telefon trzymać prosto, na wysokości klatki piersiowej;
+- jedno światło: dzienne albo lampy, bez mieszania niebieskiego okna z żółtymi lampami; bez filtrów i trybu „ciepły”;
+- przed zdjęciem posprzątać: płaszcze z wieszaka przy kanapie, butelki i drukarkę z biurka, torebki z komody.
 
 | Miejsce na stronie | Ujęcie |
 |---|---|
-| Przestrzeń – szerokie (pilne, zamiast `strefa-eventowa.jpg`) | Strefa przy oknie w codziennym wyglądzie, bez cateringu, napojów i kieliszków z dnia otwarcia. Wystarczy zdjęcie telefonem w dziennym świetle; kolory dopasuje `tools/color-match.ps1`. Ewentualnie retusz obecnego zdjęcia narzędziem AI (tylko usunięcie, bez dorabiania wyposażenia) |
 | Zespół (pion ×2) | Portrety Aleksandry i Ani w jednym stylu; najprościej jak u Katarzyny: przy podświetlonym szyldzie AMÉA, w pionie, cały szyld w kadrze |
-| O nas (pion, łuk) | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku |
-| Diagnostyka (opcjonalnie) | Analiza skóry 3D: urządzenie, ekran z wynikiem, rozmowa z klientką |
-| Przestrzeń – duże (pion) | Sala ruchu: łukowe lustro, pufy, maty, symetrycznie |
-| Przestrzeń – szerokie ×2 | Sala z oknem w dziennym świetle; recepcja / strefa spotkań |
+| O nas (pion, łuk) | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku (teraz: gabinet z muralem bez ludzi) |
+| Przestrzeń – szerokie (poziomo) | Strefa relaksu przy oknie, bez płaszcza na wieszaku; sala ruchu w dziennym świetle |
 | Zajęcia (pion ×2) | Instruktorka w pozycji jogi; prowadząca z misą tybetańską |
 | Zajęcia (szerokie) | Grupa podczas zajęć lub warsztatów, naturalne momenty |
 | Hero (opcjonalnie) | Pionowa wersja portretu Renaty; obecny `renata.webp` jest poziomy i kadrowany w CSS |
@@ -47,6 +51,7 @@ Jasne, miękkie światło, tony porcelany i karmelu (paleta strony).
 
 ## Zrobione
 
+- [x] Zdjęcia od klientki (37 plików, 3.11.2026): wybrane 4, wspólny wygląd przez `tools/photo-look.ps1`. O nas: gabinet z muralem; Przestrzeń: strefa relaksu w łuku, gabinet za zasłoną i sala ruchu (ściana z matami) – trzy różne miejsca zamiast zdjęć z cateringiem (`strefa-eventowa.jpg`), drugiego ujęcia lustra (`sala-jogi.jpg`) i sali przerobionej przez AI (`sala-wieczor.jpg`). Usunięte z repo: `gabinet.jpg`, `sala-jogi.jpg`, `strefa-eventowa.jpg`, `sala-wieczor.jpg`
 - [x] Zajęcia ruchowe → Fitssey: przyciski w sekcji Zajęcia, karty z „od 50 zł” w zakładce Ruch, stopka oferty z Fitssey, Kontakt, stopka strony, JSON-LD; karta „Zdrowy kręgosłup” (3.11.2026)
 - [x] Telefon 791 103 551, e-mail kontakt@amea-beauty.pl, Instagram i Facebook na stronie (3.11.2026)
 - [x] Godziny otwarcia pon.–sob. 8:00–21:00, niedziela nieczynne – potwierdzone przez salon (3.11.2026)
