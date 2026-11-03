@@ -10,9 +10,9 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`.
 - [x] **AMÉ Men's Skin** (3) i **AMÉ Men's Ritual** (3) – wpisane z Booksy (3.11.2026)
 - [x] **Makijaż permanentny i henna pudrowa** – 6 usług z Booksy wpisane (3.11.2026)
 - [ ] **Rytuały sezonowe**: halloweenowe zniknęły z Booksy i ze strony; przy kolejnej akcji dodać blok `.mini-cards` w zakładce Masaże
-- [ ] **Stylizacja paznokci** – jest w opisie salonu na Booksy, brak w cenniku: pokazywać?
+- [ ] **Stylizacja paznokci** – jest w opisie salonu na Booksy, brak w cenniku: pokazywać? Strefa przy oknie (zdjęcie `strefa-eventowa.jpg`, podpis „Strefa spotkań”) na co dzień to chyba stanowisko do paznokci; od odpowiedzi zależy podpis i opis w sekcji Przestrzeń
 - [ ] **Zajęcia**: grafik (dni/godziny), ceny/karnety, sposób zapisów, prowadzące
-- [ ] **Zespół**: zdjęcia portretowe Katarzyny, Aleksandry i Ani (Renata jest), nazwiska, krótkie bio; specjalizacja Ani
+- [ ] **Zespół**: zdjęcia portretowe Katarzyny, Aleksandry i Ani (Renata jest), nazwiska, krótkie bio. Ania ma bio na swoim profilu pracownika w Booksy (kosmetolog, rytuały i masaże; podpis na stronie wpisany 3.11.2026). Aleksandry nie ma na liście pracowników Booksy, jest tylko przy usługach makijażu permanentnego
 - [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online); realizacja przez Booksy jest już opisana
 - [ ] **Polityka prywatności** (link w stopce)
 
@@ -27,6 +27,7 @@ Jasne, miękkie światło, tony porcelany i karmelu (paleta strony).
 | Diagnostyka (opcjonalnie) | Analiza skóry 3D: urządzenie, ekran z wynikiem, rozmowa z klientką |
 | Przestrzeń – duże (pion) | Sala ruchu: łukowe lustro, pufy, maty, symetrycznie |
 | Przestrzeń – szerokie ×2 | Sala z oknem w dziennym świetle; recepcja / strefa spotkań |
+| Przestrzeń – szerokie (pilne, zamiast `strefa-eventowa.jpg`) | Strefa przy oknie w codziennym wyglądzie, bez cateringu, napojów i kieliszków z dnia otwarcia. Wystarczy zdjęcie telefonem w dziennym świetle; kolory dopasuje `tools/color-match.ps1`. Ewentualnie retusz obecnego zdjęcia narzędziem AI (tylko usunięcie, bez dorabiania wyposażenia) |
 | Zajęcia (pion ×2) | Instruktorka w pozycji jogi; prowadząca z misą tybetańską |
 | Zajęcia (szerokie) | Grupa podczas zajęć lub warsztatów, naturalne momenty |
 | Zespół (pion ×3) | Portrety specjalistek w jednym stylu |
