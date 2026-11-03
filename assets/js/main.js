@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, nav highlight, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -9,6 +9,7 @@
     var setMenu = function (open) {
       nav.classList.toggle('open', open);
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.textContent = open ? 'Zamknij' : 'Menu';
     };
     menuBtn.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
     nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
@@ -63,6 +64,27 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     Array.prototype.forEach.call(document.querySelectorAll('main > section[id]'), function (s) { spy.observe(s); });
+  }
+
+  // Scroll reveal: photos settle into their frames, divider lines draw out from the emblem.
+  // Elements are tagged only here, so without JS or with reduced motion nothing is ever hidden.
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !calm) {
+    var reveal = new IntersectionObserver(function (entries) {
+      var n = 0;
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.style.setProperty('--delay', (n++ * 0.12) + 's');
+        entry.target.classList.add('is-in');
+        reveal.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    var below = 'main > section:not(.hero) ';
+    Array.prototype.forEach.call(document.querySelectorAll(below + '.photo, ' + below + '.portrait, ' + below + '.divider'), function (el) {
+      if (!el.classList.contains('divider') && !el.querySelector(':scope > img')) return; // empty portrait placeholders stay as they are
+      el.classList.add('reveal');
+      reveal.observe(el);
+    });
   }
 
   // Current year in the footer

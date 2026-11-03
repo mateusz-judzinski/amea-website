@@ -15,7 +15,7 @@ Komunikacja z użytkownikiem: po polsku. Treść strony: po polsku.
 ```
 index.html                 cała strona (sekcje w kolejności jak w nawigacji)
 assets/css/styles.css      style; tokeny kolorów i fontów na górze w :root
-assets/js/main.js          menu mobilne, zakładki oferty (ARIA tabs), rok w stopce
+assets/js/main.js          menu mobilne, zakładki oferty (ARIA tabs), odsłanianie zdjęć, rok w stopce
 assets/img/brand/          logo-original.png + maski: logo-full, logo-word, emblem
 assets/img/photos/         zdjęcia robocze (do wymiany po sesji)
 tools/serve.ps1            lokalny serwer
@@ -33,6 +33,11 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 - Motyw graficzny: łukowe kadry zdjęć (`.photo.arch`, `--arch`), linia z emblematem jako przerywnik (`.divider`). Hero ma dodatkowo cienką linię łuku (`outline` + `outline-offset`).
 - Zdjęcia na białym tle studyjnym dostają klasę `.studio` na ramce: `mix-blend-mode: multiply` zamienia biel w ciepły kolor ramki.
 - Filary w Filozofii to linki `href="#oferta"` z `data-tab="<id zakładki>"`; `main.js` przełącza wtedy zakładkę oferty.
+- **Ruch** (sekcja „Motion” na końcu `styles.css`): jeden zaplanowany moment, czyli wejście hero przy załadowaniu (samo CSS). Niżej ruszają się tylko zdjęcia (osiadają w ramce) i linie przerywnika: `main.js` dodaje im `.reveal`, a po wejściu w widok `.is-in`. Każde `.photo`/`.portrait` z `<img>` jako bezpośrednim dzieckiem dostaje to automatycznie. Tekstu, kart i cen nie animujemy; ruch w odpowiedzi na kliknięcie (zakładka, menu, `details`) jest w porządku. Wszystko pod `prefers-reduced-motion: no-preference`, a bez JS nic nie jest ukryte.
+- Rogi: zdjęcia 8 px (jak dół `--arch`), karty `--radius`. Odstęp nagłówek sekcji → treść: `--head-gap`. `.eyebrow` przyklejony do tytułu. Pas wokół pojedynczej karty (Bon): `.band-tight`.
+- Pełny przycisk na hover **ciemnieje** (rozjaśniony karmel daje białemu tekstowi < 4,5:1). `.link` ma podkreślenie z tła; hover rysuje na nim linię espresso.
+- Odrzucone przez użytkownika (3.11.2026), nie proponować ponownie: w Przestrzeni nagłówek w dwóch kolumnach i podpisy pod zdjęciami (zostają nagłówek nad galerią i „pigułki” na zdjęciach); w Zajęciach obniżony łuk nachodzący na szerokie zdjęcie (zostają dwa równe łuki obok siebie).
+- Kontakt: karta trasy `.map-card` to łuk ze zdjęciem szyldu `szyld.jpg` (okrągła tablica wpisana w łuk, kadr `object-position: 0 50%`) z tabliczką adresu; link do Google Maps, bez iframe. Dane kontaktowe jako lista z cienkimi liniami, jak lista zajęć.
 - Panele i inne elementy chowamy atrybutem `hidden` (w CSS jest `[hidden] { display: none !important }`, bo reguły `display` w klasach go nadpisywały).
 - Szkic do porównań: https://claude.ai/artifact/QTXtHeLnmK9uoLAdXrfBeb (wersja z przełącznikiem palet; nie jest źródłem prawdy).
 
