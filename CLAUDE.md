@@ -43,8 +43,9 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 - Wszystkie przyciski rezerwacji → profil Booksy:
   `https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom`
   (docelowo można podpiąć linki do konkretnych usług).
-- Blok „Rytuały sezonowe” w zakładce Masaże jest sezonowy – podmieniać albo usuwać.
-- Opinie i liczba opinii (5.0 / 48) przepisane ręcznie z Booksy.
+- Zakładka Masaże: karty masaży + blok **AMÉA Women's Ritual** (`.mini-cards`). Rytuały sezonowe (np. halloweenowe) dodawać jako osobny blok `.mini-cards` i usuwać, gdy znikną z Booksy.
+- Opinie i liczba opinii (5.0 / 48) przepisane ręcznie z Booksy, cytaty **dosłownie** (najwyżej skrócone na granicy zdania).
+- Cała oferta, godziny (pon.–sob. 8–21) i realizacja bonów zsynchronizowane z Booksy 3.11.2026. Odświeżanie: Playwright MCP na profilu Booksy, rozwinąć zwinięte kategorie (część jest domyślnie zamknięta), porównać z `index.html`. Na Booksy w opisie usługi bywa „po umówionym terminie tel” – to informacja o rezerwacji, nie część nazwy.
 - Brakujące dane są oznaczone w HTML komentarzami `TODO(...)`; pełna lista w `docs/TODO.md`. Nie wymyślać danych kontaktowych, cen ani godzin – pytać użytkownika.
 
 ## Zdjęcia

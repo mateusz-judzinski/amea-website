@@ -4,15 +4,16 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`.
 
 ## Treści od salonu
 
-- [ ] **Kontakt**: telefon, e-mail, Instagram / Facebook
-- [ ] **Godziny otwarcia** na cały tydzień (z Booksy znamy tylko „dziś 8:00–21:00”)
-- [ ] **AMÉA Women's Ritual** – 7 rytuałów: nazwy, opisy, ceny
-- [ ] **AMÉ Men's Skin** (3 zabiegi) i **AMÉ Men's Ritual** (3 rytuały): nazwy, opisy, ceny
-- [ ] **Makijaż permanentny i henna pudrowa** – 6 usług: nazwy, ceny
+- [ ] **Kontakt**: telefon, e-mail, Instagram / Facebook (telefon pilny: makijaż permanentny umawia się telefonicznie)
+- [ ] **Godziny otwarcia**: wpisane z Booksy (pon.–sob. 8:00–21:00, niedz. nieczynne) – potwierdzić, czy to godziny salonu, a nie tylko kalendarza
+- [x] **AMÉA Women's Ritual** – 7 rytuałów z Booksy wpisane (3.11.2026)
+- [x] **AMÉ Men's Skin** (3) i **AMÉ Men's Ritual** (3) – wpisane z Booksy (3.11.2026)
+- [x] **Makijaż permanentny i henna pudrowa** – 6 usług z Booksy wpisane (3.11.2026)
+- [ ] **Rytuały sezonowe**: halloweenowe zniknęły z Booksy i ze strony; przy kolejnej akcji dodać blok `.mini-cards` w zakładce Masaże
 - [ ] **Stylizacja paznokci** – jest w opisie salonu na Booksy, brak w cenniku: pokazywać?
 - [ ] **Zajęcia**: grafik (dni/godziny), ceny/karnety, sposób zapisów, prowadzące
-- [ ] **Zespół**: zdjęcia portretowe Katarzyny i Ani (Renata jest), nazwiska, krótkie bio; specjalizacja Ani
-- [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online)
+- [ ] **Zespół**: zdjęcia portretowe Katarzyny, Aleksandry i Ani (Renata jest), nazwiska, krótkie bio; specjalizacja Ani
+- [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online); realizacja przez Booksy jest już opisana
 - [ ] **Polityka prywatności** (link w stopce)
 
 ## Lista ujęć do sesji zdjęciowej
