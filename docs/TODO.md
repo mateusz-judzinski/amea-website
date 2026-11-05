@@ -1,67 +1,88 @@
-# AMÉA – do uzupełnienia
+# AMÉA – plan prac
 
-Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione punkty są na dole pliku.
+Sekcje idą w kolejności, w jakiej najlepiej je robić: najpierw zebrać odpowiedzi od salonu i zrobić zdjęcia, potem nowe funkcje, przygotowanie do publikacji, a na sam koniec świeża aktualizacja oferty. Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione punkty są na dole pliku.
 
-## Treści od salonu
+## 1. Do ustalenia z salonem
 
-- [ ] **Stylizacja paznokci** – jest w opisie salonu na Booksy, brak w cenniku: pokazywać? (Strefa przy oknie ze starego zdjęcia `strefa-eventowa.jpg` to jednak biurko konsultacji z analizatorem 3D, nie stanowisko do paznokci – widać na zdjęciach od klientki.) Na zdjęciach jest też kącik z fotelem i misą do stóp za zasłoną: czy to pedicure / rytuały stóp i czy pokazać?
-- [ ] **Kod widżetu grafiku Fitssey** (opcjonalnie, daje aktualny grafik na stronie). Renata w panelu Fitssey:
-  1. Studio → Integracje → Widżety;
-  2. skopiować „kod bazowy”;
-  3. kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia);
-  4. przesłać oba fragmenty. Opcjonalnie to samo dla widżetu Cennika.
-- [ ] **Zajęcia – pytania do salonu**:
-  - „Zajęcia sensualne” są na stronie, ale nie ma ich w grafiku ani cenniku Fitssey – czy są jeszcze prowadzone?
-  - Prowadzące z Fitssey (Pati: joga i zdrowy kręgosłup, Karola: pilates) – pokazać je w Zespole?
-  - Nagłówek cennika w Fitssey mówi o „kameralnych zajęciach dla mam i dzieci” – to stała oferta do pokazania na stronie?
-- [ ] **Zespół**: zdjęcie portretowe Aleksandry; nazwiska i krótkie bio Katarzyny, Aleksandry i Ani. Ania ma bio na swoim profilu pracownika w Booksy (kosmetolog, rytuały i masaże; podpis na stronie wpisany 3.11.2026). Aleksandry nie ma na liście pracowników Booksy, jest tylko przy usługach makijażu permanentnego
-- [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online); realizacja przez Booksy jest już opisana
-- [ ] **Polityka prywatności** (link w stopce)
+Najlepiej za jednym razem, np. przy wizycie na zdjęcia.
 
-## Lista ujęć do sesji zdjęciowej
+- [ ] **Zespół**
+  - nazwiska i krótkie bio Katarzyny, Aleksandry i Ani (Ania ma bio na swoim profilu w Booksy; Aleksandry nie ma na liście pracowników Booksy, jest tylko przy makijażu permanentnym);
+  - czy pokazać prowadzące zajęcia z Fitssey: Pati (joga, zdrowy kręgosłup) i Karolę (pilates).
+- [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online), jakie wartości lub rodzaje. Realizacja przez Booksy jest już opisana na stronie.
+- [ ] **Oferta do potwierdzenia**
+  - stylizacja paznokci: jest w opisie salonu na Booksy, brak w cenniku – pokazywać?
+  - kącik z fotelem i misą do stóp: jaka to usługa (pedicure, rytuał stóp?) i czy ją pokazać;
+  - gabinet z urządzeniem do zabiegów na ciało: jakie to zabiegi;
+  - „Zajęcia sensualne”: są na stronie, ale nie ma ich w grafiku ani cenniku Fitssey – czy są prowadzone?
+  - „kameralne zajęcia dla mam i dzieci” z nagłówka cennika Fitssey: stała oferta do pokazania?
+- [ ] **Kody widżetów** (jeśli zdecydujemy się na widżety, patrz sekcja 3)
+  - Fitssey: Renata w panelu Studio → Integracje → Widżety: skopiować „kod bazowy”, kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia), przesłać oba fragmenty; opcjonalnie to samo dla Cennika;
+  - Booksy: czy w panelu Booksy Biz jest przycisk lub widżet rezerwacji na stronę, a jeśli tak – jego kod.
+- [ ] **Dane do polityki prywatności**: pełna nazwa działalności, adres siedziby, NIP, e-mail do spraw danych osobowych. Nie wymyślać – tylko od salonu.
+- [ ] **Profil firmy w Google**: czy istnieje wizytówka (link do trasy i opinii). Jeśli tak – dodać do Kontaktu i danych dla Google (`sameAs`).
 
-Jasne, miękkie światło, tony porcelany i karmelu (paleta strony). Na stronie są już zdjęcia od klientki z telefonu (O nas, trzy w Przestrzeni); sesja może je zastąpić, ale nie jest już pilna.
+## 2. Zdjęcia – wizyta w salonie
 
-Wskazówki, gdy klientka robi kolejne zdjęcia telefonem (z jej paczek z 3 i 5.11.2026):
-- przesyłać oryginały (Dysk, AirDrop, e-mail jako plik), nie przez WhatsApp – zmniejsza do 2048 px i mocno kompresuje (paczka z 5.11 przyszła już jako oryginały z Dysku i to było widać);
-- nic na pierwszym planie: liście drzewka i brzeg zasłony zepsuły około 30 zdjęć z paczki z 5.11; zrobić krok w bok zamiast fotografować „przez” roślinę;
-- z jednego miejsca 2–3 ujęcia wystarczą, nie seria 10 prawie identycznych;
-- robić też zdjęcia **poziome**: szerokie kafelki w Przestrzeni i Zajęciach są 16:9, a wszystkie zdjęcia z paczki są pionowe;
-- obiektyw 1×, nie szeroki 0,5× (krzywi pionowe linie); telefon trzymać prosto, na wysokości klatki piersiowej;
-- jedno światło: dzienne albo lampy, bez mieszania niebieskiego okna z żółtymi lampami; bez filtrów i trybu „ciepły”;
-- przed zdjęciem posprzątać: płaszcze z wieszaka przy kanapie, butelki i drukarkę z biurka, torebki z komody.
+- [ ] **Zrobić zdjęcia osobiście i podmienić.** Zdjęcia od klientki odpadają (za słabe), na stronie zostają tylko do czasu podmiany. Po sesji: wybór, wspólny wygląd przez `tools/photo-look.ps1` (czyta też HEIC z iPhone’a), WebP w rozmiarach jak niżej, zrzuty 1280 i 375 px przed podmianą.
 
-| Miejsce na stronie | Ujęcie |
-|---|---|
-| Zespół (pion) | Portret Aleksandry jak u Katarzyny i Ani: przy podświetlonym szyldzie AMÉA, w pionie, cały napis w kadrze nad głową |
-| Kącik do stóp (jeśli to usługa do pokazania) | Z wejścia, bez zasłony w kadrze, poziomo; fotel, misa i lampa w całości (teraz tylko słabe ujęcia w `inne-pomieszczenia/`) |
-| Gabinet z urządzeniem do zabiegów na ciało | Cały gabinet z łóżkiem i urządzeniem, krok dalej niż na zdjęciu z 5.11 (urządzenie ucięte) |
-| Strefa konsultacji przy oknie | Obiektyw 1×, telefon prosto: fotele i okno bez krzywych linii; biurko uprzątnięte |
-| O nas (pion, łuk) | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku (teraz: gabinet z muralem bez ludzi) |
-| Przestrzeń – szerokie (poziomo) | Strefa relaksu przy oknie, bez płaszcza na wieszaku; sala ruchu w dziennym świetle |
-| Zajęcia (pion ×2) | Instruktorka w pozycji jogi; prowadząca z misą tybetańską |
-| Zajęcia (szerokie) | Grupa podczas zajęć lub warsztatów, naturalne momenty |
-| Hero (opcjonalnie) | Pionowa wersja portretu Renaty; obecny `renata.webp` jest poziomy i kadrowany w CSS |
-| Detale (zapas) | Kosmetyki, ampułki, ręcznik, roślina – martwa natura |
+Jak fotografować:
+- dzień, jedno światło: albo okno, albo lampy, bez mieszania niebieskiego światła z okna z żółtymi lampami; bez filtrów i trybu „ciepły”;
+- obiektyw 1× (szeroki 0,5× krzywi pionowe linie), telefon prosto, na wysokości klatki piersiowej;
+- **każde miejsce w pionie i w poziomie**: łuki są pionowe, szerokie kafelki poziome 16:9;
+- nic na pierwszym planie: liście, brzeg zasłony, krawędź blatu – zrobić krok w bok;
+- przed zdjęciem posprzątać: płaszcze z wieszaka, butelki i drukarka z biurka, torebki z komody, kable;
+- 2–3 dobre ujęcia z miejsca wystarczą.
 
-## Techniczne
+| Miejsce na stronie | Kadr | Co pokazać |
+|---|---|---|
+| Zespół | pion 3:4 | Aleksandra przy podświetlonym szyldzie AMÉA, jak Katarzyna i Ania, cały napis nad głową. Ewentualnie wszystkie cztery osoby na nowo w jednym stylu |
+| O nas | pion 4:5, łuk | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku; albo gabinet z muralem jak teraz, lepiej |
+| Przestrzeń – łuk | pion 3:4 | Strefa relaksu przy oknie: kanapa, stolik, rośliny, pusty wieszak |
+| Przestrzeń – szerokie ×2 | poziom 16:9 | Gabinet zabiegowy; sala ruchu (maty, pufy, lustro) |
+| Zajęcia | pion 3:4 ×2, poziom 16:9 | Prowadząca w pozycji jogi, prowadząca z misą; grupa podczas zajęć – jeśli uda się na zajęciach |
+| Kontakt | pion 4:5, łuk | Szyld albo wejście od ulicy, żeby łatwo trafić |
+| Hero (opcjonalnie) | pion 4:5 | Pionowy portret Renaty; obecny `renata.webp` jest poziomy i kadrowany w CSS |
+| Podgląd linku | poziom 1200×630 | Najładniejsze wnętrze w poziomie (patrz sekcja 4) |
+| Nowe miejsca (zależnie od sekcji 1) | pion i poziom | Kącik do stóp z wejścia, bez zasłony; gabinet z urządzeniem w całości; strefa konsultacji przy oknie; sala z łóżkiem do masażu |
+| Detale (zapas) | dowolny | Kosmetyki, ampułki, ręcznik, roślina, świece – martwa natura |
 
-- [ ] Domena + hosting (statyczny: Netlify / Cloudflare Pages / GitHub Pages / zwykły FTP)
-- [ ] Po domenie: `<link rel="canonical">`, absolutne `og:url` i `og:image`, `sitemap.xml`, `robots.txt`
-- [ ] Self-hosting fontów (RODO) zamiast Google Fonts
-- [ ] Optymalizacja zdjęć po sesji (WebP/AVIF, ~1600 px dłuższy bok, `srcset`)
-- [ ] **Osadzić widżet Fitssey** (gdy przyjdzie kod): w `#zajecia` pod listą zajęć (miejsce oznaczone `TODO(zajęcia)` w `index.html`); skrypt ładowany dopiero przy zbliżeniu do sekcji; styl nadpisany tokenami „Karmel” (Fitssey przyjmuje własny CSS); przyciski „Grafik i zapisy” / „Cennik i karnety” zostają jako fallback; wpis o zewnętrznym skrypcie w polityce prywatności; zrzuty 1280/375 px
-- [ ] Ewentualnie linki „Umów” do konkretnych usług na Booksy
-- [ ] Analityka? Jeśli tak – baner zgód cookies
+## 3. Nowe funkcje na stronie
+
+- [ ] **Dłuższe opisy usług.** Propozycja: rozwijany opis w karcie („Więcej o zabiegu”) na wzór istniejącego rozwijanego pełnego cennika (`details.more`). Działa bez JS, nie zasłania strony, a na telefonie jest wygodniejszy niż okienko. Alternatywa: natywne okno `<dialog>` z opisem, jeśli opisy będą bardzo długie. Treść: opisy usług z Booksy jako punkt wyjścia, uzupełnione przez salon (dla kogo, przebieg, czas, efekt, przeciwwskazania).
+- [ ] **Rezerwacja na Booksy prosto ze strony** – jeśli się da i ma sens:
+  - prościej: przycisk „Umów” przy każdej usłudze prowadzi od razu do tej usługi na Booksy, a nie do całego profilu – sprawdzić, czy Booksy daje stałe adresy usług;
+  - pełniej: przycisk lub widżet rezerwacji Booksy osadzony na stronie (kod z panelu Booksy Biz). Tak jak przy Fitssey: najpierw próba w podglądzie, sprawdzenie cookies i wpis w polityce prywatności; dotychczasowe linki zostają jako zapas.
+- [ ] **Widżet grafiku Fitssey** (gdy przyjdzie kod): w `#zajecia` pod listą zajęć (miejsce oznaczone `TODO(zajęcia)` w `index.html`); skrypt ładowany dopiero przy zbliżeniu do sekcji; styl w kolorach strony (Fitssey przyjmuje własny CSS); przyciski „Grafik i zapisy” / „Cennik i karnety” zostają jako zapas; zrzuty 1280 i 375 px przed decyzją.
+
+## 4. Przed publikacją
+
+- [ ] **Polityka prywatności**: osobna strona (np. `polityka-prywatnosci.html`) i link w stopce (`TODO(prawne)`). Zawiera: administratora danych (dane z sekcji 1), cele, zewnętrzne serwisy (Booksy, Fitssey, Google Fonts – chyba że będą lokalnie, Google Maps tylko jako link), cookies.
+- [ ] **Fonty lokalnie** zamiast Google Fonts (RODO) – upraszcza politykę prywatności.
+- [ ] **Analityka?** Jeśli tak, potrzebny baner zgód cookies; bez analityki i widżetów strona może się bez niego obyć.
+- [ ] **Domena i hosting** (statyczny: Netlify / Cloudflare Pages / GitHub Pages / zwykły FTP). Adres e-mail kontakt@amea-beauty.pl sugeruje domenę amea-beauty.pl – potwierdzić.
+- [ ] **Po domenie**: `<link rel="canonical">`, absolutne `og:url` i `og:image`, `sitemap.xml`, `robots.txt` (`TODO(domena)`).
+- [ ] **Podgląd linku** (Facebook, WhatsApp): poziomy obraz 1200×630 zamiast pionowego `sala-lustro.jpg`, który serwisy przycinają. `sala-lustro.jpg` służy tylko do tego – po zmianie usunąć z repo.
+- [ ] **Optymalizacja zdjęć po sesji**: WebP/AVIF, ~1600 px dłuższy bok, `srcset`.
+- [ ] **Przegląd końcowy**: prawdziwy iPhone i Android; Lighthouse (wydajność, dostępność, SEO); wszystkie linki (Booksy, Fitssey, telefon, e-mail, mapa, Instagram, Facebook); literówki.
+
+## 5. Ostatni krok: aktualizacja oferty
+
+Tuż przed publikacją, żeby wszystko było świeże.
+
+- [ ] **Spis usług i ceny z Booksy**: procedura w `CLAUDE.md` (rozwinąć zwinięte kategorie, porównać z `index.html`); ceny regularne „od”, bez promocji.
+- [ ] **Zajęcia i ceny z Fitssey**: rodzaje zajęć, „od 50 zł”, karnety.
+- [ ] **Opinie**: ocena i liczba opinii (hero i sekcja Opinie), ewentualnie nowe cytaty – dosłownie.
+- [ ] **Godziny i dane kontaktowe**: ostatnie potwierdzenie z salonem.
 
 ## Zrobione
 
-- [x] Druga paczka zdjęć (129 oryginałów, 5.11.2026): wybrane 10 + 5 do ponownego zdjęcia, reszta do Kosza; na stronę trafiło zdjęcie Ani w Zespole (`ania-zespol.webp`). Sala z płaskorzeźbą i nowa strefa relaksu sprawdzone na zrzutach i odrzucone
-- [x] Zdjęcia od klientki (37 plików, 3.11.2026): wybrane 4, wspólny wygląd przez `tools/photo-look.ps1`. O nas: gabinet z muralem; Przestrzeń: strefa relaksu w łuku, gabinet za zasłoną i sala ruchu (ściana z matami) – trzy różne miejsca zamiast zdjęć z cateringiem (`strefa-eventowa.jpg`), drugiego ujęcia lustra (`sala-jogi.jpg`) i sali przerobionej przez AI (`sala-wieczor.jpg`). Usunięte z repo: `gabinet.jpg`, `sala-jogi.jpg`, `strefa-eventowa.jpg`, `sala-wieczor.jpg`
+- [x] Zdjęcia od klientki (paczki z 3 i 5.11.2026): na stronę trafiły robocze zdjęcia do O nas, Przestrzeni (trzy różne miejsca) i Zespołu (Ania). Reszta odrzucona; zdjęcia zostaną zrobione osobiście (sekcja 2)
 - [x] Zajęcia ruchowe → Fitssey: przyciski w sekcji Zajęcia, karty z „od 50 zł” w zakładce Ruch, stopka oferty z Fitssey, Kontakt, stopka strony, JSON-LD; karta „Zdrowy kręgosłup” (3.11.2026)
 - [x] Telefon 791 103 551, e-mail kontakt@amea-beauty.pl, Instagram i Facebook na stronie (3.11.2026)
 - [x] Godziny otwarcia pon.–sob. 8:00–21:00, niedziela nieczynne – potwierdzone przez salon (3.11.2026)
 - [x] Cała oferta zsynchronizowana z Booksy: Women's Ritual (7), Men's Skin (3), Men's Ritual (3), makijaż permanentny i henna pudrowa (6), pełny cennik zabiegów pojedynczych (3.11.2026)
-- [x] Zespół: zdjęcia Renaty (`renata-zespol.webp`) i Katarzyny (`katarzyna-zespol.webp`), Aleksandra dodana do zespołu (3.11.2026)
+- [x] Zespół: zdjęcia Renaty, Katarzyny i Ani; Aleksandra dodana do zespołu (3–5.11.2026)
 - [x] Hero: portret Renaty (`renata.webp`)
 - [x] Favicon (`favicon.ico` 16–48 px, `favicon-32.png`) + `apple-touch-icon` 180 px: czarny emblemat na białym tle
+- [x] Narzędzia do zdjęć: `tools/photo-look.ps1` (wspólny wygląd, HEIC, obrót), `tools/color-match.ps1`
