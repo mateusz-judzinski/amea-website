@@ -62,7 +62,7 @@ docs/TODO.md               brakujące treści, lista ujęć do sesji, zadania te
 
 ## Zdjęcia
 
-Obecne zdjęcia są robocze; będzie selekcja lub profesjonalna sesja. Hero: portret właścicielki `renata.webp` (poziomy, kadrowany do 4:5 przez `object-position` w `.hero .photo img`). Zespół: osobne zdjęcie `renata-zespol.webp`, przycięte w pliku do 3:4 (do bioder), żeby nie powtarzać portretu z hero. Katarzyna: `katarzyna-zespol.webp`, zdjęcie przy szyldzie AMÉA w całym kadrze (oryginał był 3:4), bo przy ciaśniejszym kadrze łuk ucina literę „A”. Pozostałe osoby mają na razie pusty łuk z emblematem. Lista ujęć w `docs/TODO.md`. Przy podmianie zachowaj `width`/`height` w `<img>` zgodne z plikiem i `loading="lazy"` poza hero.
+Obecne zdjęcia są robocze; będzie selekcja lub profesjonalna sesja. Hero: portret właścicielki `renata.webp` (poziomy, kadrowany do 4:5 przez `object-position` w `.hero .photo img`). Zespół: osobne zdjęcie `renata-zespol.webp`, przycięte w pliku do 3:4 (do bioder), żeby nie powtarzać portretu z hero. Katarzyna: `katarzyna-zespol.webp`, zdjęcie przy szyldzie AMÉA w całym kadrze (oryginał był 3:4), bo przy ciaśniejszym kadrze łuk ucina literę „A”. Ania: `ania-zespol.webp` przy tym samym szyldzie, kadr tak wysoko, by napis był cały pod sklepieniem łuku. Aleksandra ma na razie pusty łuk z emblematem. Lista ujęć w `docs/TODO.md`. Przy podmianie zachowaj `width`/`height` w `<img>` zgodne z plikiem i `loading="lazy"` poza hero.
 
 `joga-grupa.jpg` ma skorygowaną kolorystykę (było mocno pomarańczowe): `tools/color-match.ps1` z referencjami `joga.jpg` + `medytacja-prowadzaca.jpg`, siła `-StrengthL 0.5 -StrengthAB 0.7`.
 
@@ -71,6 +71,11 @@ Zdjęcia od klientki (3.11.2026, 37 plików z telefonu, przesłane przez WhatsAp
 - `gabinet-mural.webp` ← WA0038: `-Patch 440x140+540+20 -WB 0.65 -Crop 1536x1920+0+64 -Size 1000x1250`
 - `sala-joga.webp` ← WA0035: `-Patch 200x400+668+102 -WB 0.6 -Crop 1536x864+0+734 -Size 1440x810` (w galerii jako „Sala ruchu i medytacji”)
 - `gabinet-zaslona.webp` ← WA0022: `-Crop 1536x864+0+758 -Size 1440x810` (bez `-Patch`, zdjęcie jest już neutralne)
-Pozostałe dobre ujęcia (recepcja z szyldem WA0037, `-Patch 340x200+40+40 -WB 0.8`; sala z łóżkiem do masażu WA0024) są w zapasie. Odrzucone: duplikaty, łazienka i WC, ujęcia z bałaganem na biurku. `sala-lustro.jpg` nie jest w treści strony, ale to `og:image`.
+Pozostałe dobre ujęcia (recepcja z szyldem WA0037, `-Patch 340x200+40+40 -WB 0.8`; sala z łóżkiem do masażu WA0024) są w zapasie. Odrzucone: duplikaty, łazienka i WC, ujęcia z bałaganem na biurku.
+
+Druga paczka od klientki (5.11.2026, 129 oryginałów z iPhone’a, HEIC 4284×5712 – jakość dużo lepsza niż WhatsApp): selekcja leży u użytkownika w `Downloads\drive-download-20261105T181851Z-1-001` (`wybrane/` 10 zdjęć, `inne-pomieszczenia/` 5 słabych z miejscami, których nie ma na stronie), reszta poszła do Kosza.
+- `ania-zespol.webp` ← IMG_9620.JPG: `-Patch 900x250+350+1820 -WB 0.6 -Crop 3375x4500+0+300 -Size 480x640` (neutralny fragment = szara tarcza szyldu pod napisem; biały fartuch w cieniu jest niebieskawy i ocieplałby całość)
+- Sprawdzone i odrzucone przez użytkownika 5.11.2026: sala ruchu z prawdziwą płaskorzeźbą (IMG_9721) zamiast ściany z matami w Przestrzeni; strefa relaksu IMG_9695 nie weszła (zostaje WA0021).
+- Zapas w `wybrane/`: sala z łóżkiem do masażu (IMG_9657), gabinet z muralem szerzej (IMG_9681), ściana z matami w dzień (IMG_9655, lepszy oryginał `sala-joga`), oryginał Katarzyny (IMG_7619), detale: płaskorzeźba, szyld, świece. `sala-lustro.jpg` nie jest w treści strony, ale to `og:image`.
 
 Na maszynie są **ImageMagick** (`magick`: kadrowanie, WebP/AVIF, wersje do `srcset`) i **ffmpeg** (klatki z wideo). Surowe pliki trzymaj poza repo, do `assets/img/photos/` trafiają tylko gotowe.

@@ -14,7 +14,7 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione
   - „Zajęcia sensualne” są na stronie, ale nie ma ich w grafiku ani cenniku Fitssey – czy są jeszcze prowadzone?
   - Prowadzące z Fitssey (Pati: joga i zdrowy kręgosłup, Karola: pilates) – pokazać je w Zespole?
   - Nagłówek cennika w Fitssey mówi o „kameralnych zajęciach dla mam i dzieci” – to stała oferta do pokazania na stronie?
-- [ ] **Zespół**: zdjęcia portretowe Aleksandry i Ani; nazwiska i krótkie bio Katarzyny, Aleksandry i Ani. Ania ma bio na swoim profilu pracownika w Booksy (kosmetolog, rytuały i masaże; podpis na stronie wpisany 3.11.2026). Aleksandry nie ma na liście pracowników Booksy, jest tylko przy usługach makijażu permanentnego
+- [ ] **Zespół**: zdjęcie portretowe Aleksandry; nazwiska i krótkie bio Katarzyny, Aleksandry i Ani. Ania ma bio na swoim profilu pracownika w Booksy (kosmetolog, rytuały i masaże; podpis na stronie wpisany 3.11.2026). Aleksandry nie ma na liście pracowników Booksy, jest tylko przy usługach makijażu permanentnego
 - [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online); realizacja przez Booksy jest już opisana
 - [ ] **Polityka prywatności** (link w stopce)
 
@@ -22,8 +22,10 @@ Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione
 
 Jasne, miękkie światło, tony porcelany i karmelu (paleta strony). Na stronie są już zdjęcia od klientki z telefonu (O nas, trzy w Przestrzeni); sesja może je zastąpić, ale nie jest już pilna.
 
-Wskazówki, gdy klientka robi kolejne zdjęcia telefonem (z jej paczki z 3.11.2026):
-- przesyłać oryginały (Dysk, AirDrop, e-mail jako plik), nie przez WhatsApp – zmniejsza do 2048 px i mocno kompresuje;
+Wskazówki, gdy klientka robi kolejne zdjęcia telefonem (z jej paczek z 3 i 5.11.2026):
+- przesyłać oryginały (Dysk, AirDrop, e-mail jako plik), nie przez WhatsApp – zmniejsza do 2048 px i mocno kompresuje (paczka z 5.11 przyszła już jako oryginały z Dysku i to było widać);
+- nic na pierwszym planie: liście drzewka i brzeg zasłony zepsuły około 30 zdjęć z paczki z 5.11; zrobić krok w bok zamiast fotografować „przez” roślinę;
+- z jednego miejsca 2–3 ujęcia wystarczą, nie seria 10 prawie identycznych;
 - robić też zdjęcia **poziome**: szerokie kafelki w Przestrzeni i Zajęciach są 16:9, a wszystkie zdjęcia z paczki są pionowe;
 - obiektyw 1×, nie szeroki 0,5× (krzywi pionowe linie); telefon trzymać prosto, na wysokości klatki piersiowej;
 - jedno światło: dzienne albo lampy, bez mieszania niebieskiego okna z żółtymi lampami; bez filtrów i trybu „ciepły”;
@@ -31,7 +33,10 @@ Wskazówki, gdy klientka robi kolejne zdjęcia telefonem (z jej paczki z 3.11.20
 
 | Miejsce na stronie | Ujęcie |
 |---|---|
-| Zespół (pion ×2) | Portrety Aleksandry i Ani w jednym stylu; najprościej jak u Katarzyny: przy podświetlonym szyldzie AMÉA, w pionie, cały szyld w kadrze |
+| Zespół (pion) | Portret Aleksandry jak u Katarzyny i Ani: przy podświetlonym szyldzie AMÉA, w pionie, cały napis w kadrze nad głową |
+| Kącik do stóp (jeśli to usługa do pokazania) | Z wejścia, bez zasłony w kadrze, poziomo; fotel, misa i lampa w całości (teraz tylko słabe ujęcia w `inne-pomieszczenia/`) |
+| Gabinet z urządzeniem do zabiegów na ciało | Cały gabinet z łóżkiem i urządzeniem, krok dalej niż na zdjęciu z 5.11 (urządzenie ucięte) |
+| Strefa konsultacji przy oknie | Obiektyw 1×, telefon prosto: fotele i okno bez krzywych linii; biurko uprzątnięte |
 | O nas (pion, łuk) | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku (teraz: gabinet z muralem bez ludzi) |
 | Przestrzeń – szerokie (poziomo) | Strefa relaksu przy oknie, bez płaszcza na wieszaku; sala ruchu w dziennym świetle |
 | Zajęcia (pion ×2) | Instruktorka w pozycji jogi; prowadząca z misą tybetańską |
@@ -51,6 +56,7 @@ Wskazówki, gdy klientka robi kolejne zdjęcia telefonem (z jej paczki z 3.11.20
 
 ## Zrobione
 
+- [x] Druga paczka zdjęć (129 oryginałów, 5.11.2026): wybrane 10 + 5 do ponownego zdjęcia, reszta do Kosza; na stronę trafiło zdjęcie Ani w Zespole (`ania-zespol.webp`). Sala z płaskorzeźbą i nowa strefa relaksu sprawdzone na zrzutach i odrzucone
 - [x] Zdjęcia od klientki (37 plików, 3.11.2026): wybrane 4, wspólny wygląd przez `tools/photo-look.ps1`. O nas: gabinet z muralem; Przestrzeń: strefa relaksu w łuku, gabinet za zasłoną i sala ruchu (ściana z matami) – trzy różne miejsca zamiast zdjęć z cateringiem (`strefa-eventowa.jpg`), drugiego ujęcia lustra (`sala-jogi.jpg`) i sali przerobionej przez AI (`sala-wieczor.jpg`). Usunięte z repo: `gabinet.jpg`, `sala-jogi.jpg`, `strefa-eventowa.jpg`, `sala-wieczor.jpg`
 - [x] Zajęcia ruchowe → Fitssey: przyciski w sekcji Zajęcia, karty z „od 50 zł” w zakładce Ruch, stopka oferty z Fitssey, Kontakt, stopka strony, JSON-LD; karta „Zdrowy kręgosłup” (3.11.2026)
 - [x] Telefon 791 103 551, e-mail kontakt@amea-beauty.pl, Instagram i Facebook na stronie (3.11.2026)

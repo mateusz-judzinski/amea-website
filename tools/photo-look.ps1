@@ -6,7 +6,7 @@
 #  3. Kadr, skalowanie do rozmiaru miejsca na stronie, WebP.
 # Przykład (strefa relaksu, 3.11.2026):
 #   tools/photo-look.ps1 -Src surowe/IMG-20261103-WA0021.jpg -Out assets/img/photos/strefa-relaksu.webp -Patch 480x200+960+1790 -WB 0.4 -Size 1200x1600
-# Współrzędne -Patch / -Crop / -Mute są w pikselach oryginału. Zawsze porównaj wynik z oryginałem, zanim trafi na stronę.
+# Współrzędne -Patch / -Crop / -Mute są w pikselach oryginału po obróceniu do pionu (-auto-orient; zdjęcia z telefonu, także HEIC). Zawsze porównaj wynik z oryginałem, zanim trafi na stronę.
 param(
   [Parameter(Mandatory = $true)] [string]$Src,
   [Parameter(Mandatory = $true)] [string]$Out,
@@ -34,9 +34,9 @@ try {
   $in = $Src
   if ($Mute) {
     # muted copy takes the polygon as its alpha and goes over the original (a 3-image -composite flips the mask in IM7)
-    $wh = magick identify -format '%wx%h' $Src
+    $wh = magick $Src -auto-orient -format '%wx%h' info:
     $in = Join-Path $tmp 'muted.png'
-    magick $Src '(' +clone -modulate 90,30 '(' -size $wh xc:black -fill white -draw "polygon $Mute" -blur 0x2 ')' -alpha off -compose CopyOpacity -composite ')' -compose Over -composite $in
+    magick $Src -auto-orient '(' +clone -modulate 90,30 '(' -size $wh xc:black -fill white -draw "polygon $Mute" -blur 0x2 ')' -alpha off -compose CopyOpacity -composite ')' -compose Over -composite $in
   }
 
   $gains = @(1.0, 1.0, 1.0)
@@ -44,7 +44,7 @@ try {
     function Lin([double]$v) { $c = $v / 255; if ($c -le 0.04045) { $c / 12.92 } else { [Math]::Pow(($c + 0.055) / 1.055, 2.4) } }
     function Luma($c) { 0.2126 * $c[0] + 0.7152 * $c[1] + 0.0722 * $c[2] }
     $t = $target | ForEach-Object { Lin $_ }
-    $m = (magick $Src -crop $Patch +repage -colorspace RGB -format '%[fx:mean.r] %[fx:mean.g] %[fx:mean.b]' info:) -split ' ' | ForEach-Object { [double]$_ }
+    $m = (magick $Src -auto-orient -crop $Patch +repage -colorspace RGB -format '%[fx:mean.r] %[fx:mean.g] %[fx:mean.b]' info:) -split ' ' | ForEach-Object { [double]$_ }
     $k = (Luma $m) / (Luma $t)   # keep the patch's luminance, take only the target's tint
     $gains = for ($i = 0; $i -lt 3; $i++) { [Math]::Pow($t[$i] * $k / $m[$i], $WB) }
   }
@@ -53,7 +53,7 @@ try {
   # maps out-of-range values to wrong colours (a lamp came out solid blue)
   $cropArgs = if ($Crop) { @('-crop', $Crop, '+repage') } else { @() }
   $sizeArgs = if ($Size) { @('-filter', 'Lanczos', '-resize', "$Size^", '-gravity', 'center', '-extent', $Size) } else { @() }
-  magick $in @cropArgs -colorspace RGB `
+  magick $in -auto-orient @cropArgs -colorspace RGB `
     -channel R -evaluate multiply $gains[0] -channel G -evaluate multiply $gains[1] -channel B -evaluate multiply $gains[2] +channel `
     -colorspace sRGB -clamp $clut -hald-clut @sizeArgs -unsharp 0x0.6+0.5+0.02 `
     -quality $Quality -define webp:method=6 $Out
