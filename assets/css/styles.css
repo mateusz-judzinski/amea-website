@@ -403,7 +403,7 @@ html:has(.booking[open]) { overflow: hidden; }
 .booking-name { flex: 1; min-width: 0; display: grid; gap: 4px; }
 .booking-name .eyebrow { color: inherit; opacity: .72; }
 .booking-name b { font: 400 1.4rem/1.2 var(--f-display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.booking-out { flex: none; color: inherit; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 3px; border-bottom: 1px solid rgb(252 249 246 / .4); transition: border-color .2s; }
+.booking-out { flex: none; color: inherit; text-decoration: none; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 3px; border-bottom: 1px solid rgb(252 249 246 / .4); transition: border-color .2s; }
 .booking-out:hover { border-color: currentColor; }
 .booking .sheet-close { flex: none; margin-left: 0; border-color: transparent; }
 .booking-card { position: relative; flex: 0 1 860px; min-height: 0; width: var(--w); border-radius: 16px; overflow: hidden; background: var(--card); box-shadow: 0 40px 100px rgb(30 20 14 / .35); }
