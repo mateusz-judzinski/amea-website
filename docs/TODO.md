@@ -72,7 +72,7 @@ Tuż przed publikacją, żeby wszystko było świeże.
 
 - [ ] **Spis usług i ceny z Booksy**: procedura w `CLAUDE.md` (JSON Booksy albo profil z rozwiniętymi kategoriami, porównać z `index.html`); ceny regularne „od”, bez promocji. Razem z kartami zaktualizować dane panelu `#svc-data` (ceny, czas, numery wersji, teksty).
 - [ ] **Zajęcia i ceny z Fitssey**: rodzaje zajęć, „od 50 zł”, karnety.
-- [ ] **Opinie**: ocena i liczba opinii z Booksy (hero i sekcja Opinie) i z wizytówki Google (sekcja Opinie), ewentualnie nowe cytaty – dosłownie.
+- [ ] **Opinie**: ocena i liczba opinii z Booksy i z wizytówki Google (obie zakładki Opinii i suma w hero), ewentualnie nowe cytaty – dosłownie.
 - [ ] **Godziny i dane kontaktowe**: ostatnie potwierdzenie z salonem.
 
 ## Zrobione
