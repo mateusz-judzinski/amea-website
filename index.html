@@ -387,14 +387,11 @@
           <article class="card"><h3>Joga</h3><p class="for">Praktyka dla różnych poziomów zaawansowania.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
           <article class="card"><h3>Pilates</h3><p class="for">Siła głębokich mięśni, stabilizacja i postawa.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
           <article class="card"><h3>Zdrowy kręgosłup</h3><p class="for">Joga ze stretchingiem i ćwiczeniami wzmacniającymi na napięcia i ból pleców. Także dla kobiet w ciąży.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
-          <!-- TODO(zajęcia): zajęć sensualnych nie ma teraz w Fitssey – dopytać salon, czy są prowadzone -->
-          <article class="card"><h3>Zajęcia sensualne</h3><p class="for">Świadomość ciała i kobieca energia.</p></article>
           <article class="card"><h3>Warsztaty dla kobiet</h3><p class="for">Spotkania wokół ciała, piękna i równowagi.</p><div class="card-foot"><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zobacz terminy</a></div></article>
         </div>
       </div>
 
       <!-- Makijaż permanentny (Booksy: 6 usług, wykonuje Aleksandra, termin ustalany telefonicznie) -->
-      <!-- TODO(oferta): stylizacja paznokci – pokazywać? -->
       <div class="panel" role="tabpanel" id="p-pmu" aria-labelledby="t-pmu" hidden>
         <div class="panel-intro">
           <p>Zabiegi wykonuje Aleksandra, termin ustalamy telefonicznie: <a href="tel:+48791103551">791 103 551</a>. Przed pierwszym zabiegiem można wykonać bezpłatną próbę uczuleniową.</p>
@@ -1095,7 +1092,6 @@
           <li><b>Joga</b><span>zajęcia regularne</span></li>
           <li><b>Pilates</b><span>zajęcia regularne</span></li>
           <li><b>Zdrowy kręgosłup</b><span>także w ciąży</span></li>
-          <li><b>Zajęcia sensualne</b><span>zajęcia regularne</span></li>
           <li><b>Warsztaty i spotkania</b><span>terminy w Fitssey</span></li>
         </ul>
         <!-- TODO(zajęcia): widżet grafiku Fitssey, kod z panelu (docs/TODO.md); miejsce pod .class-list -->
@@ -1108,7 +1104,9 @@
   </section>
 
   <!-- ZESPÓŁ -->
-  <!-- TODO(zespół): zdjęcie Aleksandry; nazwiska i krótkie bio Katarzyny, Aleksandry i Ani (Ania ma bio na swoim profilu pracownika w Booksy) -->
+  <!-- TODO(zespół): zdjęcie Aleksandry; krótkie bio każdej (Renata prześle; Ania ma też bio na swoim profilu pracownika w Booksy).
+       Specjalistki tylko z imienia (decyzja salonu 10.11.2026). -->
+
   <section class="band" id="zespol">
     <div class="wrap">
       <div class="stack center">
@@ -1172,7 +1170,10 @@
   </section>
 
   <!-- BON UPOMINKOWY -->
-  <!-- TODO(bon): jak kupić voucher (na miejscu / telefonicznie / online); realizacja wg Booksy: usługa „Bon upominkowy” -->
+  <!-- Bon: zakup na miejscu w salonie i telefonicznie (salon, 10.11.2026); realizacja przez usługę „Bon upominkowy” w Booksy.
+       TODO(bon): Renata wymieniła też zakup przez Booksy, ale sprzedaż bonów online jest tam wyłączona (has_online_vouchers: false,
+       accept_booksy_gift_cards: false) – jeśli ją włączy, dodać przycisk „Kup bon online” z linkiem z Booksy. -->
+
   <section class="band band-tight" id="bon">
     <div class="wrap">
       <div class="voucher">
@@ -1180,10 +1181,10 @@
         <div class="stack">
           <p class="eyebrow">Bon upominkowy</p>
           <h2>Podaruj chwilę dla siebie</h2>
-          <p class="lead">Voucher na wybrany zabieg, masaż lub rytuał. Zapytaj o bon w salonie.</p>
+          <p class="lead">Voucher na wybrany zabieg, masaż lub rytuał.<br>Kupisz go na miejscu w salonie albo telefonicznie: <a href="tel:+48791103551">791 103 551</a></p>
           <p class="voucher-note">Masz już bon? <a href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom?do=open-widget&amp;variantId=21806188" target="_blank" rel="noopener">Zarezerwuj wizytę na Booksy</a> i wpisz w wiadomości numer lub rodzaj vouchera.</p>
         </div>
-        <a class="btn btn-solid" href="#kontakt">Zapytaj o bon</a>
+        <a class="btn btn-solid" href="tel:+48791103551">Zadzwoń po bon</a>
       </div>
     </div>
   </section>

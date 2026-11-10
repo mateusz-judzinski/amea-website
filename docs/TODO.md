@@ -1,29 +1,65 @@
 # AMÉA – plan prac
 
-Sekcje idą w kolejności, w jakiej najlepiej je robić: najpierw zebrać odpowiedzi od salonu i zrobić zdjęcia, potem nowe funkcje, przygotowanie do publikacji, a na sam koniec świeża aktualizacja oferty. Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione punkty są na dole pliku.
+Sekcje idą w kolejności, w jakiej najlepiej je robić: najpierw zebrać odpowiedzi od salonu (sekcja 0 – wysłane pytania i materiały, sekcja 1 – jeszcze do wysłania) i zrobić zdjęcia, potem nowe funkcje, przygotowanie do publikacji, a na sam koniec świeża aktualizacja oferty. Miejsca w kodzie oznaczone są komentarzami `TODO(...)` w `index.html`. Zrobione punkty są na dole pliku.
 
-## 1. Do ustalenia z salonem
+## 0. Wiadomość do klientki z 10.11.2026 – odpowiedzi i materiały
 
-Najlepiej za jednym razem, np. przy wizycie na zdjęcia.
+Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia), przerabiane po kolei. Przy każdym punkcie: odpowiedź i co z niej wynika na stronie. Po wdrożeniu punkt idzie do „Zrobione”. Zaznaczone [x] już nie wymagają pracy.
 
-- [ ] **Zespół**
-  - nazwiska i krótkie bio Katarzyny, Aleksandry i Ani (Ania ma bio na swoim profilu w Booksy; Aleksandry nie ma na liście pracowników Booksy, jest tylko przy makijażu permanentnym);
-  - czy pokazać prowadzące zajęcia z Fitssey: Pati (joga, zdrowy kręgosłup) i Karolę (pilates).
-- [ ] **Bon upominkowy**: jak kupić (na miejscu / telefonicznie / online), jakie wartości lub rodzaje. Realizacja przez Booksy jest już opisana na stronie.
-- [ ] **Oferta do potwierdzenia**
-  - stylizacja paznokci: jest w opisie salonu na Booksy, brak w cenniku – pokazywać?
-  - kącik z fotelem i misą do stóp: jaka to usługa (pedicure, rytuał stóp?) i czy ją pokazać;
-  - gabinet z urządzeniem do zabiegów na ciało: jakie to zabiegi;
-  - „Zajęcia sensualne”: są na stronie, ale nie ma ich w grafiku ani cenniku Fitssey – czy są prowadzone?
-  - „kameralne zajęcia dla mam i dzieci” z nagłówka cennika Fitssey: stała oferta do pokazania?
-  - nowe pozycje w cenniku Fitssey bez opisu (stan 10.11.2026): „Glow & Balance Experience” (179 zł, 1 sesja) i „Śpiewoczucie” (65 zł, 1 sesja) – co to jest, czy pokazać na stronie (np. przy warsztatach); „Joga + warsztaty matcha” z 24.10 nadal jest w cenniku, choć termin minął.
+### Pytania
+
+- [ ] **1. Nazwiska dziewczyn** na stronie? **Odpowiedź: tylko imię.**
+  - Zrobione 10.11.2026: specjalistki są z samego imienia, „nazwiska” zniknęły z `TODO(zespół)`.
+  - Do potwierdzenia: Renata jako właścicielka zostaje z nazwiskiem („Renata Judzińska” w Zespole, w opisie zdjęcia hero i w stopce)?
+- [ ] **2. Krótkie bio** każdej? **Odpowiedź: tak, Renata zaraz podeśle** (razem ze zdjęciami, materiały pkt 3).
+  - Do zrobienia: bio pod imionami w Zespole. Ania ma też bio na swoim profilu w Booksy. Aleksandry nie ma na liście pracowników Booksy, jest tylko przy makijażu permanentnym.
+- [ ] **3. Bon upominkowy**: jak kupić? **Odpowiedź: przez Booksy, telefonicznie i na miejscu w Améa.**
+  - Zrobione 10.11.2026: w sekcji Bon „Kupisz go na miejscu w salonie albo telefonicznie: 791 103 551”, przycisk „Zadzwoń po bon” (`tel:`).
+  - Do dopytania: zakup „przez Booksy” – w Booksy salonu sprzedaż bonów online jest wyłączona (`has_online_vouchers: false`, `accept_booksy_gift_cards: false`), więc nie ma czego podlinkować. Czy Renata chce ją włączyć w panelu Booksy? Wtedy przycisk „Kup bon online” (`TODO(bon)` w `index.html`).
+- [x] **4. Stylizacja paznokci**: **Odpowiedź: nie pokazujemy, Renata usunie ją z Booksy.**
+  - Na stronie jej nie ma; komentarz `TODO(oferta): stylizacja paznokci` usunięty 10.11.2026.
+- [x] **5. Kącik z fotelem i misą do stóp**: **Odpowiedź: to rytuał dla stóp – AMÉA Women's Ritual „Lekkość”, jest na Booksy, pokazywać.**
+  - Na stronie już jest (kafelek „Lekkość” w Masażach). Zostaje zdjęcie kącika przy sesji (sekcja 2).
+- [x] **6. Gabinet z urządzeniem do zabiegów na ciało**: **Odpowiedź: na ciało są rytuały, masaże (relaksacyjne i drenaż limfatyczny), fizjoterapia, a z zabiegów urządzeniem – RF mikroigłowa (jest na Booksy).**
+  - Na stronie wszystko już jest (RF mikroigłowa Ellisys Plus w cenniku zabiegów pojedynczych i w Skin Lift Premium – także brzuch i blizna po cesarskim cięciu). Zostaje zdjęcie gabinetu przy sesji (sekcja 2).
+- [ ] **7. „Zajęcia sensualne”**: **Odpowiedź: współpraca z Karoliną się skończyła, salon szuka kogoś na zastępstwo** (zapisy spadły). Pilates na razie zostaje – Renata rozmawia z prowadzącą, na przyszły tydzień są zapisy.
+  - Zrobione 10.11.2026: „Zajęcia sensualne” zdjęte ze strony (karta w zakładce Ruch i wiersz w liście w sekcji Zajęcia, razem z ich `TODO(zajęcia)`); wrócą, gdy będzie nowa prowadząca.
+  - Do obserwowania: pilates – czy zostaje po rozmowie Renaty z prowadzącą (karta w Ruchu, lista w Zajęciach, opinia Natalii o pilatesie w sekcji Opinie).
+- [x] **8. „Kameralne zajęcia dla mam i dzieci”**: **Odpowiedź: tych zajęć ostatecznie nie ma, Renata usunie je z Fitssey.**
+  - Na stronie ich nie ma, nic do zrobienia.
+
+### Materiały
+
+- [ ] **1. Dostęp do Fitssey** (login i hasło): Renata prześle, gdy odzyska hasło na komputerze (na telefonie nie umiała). Potem:
+  - w panelu Studio → Integracje → Widżety skopiować „kod bazowy” i kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia), opcjonalnie to samo dla Cennika;
+  - wdrożyć wg sekcji 3;
+  - na koniec zaproponować Renacie zmianę hasła.
+- [x] **2. Dane do polityki prywatności** – otrzymane 10.11.2026:
+  - jednoosobowa działalność gospodarcza „Améa Renata Judzińska” (przed użyciem sprawdzić dokładną pisownię nazwy w CEIDG po NIP-ie);
+  - adres siedziby: ul. Piłsudskiego 65, 41-902 Bytom (ten sam co salonu);
+  - NIP 9542682779 (REGON nie podany, jest opcjonalny);
+  - e-mail w sprawach danych osobowych: kontakt@amea-beauty.pl;
+  - inspektora ochrony danych nie wyznaczono;
+  - **każda specjalistka prowadzi własną działalność i odpowiada za dane swoich klientek** (tak jest w regulaminie i w umowach między nimi). W polityce: AMÉA jest administratorem danych ze strony i z kontaktu z salonem, specjalistki są odrębnymi administratorami danych swoich klientek. Do dopytania: wymienić je z nazw działalności (wtedy potrzebne ich nazwy i NIP-y) czy wystarczy ogólne zdanie.
+
+  Dalej: polityka prywatności w sekcji 4.
+- [ ] **3. Reszta zdjęć dziewczyn z opisami i spis całego zespołu**: Renata prześle. Potem:
+  - zdjęcia przez `tools/photo-look.ps1`;
+  - łuki w Zespole (Aleksandra ma na razie pusty łuk);
+  - bio z pytania 2.
+
+## 1. Do ustalenia z salonem – jeszcze nie wysłane
+
+Tego nie było w wiadomości z 10.11.2026 (sekcja 0) – dosłać przy okazji.
+
+- [ ] **Prowadzące zajęcia z Fitssey**: pokazać w Zespole Pati (joga, zdrowy kręgosłup)? Karoliny już nie ma (pytanie 7 w sekcji 0); przy pilatesie poczekać, kto będzie prowadził.
+- [ ] **Bon upominkowy**: jakie wartości lub rodzaje (sposób zakupu – pytanie 3 w sekcji 0).
+- [ ] **Nowe pozycje w cenniku Fitssey** bez opisu (stan 10.11.2026): „Glow & Balance Experience” (179 zł, 1 sesja) i „Śpiewoczucie” (65 zł, 1 sesja). Co to jest, czy pokazać na stronie (np. przy warsztatach)? „Joga + warsztaty matcha” z 24.10 nadal jest w cenniku, choć termin minął.
 - [ ] **Panel usług**
   - opisy w panelu (skrót z opisów na Booksy) – salon czyta i poprawia;
   - w Booksy Katarzyna (fizjoterapeutka) jest przypisana m.in. do Clear Skin, Skin Lift, Skin Age i Cosmelanu – czy to celowe?
   - fizjoterapia: czy zawsze zaczyna się od wizyty diagnostycznej (tak mówi panel), czy można od razu zapisać się na terapię;
   - Retix C i Green Sea Peel są w Booksy dwa razy (w „Zabiegach na twarz” i w „Przebarwieniach”, Green Sea Peel z innym czasem: 1 h 30 min i 1 h) – która wersja jest właściwa, czy jedną usunąć.
-- [ ] **Kod widżetu Fitssey** (jeśli zdecydujemy się na widżet, patrz sekcja 3): Renata w panelu Studio → Integracje → Widżety: skopiować „kod bazowy”, kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia), przesłać oba fragmenty; opcjonalnie to samo dla Cennika.
-- [ ] **Dane do polityki prywatności**: pełna nazwa działalności, adres siedziby, NIP, e-mail do spraw danych osobowych. Nie wymyślać – tylko od salonu.
 - [ ] **Wizytówka w Google** (Renata w panelu Profilu Firmy w Google): godziny pokazują „Czynne całą dobę” – ustawić pon.–sob. 8:00–21:00, niedziela nieczynne; po publikacji strony wpisać jej adres („Dodaj witrynę”, patrz sekcja 4). Opcjonalnie link „Poproś o opinie” (g.page/r/…/review) – dałoby się dodać „Napisz opinię w Google” pod cytatami.
 
 ## 2. Zdjęcia – wizyta w salonie
@@ -48,16 +84,16 @@ Jak fotografować:
 | Kontakt | pion 4:5, łuk | Szyld albo wejście od ulicy, żeby łatwo trafić |
 | Hero (opcjonalnie) | pion 4:5 | Pionowy portret Renaty; obecny `renata.webp` jest poziomy i kadrowany w CSS |
 | Podgląd linku | poziom 1200×630 | Najładniejsze wnętrze w poziomie (patrz sekcja 4) |
-| Nowe miejsca (zależnie od sekcji 1) | pion i poziom | Kącik do stóp z wejścia, bez zasłony; gabinet z urządzeniem w całości; strefa konsultacji przy oknie; sala z łóżkiem do masażu |
+| Nowe miejsca | pion i poziom | Kącik do stóp z wejścia, bez zasłony (rytuał „Lekkość”, pytanie 5 w sekcji 0); gabinet z urządzeniem do RF mikroigłowej w całości (pytanie 6); strefa konsultacji przy oknie; sala z łóżkiem do masażu |
 | Detale (zapas) | dowolny | Kosmetyki, ampułki, ręcznik, roślina, świece – martwa natura |
 
 ## 3. Nowe funkcje na stronie
 
-- [ ] **Widżet grafiku Fitssey** (gdy przyjdzie kod): w `#zajecia` pod listą zajęć (miejsce oznaczone `TODO(zajęcia)` w `index.html`); skrypt ładowany dopiero przy zbliżeniu do sekcji; styl w kolorach strony (Fitssey przyjmuje własny CSS); przyciski „Grafik i zapisy” / „Cennik i karnety” zostają jako zapas; zrzuty 1280 i 375 px przed decyzją.
+- [ ] **Widżet grafiku Fitssey** (gdy przyjdzie dostęp do Fitssey, sekcja 0): w `#zajecia` pod listą zajęć (miejsce oznaczone `TODO(zajęcia)` w `index.html`); skrypt ładowany dopiero przy zbliżeniu do sekcji; styl w kolorach strony (Fitssey przyjmuje własny CSS); przyciski „Grafik i zapisy” / „Cennik i karnety” zostają jako zapas; zrzuty 1280 i 375 px przed decyzją.
 
 ## 4. Przed publikacją
 
-- [ ] **Polityka prywatności**: osobna strona (np. `polityka-prywatnosci.html`) i link w stopce (`TODO(prawne)`). Zawiera: administratora danych (dane z sekcji 1), cele, zewnętrzne serwisy (Booksy – widżet rezerwacji w okienku, ładowany dopiero po kliknięciu „Wybierz termin”, ma własne cookies; Fitssey, Google Fonts – chyba że będą lokalnie, Google Maps tylko jako link), cookies.
+- [ ] **Polityka prywatności**: osobna strona (np. `polityka-prywatnosci.html`) i link w stopce (`TODO(prawne)`). Zawiera: administratora danych (dane z sekcji 0 – są już; specjalistki jako odrębni administratorzy danych swoich klientek), cele, zewnętrzne serwisy (Booksy – widżet rezerwacji w okienku, ładowany dopiero po kliknięciu „Wybierz termin”, ma własne cookies; Fitssey, Google Fonts – chyba że będą lokalnie, Google Maps tylko jako link), cookies.
 - [ ] **Fonty lokalnie** zamiast Google Fonts (RODO) – upraszcza politykę prywatności.
 - [ ] **Analityka?** Jeśli tak, potrzebny baner zgód cookies; bez analityki i widżetów strona może się bez niego obyć.
 - [ ] **Domena i hosting** (statyczny: Netlify / Cloudflare Pages / GitHub Pages / zwykły FTP). Adres e-mail kontakt@amea-beauty.pl sugeruje domenę amea-beauty.pl – potwierdzić.
