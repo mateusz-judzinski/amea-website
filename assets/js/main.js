@@ -130,8 +130,10 @@
     var renderSum = function () {
       var L = level(), V = variant();
       var parts = [svc.levels.length > 1 ? L.name : '', L.variants.length > 1 && varLabel() !== 'Czas' ? V.label : ''];
-      foot.querySelector('.sum-name').textContent = parts.filter(Boolean).join(' · ') || svc.title;
-      foot.querySelector('.sum-price').innerHTML = zl(V.price) + '<small>' + time(V.min) + '</small>';
+      foot.querySelector('.sum-name').textContent = parts.filter(Boolean).join(' · '); // nothing to choose: the title above says it
+      var sum = foot.querySelector('.sum-price');
+      sum.classList.toggle('is-quote', V.price == null); // no price on Booksy: priced after the consultation
+      sum.innerHTML = (V.price == null ? 'Wycena indywidualna' : zl(V.price)) + '<small>' + time(V.min) + '</small>';
       bookLink.href = data.booksy + '?do=open-widget&variantId=' + V.id;
     };
     var render = function () {
