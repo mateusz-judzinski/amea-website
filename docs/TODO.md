@@ -16,6 +16,7 @@ Najlepiej za jednym razem, np. przy wizycie na zdjęcia.
   - gabinet z urządzeniem do zabiegów na ciało: jakie to zabiegi;
   - „Zajęcia sensualne”: są na stronie, ale nie ma ich w grafiku ani cenniku Fitssey – czy są prowadzone?
   - „kameralne zajęcia dla mam i dzieci” z nagłówka cennika Fitssey: stała oferta do pokazania?
+  - nowe pozycje w cenniku Fitssey bez opisu (stan 10.11.2026): „Glow & Balance Experience” (179 zł, 1 sesja) i „Śpiewoczucie” (65 zł, 1 sesja) – co to jest, czy pokazać na stronie (np. przy warsztatach); „Joga + warsztaty matcha” z 24.10 nadal jest w cenniku, choć termin minął.
 - [ ] **Panel usług**
   - opisy w panelu (skrót z opisów na Booksy) – salon czyta i poprawia;
   - w Booksy Katarzyna (fizjoterapeutka) jest przypisana m.in. do Clear Skin, Skin Lift, Skin Age i Cosmelanu – czy to celowe?
@@ -70,13 +71,13 @@ Jak fotografować:
 Tuż przed publikacją, żeby wszystko było świeże.
 
 - [ ] **Spis usług i ceny z Booksy**: procedura w `CLAUDE.md` (JSON Booksy albo profil z rozwiniętymi kategoriami, porównać z `index.html`); ceny regularne „od”, bez promocji. Razem z kartami zaktualizować dane panelu `#svc-data` (ceny, czas, numery wersji, teksty).
-- [ ] **Usługi z Booksy, których nie ma na stronie** (stan 10.11.2026): ścieżka SKIN AGE – zmarszczki (329 / 469 / 699 zł) i Trychologia (Dermapen 319 zł, EPN 429 zł).
 - [ ] **Zajęcia i ceny z Fitssey**: rodzaje zajęć, „od 50 zł”, karnety.
 - [ ] **Opinie**: ocena i liczba opinii (hero i sekcja Opinie), ewentualnie nowe cytaty – dosłownie.
 - [ ] **Godziny i dane kontaktowe**: ostatnie potwierdzenie z salonem.
 
 ## Zrobione
 
+- [x] Przegląd usług z Booksy i Fitssey (10.11.2026): ceny i czasy w panelu zgodne z Booksy; nowe karty SKIN AGE (zmarszczki) i Trychologia; „Kolejna wizyta” w fizjoterapii (przycisk „Umów wizytę”); „od” tylko przy kilku cenach; link dla posiadaczy bonu prosto do usługi „Bon upominkowy” w Booksy
 - [x] Panel usługi (10.11.2026): „Umów” w ofercie (także 18 wierszy cennika zabiegów pojedynczych), Diagnostyce i Fizjoterapii otwiera wysuwany panel z opisem z Booksy, wyborem opcji i obszaru/czasu, ceną i czasem; „Wybierz termin” otwiera w nowej karcie Booksy od razu na tej usłudze. Przy okazji ceny, które Booksy zmienił (konsultacja 3D, fizjoterapia, borowina, drenaż)
 - [x] Zdjęcia od klientki (paczki z 3 i 5.11.2026): na stronę trafiły robocze zdjęcia do O nas, Przestrzeni (trzy różne miejsca) i Zespołu (Ania). Reszta odrzucona; zdjęcia zostaną zrobione osobiście (sekcja 2)
 - [x] Zajęcia ruchowe → Fitssey: przyciski w sekcji Zajęcia, karty z „od 50 zł” w zakładce Ruch, stopka oferty z Fitssey, Kontakt, stopka strony, JSON-LD; karta „Zdrowy kręgosłup” (3.11.2026)
