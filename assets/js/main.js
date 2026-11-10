@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, review source switch, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -18,11 +18,9 @@
     });
   }
 
-  // Offer tabs (WAI-ARIA tabs pattern: click, arrow keys, Home/End)
-  var tablist = document.querySelector('[role="tablist"]');
-  if (tablist) {
+  // Tabs (WAI-ARIA tabs pattern: click, arrow keys, Home/End); returns select(tab, focus). `after` runs on every change.
+  var tabset = function (tablist, after) {
     var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
-    var feet = Array.prototype.slice.call(document.querySelectorAll('.offer-foot[data-foot]'));
     var select = function (tab, focus) {
       tabs.forEach(function (t) {
         var on = t === tab;
@@ -30,9 +28,7 @@
         t.tabIndex = on ? 0 : -1;
         document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
-      // Offer footer: the tab's own one if it has it (classes → Fitssey), otherwise the default (Booksy)
-      var own = feet.some(function (f) { return f.getAttribute('data-foot') === tab.id; });
-      feet.forEach(function (f) { f.hidden = f.getAttribute('data-foot') !== (own ? tab.id : 'default'); });
+      if (after) after(tab);
       if (focus) tab.focus();
     };
     tabs.forEach(function (tab, i) {
@@ -47,12 +43,38 @@
       });
     });
     select(tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0] || tabs[0], false);
+    return select;
+  };
 
+  // Offer tabs
+  var offerTabs = document.querySelector('#oferta [role="tablist"]');
+  if (offerTabs) {
+    var feet = Array.prototype.slice.call(document.querySelectorAll('.offer-foot[data-foot]'));
+    var selectOffer = tabset(offerTabs, function (tab) {
+      // Offer footer: the tab's own one if it has it (classes → Fitssey), otherwise the default (Booksy)
+      var own = feet.some(function (f) { return f.getAttribute('data-foot') === tab.id; });
+      feet.forEach(function (f) { f.hidden = f.getAttribute('data-foot') !== (own ? tab.id : 'default'); });
+    });
     // Links with data-tab (philosophy pillars) open that tab; the anchor then scrolls to the offer
     document.addEventListener('click', function (e) {
       var link = e.target.closest('[data-tab]');
       var tab = link && document.getElementById(link.getAttribute('data-tab'));
-      if (tab) select(tab, false);
+      if (tab) selectOffer(tab, false);
+    });
+  }
+
+  // Reviews: Booksy / Google switch next to the heading; the score on the right follows the chosen source
+  var reviewTabs = document.querySelector('#opinie [role="tablist"]');
+  if (reviewTabs) {
+    var rating = document.querySelector('#opinie [data-score-rating]');
+    tabset(reviewTabs, function (tab) {
+      // Both captions sit in one grid cell (the block keeps its width, the stars stay put); show this tab's one
+      var count = document.getElementById(tab.getAttribute('data-count'));
+      if (!count || count.classList.contains('is-on')) return;
+      Array.prototype.forEach.call(count.parentNode.children, function (c) { c.classList.toggle('is-on', c === count); });
+      var changed = [count];
+      if (rating && rating.textContent !== tab.getAttribute('data-rating')) { rating.textContent = tab.getAttribute('data-rating'); changed.push(rating); }
+      changed.forEach(function (el) { el.classList.remove('is-new'); void el.offsetWidth; el.classList.add('is-new'); }); // replay the fade
     });
   }
 

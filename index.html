@@ -39,6 +39,8 @@
       "addressLocality": "Bytom",
       "addressCountry": "PL"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": 50.3491818, "longitude": 18.9235148 },
+    "hasMap": "https://maps.google.com/?cid=10555222505024656338",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -51,7 +53,8 @@
       "https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom",
       "https://app.fitssey.com/3329969456/frontoffice",
       "https://www.instagram.com/beauty_amea/",
-      "https://www.facebook.com/BeautyAmea"
+      "https://www.facebook.com/BeautyAmea",
+      "https://maps.google.com/?cid=10555222505024656338"
     ]
   }
   </script>
@@ -1137,7 +1140,9 @@
     </div>
   </section>
 
-  <!-- OPINIE (źródło: Booksy; liczba opinii aktualizowana ręcznie) -->
+  <!-- OPINIE: przełącznik źródła (Booksy / Google) to zakładki ARIA obok nagłówka (main.js); ocena i liczba opinii po prawej
+       zmieniają się razem z zakładką (data-rating, data-count). Liczby z Booksy i z wizytówki Google aktualizowane ręcznie
+       (stan 10.11.2026), cytaty dosłownie (najwyżej skrócone na granicy zdania). -->
   <section id="opinie">
     <div class="wrap">
       <div class="reviews-head">
@@ -1145,8 +1150,14 @@
           <p class="eyebrow">Opinie</p>
           <h2>Co mówią nasze klientki</h2>
         </div>
-        <div class="score"><b>5.0</b><div><span class="stars" aria-hidden="true">★★★★★</span><span>49 opinii na Booksy</span></div></div>
+        <div class="tabs sources" role="tablist" aria-label="Źródło opinii">
+          <button class="tab" role="tab" id="r-booksy" aria-controls="rp-booksy" aria-selected="true" type="button" data-rating="5.0" data-count="count-booksy">Booksy</button>
+          <button class="tab" role="tab" id="r-google" aria-controls="rp-google" aria-selected="false" type="button" data-rating="5.0" data-count="count-google">Google</button>
+        </div>
+        <!-- Oba napisy z liczbą opinii leżą w jednym miejscu (widoczny ma .is-on), więc blok nie zmienia szerokości przy przełączaniu -->
+        <div class="score"><b data-score-rating>5.0</b><div><span class="stars" aria-hidden="true">★★★★★</span><span class="score-count"><span class="is-on" id="count-booksy">49 opinii na Booksy</span><span id="count-google">23 opinie w Google</span></span></div></div>
       </div>
+      <div class="review-panel" role="tabpanel" id="rp-booksy" aria-labelledby="r-booksy">
       <div class="quotes">
         <blockquote><p>Piękna przestrzeń w sercu Bytomia. Serdecznie polecam!</p><footer>Olga · Vampire Glow</footer></blockquote>
         <blockquote><p>Kosmetolog przeprowadziła analizę skóry, trafnie dobrała zabieg oraz poinstruowała odnośnie pielęgnacji w domu.</p><footer>Katarzyna · zabieg dobrany do skóry</footer></blockquote>
@@ -1154,6 +1165,17 @@
         <blockquote><p>Bardzo lubię to miejsce! Zawsze tam się mocno zrelaksuję, a zabiegi są fantastyczne.</p><footer>Magdalena · zabieg dobrany do skóry</footer></blockquote>
       </div>
       <p class="reviews-more"><a class="link" href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Wszystkie opinie na Booksy</a></p>
+      </div>
+      <div class="review-panel" role="tabpanel" id="rp-google" aria-labelledby="r-google" hidden>
+      <!-- Cytaty z wizytówki Google (teksty wkleił użytkownik 10.11.2026): dosłowne fragmenty, przycięte na granicy zdania -->
+      <div class="quotes">
+        <blockquote><p>Amea to miejsce w którym można zadbać o siebie w sferze fizycznej i duchowej. Zabiegi pielęgnacyjne na najwyższym poziomie.</p><footer>Kasia · zabiegi i zajęcia</footer></blockquote>
+        <blockquote><p>Pani dokładnie wiedziała, co robi, wszystko tłumaczyła i przede wszystkim naprawdę dbała o mój komfort. Dawno nie spotkałam się z tak miłym i profesjonalnym podejściem.</p><footer>K. L. · zabieg</footer></blockquote>
+        <blockquote><p>Zajęcia były prowadzone na najwyższym poziomie, a prowadząca to niezwykle sympatyczna, ciepła i profesjonalna osoba, która dba o komfort każdego uczestnika.</p><footer>Natalia · pilates</footer></blockquote>
+        <blockquote><p>To coś znacznie więcej niż zwykłe spotkanie – to kilka godzin pełnych kobiecej energii, relaksu, uważności i troski o siebie.</p><footer>Eliza · Glow &amp; Balance Experience</footer></blockquote>
+      </div>
+      <p class="reviews-more"><a class="link" href="https://maps.google.com/?cid=10555222505024656338" target="_blank" rel="noopener">Wszystkie opinie w Google</a></p>
+      </div>
     </div>
   </section>
 
@@ -1194,8 +1216,9 @@
           <a class="btn btn-ghost" href="tel:+48791103551">Zadzwoń</a>
         </div>
       </div>
-      <!-- Mapa jako link (bez iframe Google Maps, żeby nie ładować cookies przed zgodą). Zdjęcie: szyld AMÉA w salonie. -->
-      <a class="map-card photo arch framed" href="https://www.google.com/maps/search/?api=1&amp;query=Pi%C5%82sudskiego+65%2C+41-902+Bytom" target="_blank" rel="noopener">
+      <!-- Mapa jako link do wizytówki salonu w Google (cid = stały numer miejsca; trasa, opinie, zdjęcia), bez iframe
+           Google Maps, żeby nie ładować cookies przed zgodą. Zdjęcie: szyld AMÉA w salonie. -->
+      <a class="map-card photo arch framed" href="https://maps.google.com/?cid=10555222505024656338" target="_blank" rel="noopener">
         <img src="assets/img/photos/szyld.jpg" width="1600" height="1014" alt="" loading="lazy" decoding="async">
         <span class="map-plate">
           <span class="map-address">Piłsudskiego 65, Bytom</span>

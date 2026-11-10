@@ -24,7 +24,7 @@ Najlepiej za jednym razem, np. przy wizycie na zdjęcia.
   - Retix C i Green Sea Peel są w Booksy dwa razy (w „Zabiegach na twarz” i w „Przebarwieniach”, Green Sea Peel z innym czasem: 1 h 30 min i 1 h) – która wersja jest właściwa, czy jedną usunąć.
 - [ ] **Kod widżetu Fitssey** (jeśli zdecydujemy się na widżet, patrz sekcja 3): Renata w panelu Studio → Integracje → Widżety: skopiować „kod bazowy”, kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia), przesłać oba fragmenty; opcjonalnie to samo dla Cennika.
 - [ ] **Dane do polityki prywatności**: pełna nazwa działalności, adres siedziby, NIP, e-mail do spraw danych osobowych. Nie wymyślać – tylko od salonu.
-- [ ] **Profil firmy w Google**: czy istnieje wizytówka (link do trasy i opinii). Jeśli tak – dodać do Kontaktu i danych dla Google (`sameAs`).
+- [ ] **Wizytówka w Google** (Renata w panelu Profilu Firmy w Google): godziny pokazują „Czynne całą dobę” – ustawić pon.–sob. 8:00–21:00, niedziela nieczynne; po publikacji strony wpisać jej adres („Dodaj witrynę”, patrz sekcja 4). Opcjonalnie link „Poproś o opinie” (g.page/r/…/review) – dałoby się dodać „Napisz opinię w Google” pod cytatami.
 
 ## 2. Zdjęcia – wizyta w salonie
 
@@ -61,7 +61,7 @@ Jak fotografować:
 - [ ] **Fonty lokalnie** zamiast Google Fonts (RODO) – upraszcza politykę prywatności.
 - [ ] **Analityka?** Jeśli tak, potrzebny baner zgód cookies; bez analityki i widżetów strona może się bez niego obyć.
 - [ ] **Domena i hosting** (statyczny: Netlify / Cloudflare Pages / GitHub Pages / zwykły FTP). Adres e-mail kontakt@amea-beauty.pl sugeruje domenę amea-beauty.pl – potwierdzić.
-- [ ] **Po domenie**: `<link rel="canonical">`, absolutne `og:url` i `og:image`, `sitemap.xml`, `robots.txt` (`TODO(domena)`).
+- [ ] **Po domenie**: `<link rel="canonical">`, absolutne `og:url` i `og:image`, `sitemap.xml`, `robots.txt` (`TODO(domena)`); adres strony w wizytówce Google, na Booksy, Instagramie i Facebooku.
 - [ ] **Podgląd linku** (Facebook, WhatsApp): poziomy obraz 1200×630 zamiast pionowego `sala-lustro.jpg`, który serwisy przycinają. `sala-lustro.jpg` służy tylko do tego – po zmianie usunąć z repo.
 - [ ] **Optymalizacja zdjęć po sesji**: WebP/AVIF, ~1600 px dłuższy bok, `srcset`.
 - [ ] **Przegląd końcowy**: prawdziwy iPhone i Android; Lighthouse (wydajność, dostępność, SEO); wszystkie linki (Booksy, Fitssey, telefon, e-mail, mapa, Instagram, Facebook); literówki.
@@ -72,11 +72,12 @@ Tuż przed publikacją, żeby wszystko było świeże.
 
 - [ ] **Spis usług i ceny z Booksy**: procedura w `CLAUDE.md` (JSON Booksy albo profil z rozwiniętymi kategoriami, porównać z `index.html`); ceny regularne „od”, bez promocji. Razem z kartami zaktualizować dane panelu `#svc-data` (ceny, czas, numery wersji, teksty).
 - [ ] **Zajęcia i ceny z Fitssey**: rodzaje zajęć, „od 50 zł”, karnety.
-- [ ] **Opinie**: ocena i liczba opinii (hero i sekcja Opinie), ewentualnie nowe cytaty – dosłownie.
+- [ ] **Opinie**: ocena i liczba opinii z Booksy (hero i sekcja Opinie) i z wizytówki Google (sekcja Opinie), ewentualnie nowe cytaty – dosłownie.
 - [ ] **Godziny i dane kontaktowe**: ostatnie potwierdzenie z salonem.
 
 ## Zrobione
 
+- [x] Wizytówka Google (10.11.2026): karta trasy w Kontakcie prowadzi do profilu salonu w Mapach, w Opiniach przełącznik Booksy / Google (ocena i liczba opinii zmieniają się z zakładką, 4 cytaty z Google), w JSON-LD `sameAs`, `hasMap` i współrzędne
 - [x] Przegląd usług z Booksy i Fitssey (10.11.2026): ceny i czasy w panelu zgodne z Booksy; nowe karty SKIN AGE (zmarszczki) i Trychologia; „od” tylko przy kilku cenach (także w wierszach poziomów) i najniższa cena we wstępie każdej zakładki; „Dla niego” jako ostatnia zakładka; wstępy zakładek najwyżej 2 linie; bez ogólnego przycisku w Fizjoterapii (karty otwierają panel); link dla posiadaczy bonu prosto do usługi „Bon upominkowy” w Booksy
 - [x] Panel usługi (10.11.2026): „Umów” w ofercie (także 18 wierszy cennika zabiegów pojedynczych), Diagnostyce i Fizjoterapii otwiera wysuwany panel z opisem z Booksy, wyborem opcji i obszaru/czasu, ceną i czasem; „Wybierz termin” otwiera w nowej karcie Booksy od razu na tej usłudze. Przy okazji ceny, które Booksy zmienił (konsultacja 3D, fizjoterapia, borowina, drenaż)
 - [x] Zdjęcia od klientki (paczki z 3 i 5.11.2026): na stronę trafiły robocze zdjęcia do O nas, Przestrzeni (trzy różne miejsca) i Zespołu (Ania). Reszta odrzucona; zdjęcia zostaną zrobione osobiście (sekcja 2)
