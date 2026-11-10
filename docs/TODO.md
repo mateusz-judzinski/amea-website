@@ -57,7 +57,7 @@ Jak fotografować:
 
 ## 4. Przed publikacją
 
-- [ ] **Polityka prywatności**: osobna strona (np. `polityka-prywatnosci.html`) i link w stopce (`TODO(prawne)`). Zawiera: administratora danych (dane z sekcji 1), cele, zewnętrzne serwisy (Booksy, Fitssey, Google Fonts – chyba że będą lokalnie, Google Maps tylko jako link), cookies.
+- [ ] **Polityka prywatności**: osobna strona (np. `polityka-prywatnosci.html`) i link w stopce (`TODO(prawne)`). Zawiera: administratora danych (dane z sekcji 1), cele, zewnętrzne serwisy (Booksy – widżet rezerwacji w okienku, ładowany dopiero po kliknięciu „Wybierz termin”, ma własne cookies; Fitssey, Google Fonts – chyba że będą lokalnie, Google Maps tylko jako link), cookies.
 - [ ] **Fonty lokalnie** zamiast Google Fonts (RODO) – upraszcza politykę prywatności.
 - [ ] **Analityka?** Jeśli tak, potrzebny baner zgód cookies; bez analityki i widżetów strona może się bez niego obyć.
 - [ ] **Domena i hosting** (statyczny: Netlify / Cloudflare Pages / GitHub Pages / zwykły FTP). Adres e-mail kontakt@amea-beauty.pl sugeruje domenę amea-beauty.pl – potwierdzić.

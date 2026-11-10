@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, service panel, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -92,9 +92,10 @@
   }
 
   // Service panel: a link with data-svc (optionally data-lvl = preselected option) opens the treatment's
-  // details with the option and area/length to choose. "Wybierz termin" is a plain link to the Booksy profile
-  // with ?do=open-widget&variantId=…, which opens Booksy in a new tab straight on that service's booking.
-  // Nothing from Booksy loads on this page. Without JS (or <dialog>) the link opens the Booksy profile.
+  // details with the option and area/length to choose. "Wybierz termin" hides the panel and opens Booksy's
+  // widget in a centred window (#booking) straight on that variant; Booksy loads only after that click.
+  // Its href (Booksy profile with ?do=open-widget&variantId=…) is for Ctrl/middle click.
+  // Without JS (or <dialog>) the link on the card opens the Booksy profile.
   var svcData = document.getElementById('svc-data');
   var sheet = document.getElementById('svc');
   if (svcData && sheet && typeof sheet.showModal === 'function') {
@@ -102,7 +103,7 @@
     var body = sheet.querySelector('.sheet-body');
     var foot = sheet.querySelector('.sheet-foot');
     var bookLink = foot.querySelector('[data-sheet-book]');
-    var svc = null, lvl = 0, vr = 0;
+    var svc = null, lvl = 0, vr = 0, trigger = null;
 
     var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
     var zl = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' zł'; };
@@ -180,13 +181,109 @@
       if (sheet.open) sheet.close();
       if (history.state && history.state.ameaSheet) history.back();
     };
-    window.addEventListener('popstate', function () { if (sheet.open) sheet.close(); });
+
+    // Booking window: Booksy's widget in an iframe. The widget talks to the page with postMessage
+    // ({ uniqueId, events: { ready | resize | close | goToUrl | sendPost } }), like Booksy's own code.js.
+    var booking = document.getElementById('booking');
+    var card = booking && booking.querySelector('.booking-card');
+    var frame = null, uid = '', waitTimer = 0;
+    var phone = window.matchMedia('(max-width: 640px)');
+    var BOOKSY = /^https:\/\/([a-z0-9-]+\.)*booksy\.(com|net)$/;
+    var afterAnim = function (el, fn) { // run fn once el's own animation ends (at once when there is none)
+      var name = getComputedStyle(el).animationName;
+      if (!name || name === 'none') { fn(); return; }
+      var done = false;
+      var end = function (e) {
+        if (done || (e && e.target !== el)) return;
+        done = true; el.removeEventListener('animationend', end); fn();
+      };
+      el.addEventListener('animationend', end);
+      setTimeout(end, 700);
+    };
+    var tellSize = function () { // where the widget sits, as Booksy's code.js reports it
+      if (!frame || !frame.contentWindow) return;
+      var r = card.getBoundingClientRect();
+      frame.contentWindow.postMessage({ uniqueId: uid, name: 'scroll', data: {
+        container: { x: r.x, y: r.y, top: r.top, left: r.left, right: r.right, bottom: r.bottom, width: r.width, height: r.height },
+        window: { width: window.innerWidth, height: window.innerHeight } } }, '*');
+    };
+    var ready = function () { booking.classList.add('is-ready'); clearTimeout(waitTimer); tellSize(); };
+    var post = function (action, fields) { // payment and similar steps: a form POST, as code.js does
+      var f = document.createElement('form');
+      f.method = 'post'; f.action = action;
+      Object.keys(fields || {}).forEach(function (k) {
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = k; i.value = fields[k]; f.appendChild(i);
+      });
+      document.body.appendChild(f); f.submit();
+    };
+    var book = function () {
+      var L = level(), V = variant(), f;
+      document.getElementById('booking-name').textContent = [svc.title, svc.levels.length > 1 ? L.name : '', L.variants.length > 1 ? V.label : ''].filter(Boolean).join(' · ');
+      Array.prototype.forEach.call(booking.querySelectorAll('[data-booking-out]'), function (a) { a.href = bookLink.href; });
+      uid = 'amea' + Date.now().toString(36);
+      frame = f = document.createElement('iframe');
+      f.title = 'Rezerwacja w Booksy';
+      f.setAttribute('allow', 'payment');
+      f.src = data.widget + '&variantId=' + V.id + '&uniqueId=' + uid;
+      f.addEventListener('load', function () { setTimeout(function () { if (frame === f) ready(); }, 4000); }); // in case "ready" never comes
+      booking.classList.remove('is-ready', 'is-late');
+      card.appendChild(f);
+      clearTimeout(waitTimer);
+      waitTimer = setTimeout(function () { booking.classList.add('is-late'); }, 15000);
+      var show = function () { booking.showModal(); history.replaceState({ ameaBook: true }, ''); };
+      if (phone.matches) { // the window slides up over the panel, then the panel goes
+        show();
+        afterAnim(booking, function () {
+          sheet.close();
+          if (booking.open && !booking.contains(document.activeElement)) booking.querySelector('[data-booking-close]').focus();
+        });
+      } else { // the panel slides away, then the window rises in the centre
+        sheet.classList.add('is-leaving');
+        afterAnim(sheet, function () { sheet.close(); sheet.classList.remove('is-leaving'); show(); });
+      }
+    };
+    var closeBooking = function (fromHistory) {
+      if (!booking.open) return;
+      booking.close();
+      clearTimeout(waitTimer);
+      if (frame) { frame.remove(); frame = null; }
+      if (sheet.open) sheet.close();
+      if (!fromHistory && history.state && history.state.ameaBook) history.back();
+      if (trigger && trigger.isConnected) trigger.focus();
+    };
+    if (booking && data.widget) {
+      bookLink.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // on purpose: Booksy's page in a new tab
+        e.preventDefault();
+        book();
+      });
+      booking.querySelector('[data-booking-close]').addEventListener('click', function () { closeBooking(); });
+      booking.addEventListener('cancel', function (e) { e.preventDefault(); closeBooking(); });
+      window.addEventListener('resize', tellSize);
+      window.addEventListener('message', function (e) {
+        var d = e.data, ev;
+        if (!frame || !BOOKSY.test(e.origin) || !d || d.uniqueId !== uid || !(ev = d.events)) return;
+        if (ev.ready) ready();
+        if (ev.close) closeBooking(); // Booksy's own X (after "Tak, przerwij") or the end of the booking
+        if (ev.goToUrl && /^https:\/\//.test(ev.goToUrl.url)) window.location.assign(ev.goToUrl.url);
+        if (ev.sendPost && /^https:\/\//.test(ev.sendPost.action)) post(ev.sendPost.action, ev.sendPost.data);
+      });
+    }
+
+    window.addEventListener('popstate', function () {
+      if (booking && booking.open) closeBooking(true);
+      if (sheet.open) sheet.close();
+    });
     sheet.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
     sheet.addEventListener('click', function (e) { if (e.target === sheet) close(); }); // click on the backdrop
     sheet.querySelector('[data-sheet-close]').addEventListener('click', close);
     document.addEventListener('click', function (e) {
       var link = e.target.closest('a[data-svc]');
-      if (link && !e.metaKey && !e.ctrlKey && !e.shiftKey && open(link.getAttribute('data-svc'), link.getAttribute('data-lvl'))) e.preventDefault();
+      if (link && !e.metaKey && !e.ctrlKey && !e.shiftKey && open(link.getAttribute('data-svc'), link.getAttribute('data-lvl'))) {
+        e.preventDefault();
+        trigger = link;
+      }
     });
   }
 

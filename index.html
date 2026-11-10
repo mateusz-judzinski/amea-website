@@ -473,8 +473,10 @@
       </div>
 
       <!-- Panel usługi (main.js): link z data-svc (i opcjonalnie data-lvl = wybrana z góry opcja) otwiera opis z wyborem
-           opcji i obszaru/czasu. „Wybierz termin” to link do profilu Booksy z ?do=open-widget&variantId=…, który otwiera
-           w nowej karcie rezerwację dokładnie tej usługi. Bez JS link z karty prowadzi na profil Booksy jak dotąd.
+           opcji i obszaru/czasu. „Wybierz termin” chowa panel i otwiera na środku okno #booking z widżetem Booksy
+           (iframe, adres "widget" w #svc-data) od razu na tej wersji usługi; Booksy ładuje się dopiero po tym kliknięciu.
+           Ctrl/środkowy przycisk otwiera profil Booksy z ?do=open-widget&variantId=… w nowej karcie.
+           Bez JS link z karty prowadzi na profil Booksy jak dotąd.
            Dane w #svc-data: treść skrócona z opisów usług na Booksy, ceny regularne i czas z Booksy (stan z 10.11.2026);
            id = numer wersji usługi w Booksy (variantId). Przy zmianie usługi w Booksy numer może się zmienić. -->
       <dialog class="sheet" id="svc" aria-labelledby="svc-title">
@@ -484,12 +486,30 @@
         <div class="sheet-body"></div>
         <div class="sheet-foot">
           <p class="sum"><span class="sum-name"></span><span class="sum-price"></span></p>
-          <a class="btn btn-solid" data-sheet-book href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Wybierz termin<span class="sr-only"> w Booksy (nowa karta)</span></a>
+          <a class="btn btn-solid" data-sheet-book href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Wybierz termin<span class="sr-only"> w Booksy</span></a>
+        </div>
+      </dialog>
+      <dialog class="booking" id="booking" aria-labelledby="booking-name">
+        <div class="booking-bar">
+          <p class="booking-name"><span class="eyebrow">Rezerwacja online</span><b id="booking-name"></b></p>
+          <a class="booking-out" data-booking-out href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Otwórz w Booksy<span class="sr-only"> (nowa karta)</span></a>
+          <button class="sheet-close" type="button" data-booking-close aria-label="Zamknij rezerwację" autofocus></button>
+        </div>
+        <div class="booking-card">
+          <div class="booking-wait" role="status">
+            <span class="mask emblem" aria-hidden="true"></span>
+            <p class="booking-wait-text">Wczytujemy kalendarz</p>
+            <div class="booking-late">
+              <p>Kalendarz Booksy wczytuje się dłużej niż zwykle.</p>
+              <a class="link" data-booking-out href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Otwórz rezerwację w Booksy</a>
+            </div>
+          </div>
         </div>
       </dialog>
       <script type="application/json" id="svc-data">
 {
   "booksy": "https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom",
+  "widget": "https://booksy.com/widget-2021/index.html?id=339658&businessId=&appointmentUid=&lang=pl&country=pl&mode=dialog&theme=default",
   "uslugi": {
     "diag": {
       "eyebrow": "Od czego zacząć",

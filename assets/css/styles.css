@@ -307,7 +307,7 @@ details.more[open] summary::after { content: "–"; }
 .mini-cards small { margin-top: 6px; font-size: .85rem; font-variant-numeric: tabular-nums; }
 
 /* Service panel: a sheet from the right (desktop) or from the bottom (phone) with the treatment's details,
-   option and area/length; "Wybierz termin" opens Booksy in a new tab on exactly that service. */
+   option and area/length; "Wybierz termin" opens the booking window below on exactly that service. */
 html:has(.sheet[open]) { overflow: hidden; }
 .sheet {
   position: fixed; inset: 0 0 0 auto; margin: 0; padding: 0; border: 0;
@@ -384,6 +384,51 @@ html:has(.sheet[open]) { overflow: hidden; }
   .sheet-body { padding: 0 20px 28px; }
   .sheet-foot { padding-inline: 20px; }
   .sheet-foot .btn { padding: 0 20px; letter-spacing: .16em; }
+}
+
+/* Booking window: "Wybierz termin" hides the panel and opens Booksy's widget (iframe) in the centre of the screen.
+   Above Booksy's card, on the darkened and blurred page, our bar: the chosen service, "Otwórz w Booksy", close.
+   Phone: a sheet from the bottom like the service panel. While Booksy loads, the emblem breathes in the card. */
+html:has(.booking[open]) { overflow: hidden; }
+.booking {
+  --w: min(800px, 100%);
+  position: fixed; inset: 0; margin: 0; padding: 24px; border: 0;
+  width: 100%; max-width: none; height: 100%; max-height: none;
+  background: transparent; color: var(--bg); overflow: hidden;
+  flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+}
+.booking[open] { display: flex; }
+.booking::backdrop { background: rgb(58 46 40 / .62); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.booking-bar { flex: none; width: var(--w); display: flex; align-items: center; gap: 24px; }
+.booking-name { flex: 1; min-width: 0; display: grid; gap: 4px; }
+.booking-name .eyebrow { color: inherit; opacity: .72; }
+.booking-name b { font: 400 1.4rem/1.2 var(--f-display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.booking-out { flex: none; color: inherit; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 3px; border-bottom: 1px solid rgb(252 249 246 / .4); transition: border-color .2s; }
+.booking-out:hover { border-color: currentColor; }
+.booking .sheet-close { flex: none; margin-left: 0; border-color: transparent; }
+.booking-card { position: relative; flex: 0 1 860px; min-height: 0; width: var(--w); border-radius: 16px; overflow: hidden; background: var(--card); box-shadow: 0 40px 100px rgb(30 20 14 / .35); }
+.booking-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.booking-wait { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 32px; background: var(--card); color: var(--muted); text-align: center; transition: opacity .45s ease, visibility .45s; }
+.booking-wait .mask { width: 48px; background: var(--soft); }
+.booking-wait-text { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; }
+.booking-late { display: none; max-width: 34ch; gap: 14px; justify-items: center; }
+.booking.is-late .booking-late { display: grid; }
+.booking.is-late .booking-wait-text { display: none; }
+.booking.is-ready .booking-wait { opacity: 0; visibility: hidden; }
+
+@media (max-width: 640px) {
+  .booking {
+    --w: 100%;
+    inset: auto 0 0 0; height: calc(100% - 12px); padding: 0; gap: 0; justify-content: flex-start;
+    background: var(--bg); color: var(--ink); border-radius: 16px 16px 0 0; box-shadow: 0 -20px 60px rgb(58 46 40 / .2);
+  }
+  .booking::backdrop { background: rgb(58 46 40 / .45); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .booking-bar { min-height: 64px; padding: 8px 12px 8px 20px; gap: 12px; }
+  .booking-name .eyebrow { display: none; }
+  .booking-name b { font-size: 1.1rem; white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+  .booking-out { display: none; }
+  .booking .sheet-close { border-color: var(--line); }
+  .booking-card { flex: 1 1 auto; border-radius: 0; box-shadow: none; }
 }
 
 /* ---------- Space gallery ---------- */
@@ -534,10 +579,26 @@ html:has(.sheet[open]) { overflow: hidden; }
   .sheet[open]::backdrop { animation: fade .3s ease-out; }
   @media (max-width: 640px) { .sheet[open] { animation-name: sheet-up; } }
   .sheet-block { animation: rise .35s ease-out; }
+  /* Booking: the panel slides away, the backdrop deepens and blurs, Booksy's card rises into the centre;
+     on the phone the booking sheet slides up over the panel. The emblem breathes while Booksy loads. */
+  .sheet.is-leaving { animation: sheet-out .26s cubic-bezier(.5, 0, .75, 0) forwards; }
+  .booking[open]::backdrop { animation: deepen .45s ease-out; }
+  .booking[open] .booking-card { animation: lift .55s cubic-bezier(.2, .7, .2, 1) both; }
+  .booking[open] .booking-bar { animation: rise .45s ease-out .12s both; }
+  .booking-wait .mask { animation: breathe 1.3s ease-in-out infinite alternate; }
+  @media (max-width: 640px) {
+    .booking[open] { animation: sheet-up .45s cubic-bezier(.2, .7, .2, 1); }
+    .booking[open]::backdrop { animation: fade .3s ease-out; }
+    .booking[open] .booking-card, .booking[open] .booking-bar { animation: none; }
+  }
 }
 
 @keyframes sheet-in { from { translate: 100% 0; } }
 @keyframes sheet-up { from { translate: 0 100%; } }
+@keyframes sheet-out { to { translate: 100% 0; } }
+@keyframes deepen { from { background-color: rgb(58 46 40 / .45); -webkit-backdrop-filter: blur(0); backdrop-filter: blur(0); } }
+@keyframes lift { from { opacity: 0; translate: 0 28px; scale: .97; } }
+@keyframes breathe { from { opacity: .35; scale: .9; } }
 @keyframes fade { from { opacity: 0; } }
 @keyframes unfold { from { clip-path: inset(0 50%); } to { clip-path: inset(0 0); } }
 @keyframes rise { from { opacity: 0; translate: 0 8px; } }
