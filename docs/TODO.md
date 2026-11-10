@@ -35,9 +35,9 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
   - wdrożyć wg sekcji 3;
   - na koniec zaproponować Renacie zmianę hasła.
 - [x] **2. Dane do polityki prywatności** – otrzymane 10.11.2026:
-  - jednoosobowa działalność gospodarcza „Améa Renata Judzińska” (przed użyciem sprawdzić dokładną pisownię nazwy w CEIDG po NIP-ie);
-  - adres siedziby: ul. Piłsudskiego 65, 41-902 Bytom (ten sam co salonu);
-  - NIP 9542682779 (REGON nie podany, jest opcjonalny);
+  - jednoosobowa działalność gospodarcza „Améa Renata Judzińska” (sprawdzone w CEIDG 11.11.2026, wpis aktywny);
+  - adres: ul. Piłsudskiego 65, 41-902 Bytom; w CEIDG stałe miejsce wykonywania działalności to ul. Marszałka Józefa Piłsudskiego 65/9 (z numerem lokalu) – tak jest w polityce;
+  - NIP 9542682779, REGON 243572225 (z CEIDG);
   - e-mail w sprawach danych osobowych: kontakt@amea-beauty.pl;
   - inspektora ochrony danych nie wyznaczono;
   - **każda specjalistka prowadzi własną działalność i odpowiada za dane swoich klientek** (tak jest w regulaminie i w umowach między nimi). W polityce: AMÉA jest administratorem danych ze strony i z kontaktu z salonem, specjalistki są odrębnymi administratorami danych swoich klientek. W polityce na razie ogólne zdanie, bez nazw ich działalności (decyzja 11.11.2026); wymienienie z nazw wymagałoby ich NIP-ów.
@@ -94,7 +94,6 @@ Jak fotografować:
 ## 4. Przed publikacją
 
 - [ ] **Polityka prywatności – dokończyć** (strona `polityka-prywatnosci.html` jest od 11.11.2026):
-  - sprawdzić w CEIDG (po NIP) dokładną nazwę firmy i adres (`TODO(prawne)` w polityce);
   - po wyborze hostingu i poczty wpisać ich dostawców z nazwy (`TODO(domena)` w polityce, punkt 4);
   - przed publikacją dać ją do przejrzenia osobie znającej RODO; Renata czyta, czy okresy przechowywania i opis współpracy ze specjalistkami się zgadzają;
   - przy każdej zmianie, która dotyka danych (widżet Fitssey, analityka, formularz), zaktualizować politykę i jej datę.
