@@ -40,9 +40,9 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
   - NIP 9542682779 (REGON nie podany, jest opcjonalny);
   - e-mail w sprawach danych osobowych: kontakt@amea-beauty.pl;
   - inspektora ochrony danych nie wyznaczono;
-  - **każda specjalistka prowadzi własną działalność i odpowiada za dane swoich klientek** (tak jest w regulaminie i w umowach między nimi). W polityce: AMÉA jest administratorem danych ze strony i z kontaktu z salonem, specjalistki są odrębnymi administratorami danych swoich klientek. Do dopytania: wymienić je z nazw działalności (wtedy potrzebne ich nazwy i NIP-y) czy wystarczy ogólne zdanie.
+  - **każda specjalistka prowadzi własną działalność i odpowiada za dane swoich klientek** (tak jest w regulaminie i w umowach między nimi). W polityce: AMÉA jest administratorem danych ze strony i z kontaktu z salonem, specjalistki są odrębnymi administratorami danych swoich klientek. W polityce na razie ogólne zdanie, bez nazw ich działalności (decyzja 11.11.2026); wymienienie z nazw wymagałoby ich NIP-ów.
 
-  Dalej: polityka prywatności w sekcji 4.
+  Wykorzystane w `polityka-prywatnosci.html` (11.11.2026); co jeszcze zostało – sekcja 4.
 - [ ] **3. Reszta zdjęć dziewczyn z opisami i spis całego zespołu**: Renata prześle. Potem:
   - zdjęcia przez `tools/photo-look.ps1`;
   - łuki w Zespole (Aleksandra ma na razie pusty łuk);
@@ -93,8 +93,11 @@ Jak fotografować:
 
 ## 4. Przed publikacją
 
-- [ ] **Polityka prywatności**: osobna strona (np. `polityka-prywatnosci.html`) i link w stopce (`TODO(prawne)`). Zawiera: administratora danych (dane z sekcji 0 – są już; specjalistki jako odrębni administratorzy danych swoich klientek), cele, zewnętrzne serwisy (Booksy – widżet rezerwacji w okienku, ładowany dopiero po kliknięciu „Wybierz termin”, ma własne cookies; Fitssey, Google Fonts – chyba że będą lokalnie, Google Maps tylko jako link), cookies.
-- [ ] **Fonty lokalnie** zamiast Google Fonts (RODO) – upraszcza politykę prywatności.
+- [ ] **Polityka prywatności – dokończyć** (strona `polityka-prywatnosci.html` jest od 11.11.2026):
+  - sprawdzić w CEIDG (po NIP) dokładną nazwę firmy i adres (`TODO(prawne)` w polityce);
+  - po wyborze hostingu i poczty wpisać ich dostawców z nazwy (`TODO(domena)` w polityce, punkt 4);
+  - przed publikacją dać ją do przejrzenia osobie znającej RODO; Renata czyta, czy okresy przechowywania i opis współpracy ze specjalistkami się zgadzają;
+  - przy każdej zmianie, która dotyka danych (widżet Fitssey, analityka, formularz), zaktualizować politykę i jej datę.
 - [ ] **Analityka?** Jeśli tak, potrzebny baner zgód cookies; bez analityki i widżetów strona może się bez niego obyć.
 - [ ] **Domena i hosting** (statyczny: Netlify / Cloudflare Pages / GitHub Pages / zwykły FTP). Adres e-mail kontakt@amea-beauty.pl sugeruje domenę amea-beauty.pl – potwierdzić.
 - [ ] **Po domenie**: `<link rel="canonical">`, absolutne `og:url` i `og:image`, `sitemap.xml`, `robots.txt` (`TODO(domena)`); adres strony w wizytówce Google, na Booksy, Instagramie i Facebooku.
@@ -112,6 +115,8 @@ Tuż przed publikacją, żeby wszystko było świeże.
 - [ ] **Godziny i dane kontaktowe**: ostatnie potwierdzenie z salonem.
 
 ## Zrobione
+
+- [x] Polityka prywatności (11.11.2026): osobna strona `polityka-prywatnosci.html` w stylu strony (RODO art. 13: administrator, specjalistki jako odrębni administratorzy, cele i podstawy, Booksy i Fitssey, odbiorcy, okresy, prawa, cookies), link w stopce obu stron; fonty Playfair Display i Jost z naszego serwera (`assets/fonts`, licencje OFL obok) zamiast Google Fonts – przy wejściu na stronę nic nie idzie do zewnętrznych serwisów
 
 - [x] Wizytówka Google (10.11.2026): karta trasy w Kontakcie prowadzi do profilu salonu w Mapach, w hero i Opiniach wspólna ocena „5.0 · 72 opinie na Booksy i w Google”, w Opiniach jedna lista cytatów z obu źródeł i linki do obu, w JSON-LD `sameAs`, `hasMap` i współrzędne
 - [x] Przegląd usług z Booksy i Fitssey (10.11.2026): ceny i czasy w panelu zgodne z Booksy; nowe karty SKIN AGE (zmarszczki) i Trychologia; „od” tylko przy kilku cenach (także w wierszach poziomów) i najniższa cena we wstępie każdej zakładki; „Dla niego” jako ostatnia zakładka; wstępy zakładek najwyżej 2 linie; bez ogólnego przycisku w Fizjoterapii (karty otwierają panel); link dla posiadaczy bonu prosto do usługi „Bon upominkowy” w Booksy

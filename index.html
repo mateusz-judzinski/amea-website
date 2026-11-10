@@ -19,10 +19,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
 
-  <!-- TODO(RODO): rozważyć self-hosting fontów zamiast Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+  <!-- Fonty z naszego serwera (assets/fonts, @font-face w styles.css), bez Google Fonts – nic nie idzie do zewnętrznych serwisów przy wejściu -->
+  <link rel="preload" href="assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
 
@@ -1234,8 +1233,8 @@
       <a href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Fitssey</a>
       <a href="https://www.instagram.com/beauty_amea/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/BeautyAmea" target="_blank" rel="noopener">Facebook</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
     </nav>
-    <!-- TODO(prawne): link do polityki prywatności -->
     <p><span>© <span id="year">2026</span> AMÉA Renata Judzińska</span> · <span>ul. Piłsudskiego 65, 41-902 Bytom</span> · <a href="tel:+48791103551">791 103 551</a> · <a href="mailto:kontakt@amea-beauty.pl">kontakt@amea-beauty.pl</a></p>
   </div>
 </footer>
