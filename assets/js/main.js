@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, service panel, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -88,6 +88,103 @@
       if (!el.classList.contains('divider') && !el.querySelector(':scope > img')) return; // empty portrait placeholders stay as they are
       el.classList.add('reveal');
       reveal.observe(el);
+    });
+  }
+
+  // Service panel: a link with data-svc (optionally data-lvl = preselected option) opens the treatment's
+  // details with the option and area/length to choose. "Wybierz termin" is a plain link to the Booksy profile
+  // with ?do=open-widget&variantId=…, which opens Booksy in a new tab straight on that service's booking.
+  // Nothing from Booksy loads on this page. Without JS (or <dialog>) the link opens the Booksy profile.
+  var svcData = document.getElementById('svc-data');
+  var sheet = document.getElementById('svc');
+  if (svcData && sheet && typeof sheet.showModal === 'function') {
+    var data = JSON.parse(svcData.textContent);
+    var body = sheet.querySelector('.sheet-body');
+    var foot = sheet.querySelector('.sheet-foot');
+    var bookLink = foot.querySelector('[data-sheet-book]');
+    var svc = null, lvl = 0, vr = 0;
+
+    var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var zl = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' zł'; };
+    var time = function (m) { var h = Math.floor(m / 60), r = m % 60; return (h ? h + ' h' : '') + (h && r ? ' ' : '') + (r ? r + ' min' : ''); };
+    var list = function (items) { return items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join(''); };
+    var level = function () { return svc.levels[lvl]; };
+    var variant = function () { return level().variants[vr]; };
+    var varLabel = function () { return level().varLabel || svc.varLabel || 'Obszar'; };
+
+    // Parts that change with the choice: variant pills, the option's description, the summary in the footer
+    var renderLevel = function () {
+      var L = level(), h = '';
+      if (L.variants.length > 1) {
+        h += '<fieldset class="chips"><legend class="eyebrow">' + esc(varLabel()) + '</legend>' + L.variants.map(function (v, i) {
+          return '<label class="chip"><input type="radio" name="svc-var" value="' + i + '"' + (i === vr ? ' checked' : '') + '><span>' + esc(v.label) + '</span></label>';
+        }).join('') + '</fieldset>';
+      }
+      if (L.note || L.steps) {
+        h += '<div class="sheet-block"><h3>' + (L.steps ? 'Przebieg zabiegu' : 'O zabiegu') + '</h3>' +
+          (L.note ? '<p>' + esc(L.note) + '</p>' : '') + (L.steps ? '<ol class="sheet-steps">' + list(L.steps) + '</ol>' : '') + '</div>';
+      }
+      body.querySelector('[data-part="level"]').innerHTML = h;
+      renderSum();
+    };
+    var renderSum = function () {
+      var L = level(), V = variant();
+      var parts = [svc.levels.length > 1 ? L.name : '', L.variants.length > 1 && varLabel() !== 'Czas' ? V.label : ''];
+      foot.querySelector('.sum-name').textContent = parts.filter(Boolean).join(' · ') || svc.title;
+      foot.querySelector('.sum-price').innerHTML = zl(V.price) + '<small>' + time(V.min) + '</small>';
+      bookLink.href = data.booksy + '?do=open-widget&variantId=' + V.id;
+    };
+    var render = function () {
+      var h = '<header class="sheet-title"><p class="eyebrow">' + esc(svc.eyebrow) + '</p><h2 id="svc-title">' + esc(svc.title) + '</h2>' +
+        (svc.tagline ? '<p class="tagline">' + esc(svc.tagline) + '</p>' : '') + '<p class="sheet-for">' + esc(svc.for) + '</p></header>';
+      if (svc.levels.length > 1) {
+        h += '<fieldset><legend class="eyebrow">' + esc(svc.levelLabel || 'Poziom') + '</legend>' + svc.levels.map(function (L, i) {
+          var min = Math.min.apply(null, L.variants.map(function (v) { return v.price; }));
+          return '<label class="opt"><input type="radio" name="svc-lvl" value="' + i + '"' + (i === lvl ? ' checked' : '') + '>' +
+            '<span class="opt-name' + (svc.levelLabel ? ' plain' : '') + '">' + esc(L.name) + '</span><span class="opt-price">' + (L.variants.length > 1 ? 'od ' : '') + zl(min) + '</span></label>';
+        }).join('') + '</fieldset>';
+      }
+      h += '<div data-part="level"></div>';
+      (svc.lists || []).forEach(function (l) { h += '<details class="fold"><summary>' + esc(l.title) + '</summary><ul>' + list(l.items) + '</ul></details>'; });
+      body.innerHTML = h;
+      renderLevel();
+    };
+
+    body.addEventListener('change', function (e) {
+      if (e.target.name === 'svc-lvl') {
+        var label = variant().label;
+        lvl = +e.target.value;
+        vr = Math.max(0, level().variants.map(function (v) { return v.label; }).indexOf(label)); // keep the area/length if the option has it
+        renderLevel();
+      } else if (e.target.name === 'svc-var') {
+        vr = +e.target.value;
+        renderSum();
+      }
+    });
+
+    // Open / close; the panel takes a history entry, so the phone's back button closes it
+    var open = function (key, preset) {
+      svc = data.uslugi[key];
+      if (!svc) return false;
+      lvl = Math.min(Math.max(+preset || 0, 0), svc.levels.length - 1);
+      vr = 0;
+      render();
+      sheet.showModal();
+      body.scrollTop = 0;
+      history.pushState({ ameaSheet: true }, '');
+      return true;
+    };
+    var close = function () {
+      if (sheet.open) sheet.close();
+      if (history.state && history.state.ameaSheet) history.back();
+    };
+    window.addEventListener('popstate', function () { if (sheet.open) sheet.close(); });
+    sheet.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
+    sheet.addEventListener('click', function (e) { if (e.target === sheet) close(); }); // click on the backdrop
+    sheet.querySelector('[data-sheet-close]').addEventListener('click', close);
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[data-svc]');
+      if (link && !e.metaKey && !e.ctrlKey && !e.shiftKey && open(link.getAttribute('data-svc'), link.getAttribute('data-lvl'))) e.preventDefault();
     });
   }
 

@@ -16,9 +16,11 @@ Najlepiej za jednym razem, np. przy wizycie na zdjęcia.
   - gabinet z urządzeniem do zabiegów na ciało: jakie to zabiegi;
   - „Zajęcia sensualne”: są na stronie, ale nie ma ich w grafiku ani cenniku Fitssey – czy są prowadzone?
   - „kameralne zajęcia dla mam i dzieci” z nagłówka cennika Fitssey: stała oferta do pokazania?
-- [ ] **Kody widżetów** (jeśli zdecydujemy się na widżety, patrz sekcja 3)
-  - Fitssey: Renata w panelu Studio → Integracje → Widżety: skopiować „kod bazowy”, kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia), przesłać oba fragmenty; opcjonalnie to samo dla Cennika;
-  - Booksy: czy w panelu Booksy Biz jest przycisk lub widżet rezerwacji na stronę, a jeśli tak – jego kod.
+- [ ] **Panel usług**
+  - opisy w panelu (skrót z opisów na Booksy) – salon czyta i poprawia;
+  - w Booksy Katarzyna (fizjoterapeutka) jest przypisana m.in. do Clear Skin, Skin Lift, Skin Age i Cosmelanu – czy to celowe?
+  - fizjoterapia: czy zawsze zaczyna się od wizyty diagnostycznej (tak mówi panel), czy można od razu zapisać się na terapię.
+- [ ] **Kod widżetu Fitssey** (jeśli zdecydujemy się na widżet, patrz sekcja 3): Renata w panelu Studio → Integracje → Widżety: skopiować „kod bazowy”, kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia), przesłać oba fragmenty; opcjonalnie to samo dla Cennika.
 - [ ] **Dane do polityki prywatności**: pełna nazwa działalności, adres siedziby, NIP, e-mail do spraw danych osobowych. Nie wymyślać – tylko od salonu.
 - [ ] **Profil firmy w Google**: czy istnieje wizytówka (link do trasy i opinii). Jeśli tak – dodać do Kontaktu i danych dla Google (`sameAs`).
 
@@ -49,10 +51,7 @@ Jak fotografować:
 
 ## 3. Nowe funkcje na stronie
 
-- [ ] **Dłuższe opisy usług.** Propozycja: rozwijany opis w karcie („Więcej o zabiegu”) na wzór istniejącego rozwijanego pełnego cennika (`details.more`). Działa bez JS, nie zasłania strony, a na telefonie jest wygodniejszy niż okienko. Alternatywa: natywne okno `<dialog>` z opisem, jeśli opisy będą bardzo długie. Treść: opisy usług z Booksy jako punkt wyjścia, uzupełnione przez salon (dla kogo, przebieg, czas, efekt, przeciwwskazania).
-- [ ] **Rezerwacja na Booksy prosto ze strony** – jeśli się da i ma sens:
-  - prościej: przycisk „Umów” przy każdej usłudze prowadzi od razu do tej usługi na Booksy, a nie do całego profilu – sprawdzić, czy Booksy daje stałe adresy usług;
-  - pełniej: przycisk lub widżet rezerwacji Booksy osadzony na stronie (kod z panelu Booksy Biz). Tak jak przy Fitssey: najpierw próba w podglądzie, sprawdzenie cookies i wpis w polityce prywatności; dotychczasowe linki zostają jako zapas.
+- [ ] **Panel dla zabiegów pojedynczych?** (rozwijany cennik „Zabiegi pojedyncze i technologie”): wiersze bez „Umów”; można je podpiąć pod panel tak jak karty, jeśli salon chce, żeby były rezerwowane ze strony.
 - [ ] **Widżet grafiku Fitssey** (gdy przyjdzie kod): w `#zajecia` pod listą zajęć (miejsce oznaczone `TODO(zajęcia)` w `index.html`); skrypt ładowany dopiero przy zbliżeniu do sekcji; styl w kolorach strony (Fitssey przyjmuje własny CSS); przyciski „Grafik i zapisy” / „Cennik i karnety” zostają jako zapas; zrzuty 1280 i 375 px przed decyzją.
 
 ## 4. Przed publikacją
@@ -70,13 +69,15 @@ Jak fotografować:
 
 Tuż przed publikacją, żeby wszystko było świeże.
 
-- [ ] **Spis usług i ceny z Booksy**: procedura w `CLAUDE.md` (rozwinąć zwinięte kategorie, porównać z `index.html`); ceny regularne „od”, bez promocji.
+- [ ] **Spis usług i ceny z Booksy**: procedura w `CLAUDE.md` (JSON Booksy albo profil z rozwiniętymi kategoriami, porównać z `index.html`); ceny regularne „od”, bez promocji. Razem z kartami zaktualizować dane panelu `#svc-data` (ceny, czas, numery wersji, teksty).
+- [ ] **Usługi z Booksy, których nie ma na stronie** (stan 10.11.2026): ścieżka SKIN AGE – zmarszczki (329 / 469 / 699 zł) i Trychologia (Dermapen 319 zł, EPN 429 zł).
 - [ ] **Zajęcia i ceny z Fitssey**: rodzaje zajęć, „od 50 zł”, karnety.
 - [ ] **Opinie**: ocena i liczba opinii (hero i sekcja Opinie), ewentualnie nowe cytaty – dosłownie.
 - [ ] **Godziny i dane kontaktowe**: ostatnie potwierdzenie z salonem.
 
 ## Zrobione
 
+- [x] Panel usługi (10.11.2026): „Umów” w ofercie, Diagnostyce i Fizjoterapii otwiera wysuwany panel z opisem z Booksy, wyborem opcji i obszaru/czasu, ceną i czasem; „Wybierz termin” otwiera w nowej karcie Booksy od razu na tej usłudze. Przy okazji ceny, które Booksy zmienił (konsultacja 3D, fizjoterapia, borowina, drenaż)
 - [x] Zdjęcia od klientki (paczki z 3 i 5.11.2026): na stronę trafiły robocze zdjęcia do O nas, Przestrzeni (trzy różne miejsca) i Zespołu (Ania). Reszta odrzucona; zdjęcia zostaną zrobione osobiście (sekcja 2)
 - [x] Zajęcia ruchowe → Fitssey: przyciski w sekcji Zajęcia, karty z „od 50 zł” w zakładce Ruch, stopka oferty z Fitssey, Kontakt, stopka strony, JSON-LD; karta „Zdrowy kręgosłup” (3.11.2026)
 - [x] Telefon 791 103 551, e-mail kontakt@amea-beauty.pl, Instagram i Facebook na stronie (3.11.2026)

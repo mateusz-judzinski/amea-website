@@ -287,10 +287,92 @@ details.more[open] summary::after { content: "–"; }
 
 /* Compact service tiles (Women's Ritual; also fits a future seasonal block) */
 .mini-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-.mini-cards div { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: grid; grid-template-rows: auto 1fr auto; gap: 4px; background: var(--card); }
+.mini-cards > * { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: grid; grid-template-rows: auto 1fr auto; gap: 4px; background: var(--card); }
+/* Tiles that open the service panel: the whole tile is the link; the time · price line gets an "Umów" on the right */
+.mini-cards > a { color: inherit; text-decoration: none; transition: border-color .2s; }
+.mini-cards > a small { display: flex; justify-content: space-between; gap: 12px; }
+.mini-cards > a small::after { content: "Umów"; color: var(--accent); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; }
+@media (hover: hover) { .mini-cards > a:hover { border-color: var(--soft); } }
 .mini-cards b { font-family: var(--f-display); font-size: 1.15rem; font-weight: 400; line-height: 1.3; margin-bottom: 2px; }
 .mini-cards span { color: var(--muted); font-size: .88rem; }
 .mini-cards small { margin-top: 6px; font-size: .85rem; font-variant-numeric: tabular-nums; }
+
+/* Service panel: a sheet from the right (desktop) or from the bottom (phone) with the treatment's details,
+   option and area/length; "Wybierz termin" opens Booksy in a new tab on exactly that service. */
+html:has(.sheet[open]) { overflow: hidden; }
+.sheet {
+  position: fixed; inset: 0 0 0 auto; margin: 0; padding: 0; border: 0;
+  width: min(560px, 100%); max-width: none; height: 100%; max-height: none;
+  background: var(--bg); color: var(--ink); box-shadow: -30px 0 80px rgb(58 46 40 / .18);
+  flex-direction: column; overflow: hidden;
+}
+.sheet[open] { display: flex; }
+.sheet::backdrop { background: rgb(58 46 40 / .45); }
+.sheet-head { flex: none; display: flex; align-items: center; justify-content: flex-end; min-height: 64px; padding: 8px 20px 8px 32px; }
+.sheet-close { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); cursor: pointer; position: relative; }
+.sheet-close::before, .sheet-close::after { content: ""; position: absolute; left: 50%; top: 50%; width: 16px; height: 1px; background: var(--ink); translate: -50% -50%; rotate: 45deg; }
+.sheet-close::after { rotate: -45deg; }
+.sheet-close:hover { border-color: var(--soft); }
+
+.sheet-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 0 32px 32px; display: grid; align-content: start; gap: 28px; }
+.sheet-title { display: grid; gap: 12px; }
+.sheet-title .eyebrow { margin-bottom: -4px; }
+.sheet-title h2 { font-size: clamp(1.8rem, 5vw, 2.3rem); }
+.sheet-title .tagline { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.sheet-title .sheet-for { color: var(--muted); }
+
+.sheet fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 8px; }
+.sheet legend { padding: 0; margin-bottom: 10px; }
+.sheet fieldset input { position: absolute; opacity: 0; pointer-events: none; }
+.opt, .chip { position: relative; }
+[data-part="level"] { display: grid; gap: 28px; }
+[data-part="level"]:empty { display: none; }
+/* Level: rows like the card's tiers, the chosen one framed in caramel */
+.opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); cursor: pointer; transition: border-color .2s, box-shadow .2s; }
+.opt::before { content: ""; flex: none; width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--soft); box-shadow: inset 0 0 0 4px var(--card); transition: background-color .2s, border-color .2s; }
+@media (hover: hover) { .opt:hover { border-color: var(--soft); } .chip span:hover { color: var(--ink); border-color: var(--soft); } }
+.opt:has(input:checked) { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.opt:has(input:checked)::before { background: var(--accent); border-color: var(--accent); }
+.opt:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.opt-name { flex: 1; letter-spacing: .16em; font-size: .8rem; text-transform: uppercase; }
+.opt-name.plain { letter-spacing: normal; font-size: .95rem; text-transform: none; }
+.opt-price { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--muted); font-size: .92rem; }
+/* Area: pills like the offer tabs */
+.chips { grid-template-columns: none; display: flex !important; flex-wrap: wrap; }
+.chips legend { width: 100%; }
+.chip span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: .9rem; cursor: pointer; transition: color .2s, background-color .2s, border-color .2s; }
+.chip input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.chip input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.sheet-block { display: grid; gap: 12px; }
+.sheet-block h3, .fold summary { font-family: var(--f-body); font-size: var(--step--1); letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+.sheet-block > p { color: var(--muted); }
+.sheet-steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; }
+.sheet-steps li { counter-increment: step; display: grid; grid-template-columns: 28px 1fr; gap: 8px; padding: 10px 0; border-top: 1px solid var(--line); font-size: .95rem; }
+.sheet-steps li::before { content: counter(step); font-family: var(--f-display); color: var(--accent); }
+.fold { border-top: 1px solid var(--line); }
+.fold + .fold { margin-top: -28px; }
+.fold:last-child { border-bottom: 1px solid var(--line); }
+.fold summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; padding: 14px 0; }
+.fold summary::-webkit-details-marker { display: none; }
+.fold summary::after { content: "+"; color: var(--accent); font-size: 1.2rem; line-height: 1; letter-spacing: 0; }
+.fold[open] summary::after { content: "–"; }
+.fold ul { margin: 0 0 14px; padding-left: 1.1em; color: var(--muted); font-size: .95rem; }
+
+.sheet-foot { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 16px 32px calc(16px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); background: var(--card); }
+.sheet-foot .btn { flex: none; white-space: nowrap; }
+.sum { display: grid; gap: 2px; min-width: 0; }
+.sum-name { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.sum-price { font-family: var(--f-display); font-size: 1.35rem; }
+.sum-price small { font-family: var(--f-body); font-size: .85rem; color: var(--muted); margin-left: 8px; }
+
+@media (max-width: 640px) {
+  .sheet { inset: auto 0 0 0; width: 100%; height: calc(100% - 12px); border-radius: 16px 16px 0 0; box-shadow: 0 -20px 60px rgb(58 46 40 / .2); }
+  .sheet-head { padding: 8px 12px 0 20px; min-height: 56px; }
+  .sheet-body { padding: 0 20px 28px; }
+  .sheet-foot { padding-inline: 20px; }
+  .sheet-foot .btn { padding: 0 20px; letter-spacing: .16em; }
+}
 
 /* ---------- Space gallery ---------- */
 
@@ -435,8 +517,16 @@ details.more[open] summary::after { content: "–"; }
   details.more { interpolate-size: allow-keywords; }
   details.more::details-content { block-size: 0; overflow: hidden; transition: block-size .35s ease, content-visibility .35s allow-discrete; }
   details.more[open]::details-content { block-size: auto; }
+  /* Service panel slides in from the right (phone: from the bottom); a newly chosen option's text fades in */
+  .sheet[open] { animation: sheet-in .45s cubic-bezier(.2, .7, .2, 1); }
+  .sheet[open]::backdrop { animation: fade .3s ease-out; }
+  @media (max-width: 640px) { .sheet[open] { animation-name: sheet-up; } }
+  .sheet-block { animation: rise .35s ease-out; }
 }
 
+@keyframes sheet-in { from { translate: 100% 0; } }
+@keyframes sheet-up { from { translate: 0 100%; } }
+@keyframes fade { from { opacity: 0; } }
 @keyframes unfold { from { clip-path: inset(0 50%); } to { clip-path: inset(0 0); } }
 @keyframes rise { from { opacity: 0; translate: 0 8px; } }
 @keyframes ring { from { outline-offset: 0; outline-color: transparent; } }
