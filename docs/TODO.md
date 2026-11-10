@@ -72,12 +72,12 @@ Tuż przed publikacją, żeby wszystko było świeże.
 
 - [ ] **Spis usług i ceny z Booksy**: procedura w `CLAUDE.md` (JSON Booksy albo profil z rozwiniętymi kategoriami, porównać z `index.html`); ceny regularne „od”, bez promocji. Razem z kartami zaktualizować dane panelu `#svc-data` (ceny, czas, numery wersji, teksty).
 - [ ] **Zajęcia i ceny z Fitssey**: rodzaje zajęć, „od 50 zł”, karnety.
-- [ ] **Opinie**: ocena i liczba opinii z Booksy i z wizytówki Google (obie zakładki Opinii i suma w hero), ewentualnie nowe cytaty – dosłownie.
+- [ ] **Opinie**: ocena i liczba opinii z Booksy i z wizytówki Google, suma w hero i w sekcji Opinie, ewentualnie nowe cytaty – dosłownie.
 - [ ] **Godziny i dane kontaktowe**: ostatnie potwierdzenie z salonem.
 
 ## Zrobione
 
-- [x] Wizytówka Google (10.11.2026): karta trasy w Kontakcie prowadzi do profilu salonu w Mapach, w Opiniach przełącznik Booksy / Google (ocena i liczba opinii zmieniają się z zakładką, 4 cytaty z Google), w JSON-LD `sameAs`, `hasMap` i współrzędne
+- [x] Wizytówka Google (10.11.2026): karta trasy w Kontakcie prowadzi do profilu salonu w Mapach, w hero i Opiniach wspólna ocena „5.0 · 72 opinie na Booksy i w Google”, w Opiniach jedna lista cytatów z obu źródeł i linki do obu, w JSON-LD `sameAs`, `hasMap` i współrzędne
 - [x] Przegląd usług z Booksy i Fitssey (10.11.2026): ceny i czasy w panelu zgodne z Booksy; nowe karty SKIN AGE (zmarszczki) i Trychologia; „od” tylko przy kilku cenach (także w wierszach poziomów) i najniższa cena we wstępie każdej zakładki; „Dla niego” jako ostatnia zakładka; wstępy zakładek najwyżej 2 linie; bez ogólnego przycisku w Fizjoterapii (karty otwierają panel); link dla posiadaczy bonu prosto do usługi „Bon upominkowy” w Booksy
 - [x] Panel usługi (10.11.2026): „Umów” w ofercie (także 18 wierszy cennika zabiegów pojedynczych), Diagnostyce i Fizjoterapii otwiera wysuwany panel z opisem z Booksy, wyborem opcji i obszaru/czasu, ceną i czasem; „Wybierz termin” otwiera w nowej karcie Booksy od razu na tej usłudze. Przy okazji ceny, które Booksy zmienił (konsultacja 3D, fizjoterapia, borowina, drenaż)
 - [x] Zdjęcia od klientki (paczki z 3 i 5.11.2026): na stronę trafiły robocze zdjęcia do O nas, Przestrzeni (trzy różne miejsca) i Zespołu (Ania). Reszta odrzucona; zdjęcia zostaną zrobione osobiście (sekcja 2)

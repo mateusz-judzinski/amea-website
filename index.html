@@ -1141,9 +1141,14 @@
     </div>
   </section>
 
-  <!-- OPINIE: przełącznik źródła (Booksy / Google) to zakładki ARIA obok nagłówka (main.js); ocena i liczba opinii po prawej
-       zmieniają się razem z zakładką (data-rating, data-count). Liczby z Booksy i z wizytówki Google aktualizowane ręcznie
-       (stan 10.11.2026), cytaty dosłownie (najwyżej skrócone na granicy zdania). -->
+  <!-- OPINIE: jedna ocena jak w hero (suma opinii z Booksy 49 i Google 23, obie średnie 5,0; stan 10.11.2026) i jedna lista
+       4 cytatów z obu źródeł – zabiegi i zajęcia; pod spodem linki do obu. Cytaty dosłownie (najwyżej skrócone na granicy
+       zdania); przy zmianie liczb poprawić też hero.
+       Zapas cytatów do podmiany:
+       Booksy – Olga · Vampire Glow: „Piękna przestrzeń w sercu Bytomia. Serdecznie polecam!”
+       Booksy – Magdalena · zabieg dobrany do skóry: „Bardzo lubię to miejsce! Zawsze tam się mocno zrelaksuję, a zabiegi są fantastyczne.”
+       Google – K. L. · zabieg: „Pani dokładnie wiedziała, co robi, wszystko tłumaczyła i przede wszystkim naprawdę dbała o mój komfort. Dawno nie spotkałam się z tak miłym i profesjonalnym podejściem.”
+       Google – Eliza · Glow & Balance Experience: „To coś znacznie więcej niż zwykłe spotkanie – to kilka godzin pełnych kobiecej energii, relaksu, uważności i troski o siebie.” -->
   <section id="opinie">
     <div class="wrap">
       <div class="reviews-head">
@@ -1151,32 +1156,18 @@
           <p class="eyebrow">Opinie</p>
           <h2>Co mówią nasze klientki</h2>
         </div>
-        <div class="tabs sources" role="tablist" aria-label="Źródło opinii">
-          <button class="tab" role="tab" id="r-booksy" aria-controls="rp-booksy" aria-selected="true" type="button" data-rating="5.0" data-count="count-booksy">Booksy</button>
-          <button class="tab" role="tab" id="r-google" aria-controls="rp-google" aria-selected="false" type="button" data-rating="5.0" data-count="count-google">Google</button>
-        </div>
-        <!-- Oba napisy z liczbą opinii leżą w jednym miejscu (widoczny ma .is-on), więc blok nie zmienia szerokości przy przełączaniu -->
-        <div class="score"><b data-score-rating>5.0</b><div><span class="stars" aria-hidden="true">★★★★★</span><span class="score-count"><span class="is-on" id="count-booksy">49 opinii na Booksy</span><span id="count-google">23 opinie w Google</span></span></div></div>
+        <div class="score"><b>5.0</b><div><span class="stars" aria-hidden="true">★★★★★</span><span>72 opinie na Booksy i w Google</span></div></div>
       </div>
-      <div class="review-panel" role="tabpanel" id="rp-booksy" aria-labelledby="r-booksy">
       <div class="quotes">
-        <blockquote><p>Piękna przestrzeń w sercu Bytomia. Serdecznie polecam!</p><footer>Olga · Vampire Glow</footer></blockquote>
         <blockquote><p>Kosmetolog przeprowadziła analizę skóry, trafnie dobrała zabieg oraz poinstruowała odnośnie pielęgnacji w domu.</p><footer>Katarzyna · zabieg dobrany do skóry</footer></blockquote>
-        <blockquote><p>Z całego serca polecam salon Amea! Zabieg Cosmelan to była jedna z najlepszych decyzji, jakie podjęłam w pielęgnacji swojej skóry.</p><footer>Anna · Cosmelan</footer></blockquote>
-        <blockquote><p>Bardzo lubię to miejsce! Zawsze tam się mocno zrelaksuję, a zabiegi są fantastyczne.</p><footer>Magdalena · zabieg dobrany do skóry</footer></blockquote>
-      </div>
-      <p class="reviews-more"><a class="link" href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Wszystkie opinie na Booksy</a></p>
-      </div>
-      <div class="review-panel" role="tabpanel" id="rp-google" aria-labelledby="r-google" hidden>
-      <!-- Cytaty z wizytówki Google (teksty wkleił użytkownik 10.11.2026): dosłowne fragmenty, przycięte na granicy zdania -->
-      <div class="quotes">
         <blockquote><p>Amea to miejsce w którym można zadbać o siebie w sferze fizycznej i duchowej. Zabiegi pielęgnacyjne na najwyższym poziomie.</p><footer>Kasia · zabiegi i zajęcia</footer></blockquote>
-        <blockquote><p>Pani dokładnie wiedziała, co robi, wszystko tłumaczyła i przede wszystkim naprawdę dbała o mój komfort. Dawno nie spotkałam się z tak miłym i profesjonalnym podejściem.</p><footer>K. L. · zabieg</footer></blockquote>
+        <blockquote><p>Z całego serca polecam salon Amea! Zabieg Cosmelan to była jedna z najlepszych decyzji, jakie podjęłam w pielęgnacji swojej skóry.</p><footer>Anna · Cosmelan</footer></blockquote>
         <blockquote><p>Zajęcia były prowadzone na najwyższym poziomie, a prowadząca to niezwykle sympatyczna, ciepła i profesjonalna osoba, która dba o komfort każdego uczestnika.</p><footer>Natalia · pilates</footer></blockquote>
-        <blockquote><p>To coś znacznie więcej niż zwykłe spotkanie – to kilka godzin pełnych kobiecej energii, relaksu, uważności i troski o siebie.</p><footer>Eliza · Glow &amp; Balance Experience</footer></blockquote>
       </div>
-      <p class="reviews-more"><a class="link" href="https://maps.google.com/?cid=10555222505024656338" target="_blank" rel="noopener">Wszystkie opinie w Google</a></p>
-      </div>
+      <p class="reviews-more">
+        <a class="link" href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Opinie na Booksy</a>
+        <a class="link" href="https://maps.google.com/?cid=10555222505024656338" target="_blank" rel="noopener">Opinie w Google</a>
+      </p>
     </div>
   </section>
 

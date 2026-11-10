@@ -473,25 +473,22 @@ html:has(.booking[open]) { overflow: hidden; }
 
 /* ---------- Reviews ---------- */
 
-/* Heading, then the source switch (the offer's tab pills) right of it, the score far right; it follows the chosen source.
-   Up to 880 px (tablet, phone) the three no longer fit in a line: heading and score, the switch under them above the quotes. */
+/* Heading left, one score right: the sum of Booksy and Google reviews, as in the hero */
 .reviews-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px 32px; }
-.reviews-head .sources { margin: 0 auto 6px 0; }
-@media (max-width: 880px) { .reviews-head .sources { order: 1; flex-basis: 100%; margin: 4px 0 0; } }
 .score { display: flex; align-items: center; gap: 16px; }
 .score b { font-family: var(--f-display); font-size: 3.6rem; font-weight: 400; line-height: 1; }
 .score div { display: grid; gap: 2px; }
 .score span { color: var(--muted); }
 .score .stars { color: var(--accent); font-size: 1rem; }
-.score-count { display: grid; }
-.score-count > span { grid-area: 1 / 1; }
-.score-count > span:not(.is-on) { visibility: hidden; }
-.quotes { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; margin-top: var(--head-gap); }
+/* Four quotes: one row, 2 × 2 on laptops and tablets (no lone card in a second row), one column on phones */
+.quotes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: var(--head-gap); }
+@media (max-width: 1100px) { .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .quotes { grid-template-columns: 1fr; } }
 .quotes blockquote { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px 26px; display: grid; grid-template-rows: auto 1fr auto; gap: 10px; }
 .quotes blockquote::before { content: "\201C"; font-family: var(--f-display); font-size: 3.4rem; line-height: 1; height: .5em; color: var(--soft); }
 .quotes p { font-family: var(--f-display); font-size: 1.15rem; line-height: 1.45; font-style: italic; }
 .quotes footer { font-size: .85rem; color: var(--muted); }
-.reviews-more { margin-top: 24px; }
+.reviews-more { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px 32px; }
 
 /* ---------- Voucher ---------- */
 
@@ -576,8 +573,7 @@ html:has(.booking[open]) { overflow: hidden; }
   .divider.reveal.is-in::before, .divider.reveal.is-in::after { scale: 1; }
 
   /* Answers to a click: the chosen offer panel and the mobile menu fade in, the price list unfolds */
-  .panel:not([hidden]), .review-panel:not([hidden]) { animation: rise .35s ease-out; }
-  .score .is-new { animation: rise .35s ease-out; }
+  .panel:not([hidden]) { animation: rise .35s ease-out; }
   @media (max-width: 1000px) { .nav.open { animation: rise .25s ease-out; } }
   details.more { interpolate-size: allow-keywords; }
   details.more::details-content { block-size: 0; overflow: hidden; transition: block-size .35s ease, content-visibility .35s allow-discrete; }

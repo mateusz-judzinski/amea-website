@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, review source switch, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -60,21 +60,6 @@
       var link = e.target.closest('[data-tab]');
       var tab = link && document.getElementById(link.getAttribute('data-tab'));
       if (tab) selectOffer(tab, false);
-    });
-  }
-
-  // Reviews: Booksy / Google switch next to the heading; the score on the right follows the chosen source
-  var reviewTabs = document.querySelector('#opinie [role="tablist"]');
-  if (reviewTabs) {
-    var rating = document.querySelector('#opinie [data-score-rating]');
-    tabset(reviewTabs, function (tab) {
-      // Both captions sit in one grid cell (the block keeps its width, the stars stay put); show this tab's one
-      var count = document.getElementById(tab.getAttribute('data-count'));
-      if (!count || count.classList.contains('is-on')) return;
-      Array.prototype.forEach.call(count.parentNode.children, function (c) { c.classList.toggle('is-on', c === count); });
-      var changed = [count];
-      if (rating && rating.textContent !== tab.getAttribute('data-rating')) { rating.textContent = tab.getAttribute('data-rating'); changed.push(rating); }
-      changed.forEach(function (el) { el.classList.remove('is-new'); void el.offsetWidth; el.classList.add('is-new'); }); // replay the fade
     });
   }
 
