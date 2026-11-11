@@ -12,7 +12,9 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
   - Zrobione 10.11.2026: specjalistki są z samego imienia, „nazwiska” zniknęły z `TODO(zespół)`.
   - Do potwierdzenia: Renata jako właścicielka zostaje z nazwiskiem („Renata Judzińska” w Zespole, w opisie zdjęcia hero i w stopce)?
 - [ ] **2. Krótkie bio** każdej? **Odpowiedź: tak, Renata zaraz podeśle** (razem ze zdjęciami, materiały pkt 3).
-  - Do zrobienia: bio pod imionami w Zespole. Ania ma też bio na swoim profilu w Booksy. Aleksandry nie ma na liście pracowników Booksy, jest tylko przy makijażu permanentnym.
+  - Otrzymane 11.11.2026 (wklejone w rozmowie, WhatsApp od Renaty): bio Pati (joga), Oli (makijaż permanentny), Ani (rytuały i masaże, pisane w 3. osobie) i Katarzyny (fizjoterapia, bez imienia w tekście). **Brak bio Renaty.**
+  - Do zrobienia: sposób pokazania (bio są długie, Oli ok. 170 słów) – prototyp na zrzutach, np. 1–2 zdania pod imieniem i pełny tekst po kliknięciu. Teksty dosłownie, najwyżej skrócone na granicy zdania.
+  - Do ustalenia: imiona – na stronie „Aleksandra”, w bio „Ola”; obok „Katarzyna” (pełne) i „Ania”, „Pati” (zdrobnienia).
 - [ ] **3. Bon upominkowy**: jak kupić? **Odpowiedź: przez Booksy, telefonicznie i na miejscu w Améa.**
   - Zrobione 10.11.2026: w sekcji Bon „Kupisz go na miejscu w salonie albo telefonicznie: 791 103 551”, przycisk „Zadzwoń po bon” (`tel:`).
   - Do dopytania: zakup „przez Booksy” – w Booksy salonu sprzedaż bonów online jest wyłączona (`has_online_vouchers: false`, `accept_booksy_gift_cards: false`), więc nie ma czego podlinkować. Czy Renata chce ją włączyć w panelu Booksy? Wtedy przycisk „Kup bon online” (`TODO(bon)` w `index.html`).
@@ -43,16 +45,15 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
   - **każda specjalistka prowadzi własną działalność i odpowiada za dane swoich klientek** (tak jest w regulaminie i w umowach między nimi). W polityce: AMÉA jest administratorem danych ze strony i z kontaktu z salonem, specjalistki są odrębnymi administratorami danych swoich klientek. W polityce na razie ogólne zdanie, bez nazw ich działalności (decyzja 11.11.2026); wymienienie z nazw wymagałoby ich NIP-ów.
 
   Wykorzystane w `polityka-prywatnosci.html` (11.11.2026); co jeszcze zostało – sekcja 4.
-- [ ] **3. Reszta zdjęć dziewczyn z opisami i spis całego zespołu**: Renata prześle. Potem:
-  - zdjęcia przez `tools/photo-look.ps1`;
-  - łuki w Zespole (Aleksandra ma na razie pusty łuk);
-  - bio z pytania 2.
+- [x] **3. Reszta zdjęć dziewczyn z opisami i spis całego zespołu**: otrzymane 11.11.2026 (8 zdjęć: Pati w sali jogi i dwa wycięte, Ola w studiu, Katarzyna i Ania przy szyldzie i wycięte).
+  - Zrobione 11.11.2026: w Zespole pięć osób – doszła Pati (nauczycielka jogi), Aleksandra ma zdjęcie. Zdjęcia z własnym tłem (wariant A, wybór użytkownika); szczegóły w CLAUDE.md, „Zdjęcia”.
+  - Bio – pytanie 2.
 
 ## 1. Do ustalenia z salonem – jeszcze nie wysłane
 
 Tego nie było w wiadomości z 10.11.2026 (sekcja 0) – dosłać przy okazji.
 
-- [ ] **Prowadzące zajęcia z Fitssey**: pokazać w Zespole Pati (joga, zdrowy kręgosłup)? Karoliny już nie ma (pytanie 7 w sekcji 0); przy pilatesie poczekać, kto będzie prowadził.
+- [ ] **Prowadzące zajęcia z Fitssey**: Pati jest w Zespole od 11.11.2026 (Renata przysłała jej zdjęcia i bio). Karoliny już nie ma (pytanie 7 w sekcji 0); przy pilatesie poczekać, kto będzie prowadził.
 - [ ] **Bon upominkowy**: jakie wartości lub rodzaje (sposób zakupu – pytanie 3 w sekcji 0).
 - [ ] **Nowe pozycje w cenniku Fitssey** bez opisu (stan 10.11.2026): „Glow & Balance Experience” (179 zł, 1 sesja) i „Śpiewoczucie” (65 zł, 1 sesja). Co to jest, czy pokazać na stronie (np. przy warsztatach)? „Joga + warsztaty matcha” z 24.10 nadal jest w cenniku, choć termin minął.
 - [ ] **Panel usług**
@@ -76,7 +77,7 @@ Jak fotografować:
 
 | Miejsce na stronie | Kadr | Co pokazać |
 |---|---|---|
-| Zespół | pion 3:4 | Aleksandra przy podświetlonym szyldzie AMÉA, jak Katarzyna i Ania, cały napis nad głową. Ewentualnie wszystkie cztery osoby na nowo w jednym stylu |
+| Zespół | pion 3:4 | Od 11.11.2026 każda osoba ma zdjęcie z własnym tłem (wybór użytkownika). Przy sesji: Renata w lepszej rozdzielczości (obecne ma 480 × 640 px), ewentualnie Aleksandra i Pati w salonie |
 | O nas | pion 4:5, łuk | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku; albo gabinet z muralem jak teraz, lepiej |
 | Przestrzeń – łuk | pion 3:4 | Strefa relaksu przy oknie: kanapa, stolik, rośliny, pusty wieszak |
 | Przestrzeń – szerokie ×2 | poziom 16:9 | Gabinet zabiegowy; sala ruchu (maty, pufy, lustro) |
@@ -125,7 +126,7 @@ Tuż przed publikacją, żeby wszystko było świeże.
 - [x] Telefon 791 103 551, e-mail kontakt@amea-beauty.pl, Instagram i Facebook na stronie (3.11.2026)
 - [x] Godziny otwarcia pon.–sob. 8:00–21:00, niedziela nieczynne – potwierdzone przez salon (3.11.2026)
 - [x] Cała oferta zsynchronizowana z Booksy: Women's Ritual (7), Men's Skin (3), Men's Ritual (3), makijaż permanentny i henna pudrowa (6), pełny cennik zabiegów pojedynczych (3.11.2026)
-- [x] Zespół: zdjęcia Renaty, Katarzyny i Ani; Aleksandra dodana do zespołu (3–5.11.2026)
+- [x] Zespół: zdjęcia Renaty, Katarzyny i Ani; Aleksandra dodana do zespołu (3–5.11.2026); zdjęcie Aleksandry i Pati jako piąta osoba (11.11.2026)
 - [x] Hero: portret Renaty (`renata.webp`)
 - [x] Favicon (`favicon.ico` 16–48 px, `favicon-32.png`) + `apple-touch-icon` 180 px: czarny emblemat na białym tle
 - [x] Narzędzia do zdjęć: `tools/photo-look.ps1` (wspólny wygląd, HEIC, obrót), `tools/color-match.ps1`
