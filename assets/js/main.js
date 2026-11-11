@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, team bios, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -61,6 +61,27 @@
       var tab = link && document.getElementById(link.getAttribute('data-tab'));
       if (tab) selectOffer(tab, false);
     });
+  }
+
+  // Team: nothing open at first; clicking a person shows their bio below the row, another person swaps it,
+  // the same person again hides it (disclosure buttons, at most one open)
+  var team = document.querySelector('#zespol .team');
+  if (team) {
+    var people = Array.prototype.slice.call(team.querySelectorAll('[aria-controls]'));
+    var hint = document.querySelector('#zespol .team-hint');
+    var showBio = function (person) {
+      people.forEach(function (p) {
+        var on = p === person;
+        p.setAttribute('aria-expanded', on ? 'true' : 'false');
+        document.getElementById(p.getAttribute('aria-controls')).hidden = !on;
+      });
+      team.classList.toggle('has-open', !!person);
+      if (hint) hint.hidden = !!person;
+    };
+    people.forEach(function (p) {
+      p.addEventListener('click', function () { showBio(p.getAttribute('aria-expanded') === 'true' ? null : p); });
+    });
+    showBio(null);
   }
 
   // Highlight the nav link of the section in the middle of the viewport

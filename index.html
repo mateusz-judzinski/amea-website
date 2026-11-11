@@ -1103,9 +1103,13 @@
   </section>
 
   <!-- ZESPÓŁ -->
-  <!-- TODO(zespół): bio (Renata przysłała 11.11.2026 bio Pati, Oli, Ani i Katarzyny – sposób pokazania do ustalenia; brak bio Renaty);
-       imiona: na stronie „Aleksandra”, w bio „Ola” – ustalić formy. Specjalistki tylko z imienia (decyzja salonu 10.11.2026).
-       Zdjęcia z własnym tłem, każde z innego miejsca (wybór użytkownika 11.11.2026, wariant A). -->
+  <!-- TODO(zespół): bio Renaty (jej panel ma na razie tylko rolę i link do oferty); imiona: na stronie „Aleksandra”, w bio „Ola” –
+       ustalić formy. Ania pisze o sobie w 3. osobie, reszta w 1. – ewentualne ujednolicenie tylko za zgodą salonu.
+       Specjalistki tylko z imienia (decyzja salonu 10.11.2026). Zdjęcia z własnym tłem, każde z innego miejsca (wybór użytkownika 11.11.2026). -->
+  <!-- Osoby to przyciski rozwijania (aria-expanded, main.js): na start nic nie jest otwarte; kliknięcie pokazuje bio pod rzędem zdjęć,
+       kliknięcie innej osoby je podmienia, ponowne kliknięcie tej samej zwija (wariant B, 11.11.2026). Podpowiedź pod rzędem
+       pokazuje dopiero JS. Bio dosłownie od Renaty (WhatsApp 11.11.2026), najwyżej skracane na granicy zdania. Alternatywa, jeśli B
+       się nie sprawdzi: wariant A – link „Poznaj …” pod osobą otwiera panel z boku jak panel usługi; teksty z .bio zostają te same. -->
 
   <section class="band" id="zespol">
     <div class="wrap">
@@ -1114,31 +1118,84 @@
         <h2>Specjaliści, którzy pracują razem</h2>
       </div>
       <div class="team">
-        <div class="person">
-          <div class="portrait"><img src="assets/img/photos/renata-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></div>
-          <h3>Renata Judzińska</h3>
-          <p>Kosmetolog, założycielka AMÉA</p>
+        <button class="person" type="button" aria-expanded="false" aria-controls="bio-renata">
+          <span class="portrait"><img src="assets/img/photos/renata-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+          <span class="person-name">Renata<span class="person-last"> Judzińska</span></span>
+          <span class="person-role">Kosmetolog, założycielka AMÉA</span>
+        </button>
+        <button class="person" type="button" aria-expanded="false" aria-controls="bio-katarzyna">
+          <span class="portrait"><img src="assets/img/photos/katarzyna-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+          <span class="person-name">Katarzyna</span>
+          <span class="person-role">Fizjoterapeutka</span>
+        </button>
+        <button class="person" type="button" aria-expanded="false" aria-controls="bio-aleksandra">
+          <span class="portrait"><img src="assets/img/photos/aleksandra-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+          <span class="person-name">Aleksandra</span>
+          <span class="person-role">Specjalistka makijażu permanentnego</span>
+        </button>
+        <button class="person" type="button" aria-expanded="false" aria-controls="bio-ania">
+          <span class="portrait"><img src="assets/img/photos/ania-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+          <span class="person-name">Ania</span>
+          <span class="person-role">Kosmetolog, rytuały pielęgnacyjne i masaże</span>
+        </button>
+        <button class="person" type="button" aria-expanded="false" aria-controls="bio-pati">
+          <span class="portrait"><img src="assets/img/photos/pati-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+          <span class="person-name">Pati</span>
+          <span class="person-role">Nauczycielka jogi</span>
+        </button>
+      </div>
+      <p class="team-hint" hidden>Wybierz osobę, aby przeczytać o niej więcej.</p>
+
+      <div class="bio" id="bio-renata" hidden>
+        <p class="eyebrow">Kosmetolog, założycielka AMÉA</p>
+        <h3>Renata Judzińska</h3>
+        <a class="link" href="#oferta" data-tab="t-skora">Pielęgnacja skóry – oferta</a>
+      </div>
+      <div class="bio" id="bio-katarzyna" hidden>
+        <p class="eyebrow">Fizjoterapeutka</p>
+        <h3>Katarzyna</h3>
+        <div class="bio-text">
+          <p>Magister fizjoterapii z ponad 11-letnim doświadczeniem w pracy z pacjentami.</p>
+          <p>Specjalizuję się w terapii dolegliwości bólowych, problemów ortopedycznych oraz zaburzeń funkcjonalnych narządu ruchu. Wspieram również osoby z wadami postawy, a masaż wykorzystuję jako element indywidualnie dobranej terapii.</p>
+          <p>Każdą terapię poprzedzam oceną potrzeb i możliwości pacjenta. Na tej podstawie dobieram odpowiednie metody pracy, koncentrując się nie tylko na zmniejszeniu dolegliwości, ale przede wszystkim na poprawie funkcji, sprawności i jakości życia.</p>
+          <p>W swojej pracy łączę ponad 11 lat doświadczenia praktycznego z aktualną wiedzą z zakresu fizjoterapii. Stale rozwijam swoje kompetencje, aby jeszcze skuteczniej wspierać pacjentów w powrocie do sprawności i codziennego komfortu.</p>
         </div>
-        <div class="person">
-          <div class="portrait"><img src="assets/img/photos/katarzyna-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></div>
-          <h3>Katarzyna</h3>
-          <p>Fizjoterapeutka</p>
+        <a class="link" href="#oferta" data-tab="t-fizjo">Fizjoterapia – oferta</a>
+      </div>
+      <div class="bio" id="bio-aleksandra" hidden>
+        <p class="eyebrow">Specjalistka makijażu permanentnego</p>
+        <h3>Aleksandra</h3>
+        <div class="bio-text">
+          <p>Witaj w moim świecie permanentnego piękna.</p>
+          <p>Mam na imię Ola i od najmłodszych lat towarzyszy mi pasja do sztuki. Rysunek i malarstwo nauczyły mnie wrażliwości na detal, harmonię i proporcje – dziś tę artystyczną precyzję przenoszę do świata makijażu permanentnego.</p>
+          <p>Tworzę subtelne, eleganckie efekty, które podkreślają naturalne piękno i indywidualność każdej kobiety. Wierzę, że prawdziwe piękno tkwi w delikatności, proporcji i perfekcyjnie dopracowanych szczegółach.</p>
+          <p>Jako osoba, która sama przez długi czas poszukiwała idealnych brwi, doskonale rozumiem potrzeby moich klientek. Dlatego każdy zabieg traktuję indywidualnie, z pełnym zaangażowaniem i dbałością o najwyższy standard pracy.</p>
+          <p>Moim celem jest, aby każda kobieta opuszczając moje studio czuła się wyjątkowo – piękna, pewna siebie i zachwycona swoim odbiciem w lustrze, od pierwszej chwili po przebudzeniu.</p>
+          <p>Nieustannie podnoszę swoje kwalifikacje, aby oferować zabiegi na najwyższym poziomie, łącząc sztukę, precyzję i nowoczesne techniki pigmentacji.</p>
+          <p>Zapraszam Cię do mojego świata, gdzie pasja spotyka się z profesjonalizmem, a piękno staje się ponadczasowe.</p>
         </div>
-        <div class="person">
-          <div class="portrait"><img src="assets/img/photos/aleksandra-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></div>
-          <h3>Aleksandra</h3>
-          <p>Specjalistka makijażu permanentnego</p>
+        <a class="link" href="#oferta" data-tab="t-pmu">Makijaż permanentny – oferta</a>
+      </div>
+      <div class="bio" id="bio-ania" hidden>
+        <p class="eyebrow">Kosmetolog, rytuały pielęgnacyjne i masaże</p>
+        <h3>Ania</h3>
+        <div class="bio-text">
+          <p>W Améa wykonuje rytuały pielęgnacyjne oraz masaże, w których pielęgnacja skóry spotyka się z dotykiem, relaksem i świadomym doświadczeniem całego zabiegu. Zależy jej na tym, aby każdy rytuał był czymś więcej niż pielęgnacją skóry – był momentem wyciszenia, regeneracji i zadbania o ciało.</p>
+          <p>W swojej pracy łączy wiedzę z zakresu kosmetologii z uważnym podejściem do potrzeb skóry i człowieka. Szczególnie interesuje ją kosmetologia antystarzeniowa oraz holistyczne podejście do pielęgnacji, w którym kondycja skóry jest częścią szerszego obrazu naszego samopoczucia i stylu życia.</p>
+          <p>Do każdego spotkania podchodzi indywidualnie, zwracając uwagę zarówno na potrzeby skóry, jak i na to, czego w danym momencie potrzebuje ciało.</p>
+          <p>W Améa tworzy doświadczenie, w którym pielęgnacja, masaż i dotyk stają się przestrzenią dla regeneracji i prawdziwego odpoczynku.</p>
         </div>
-        <div class="person">
-          <div class="portrait"><img src="assets/img/photos/ania-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></div>
-          <h3>Ania</h3>
-          <p>Kosmetolog, rytuały pielęgnacyjne i masaże</p>
+        <a class="link" href="#oferta" data-tab="t-masaze">Masaże i rytuały – oferta</a>
+      </div>
+      <div class="bio" id="bio-pati" hidden>
+        <p class="eyebrow">Nauczycielka jogi</p>
+        <h3>Pati</h3>
+        <div class="bio-text">
+          <p>Nazywam się Pati i jestem nauczycielką jogi. Ukończyłam kursy nauczycielskie Hatha, Vinyasa oraz Yin Jogi RYT200, a także kurs instruktorski prowadzenia zajęć dla kobiet w ciąży.</p>
+          <p>W swojej pracy tworzę spokojną i bezpieczną przestrzeń, w której każda osoba może zatrzymać się na chwilę i skierować uwagę do swojego ciała. Podczas zajęć dużą wagę przykładam do uważności, oddechu oraz indywidualnego podejścia, tak aby każdy mógł praktykować w zgodzie ze swoimi możliwościami i potrzebami.</p>
+          <p>Moje sesje koncentrują się na pogłębianiu połączenia z ciałem, podążaniu za naturalnym rytmem oddechu oraz budowaniu poczucia stabilności i ugruntowania. Wierzę, że nasze ciało pozostaje w głębokiej relacji z naturą – z rytmem pór roku, energią zmieniających się faz księżyca oraz naturalnymi cyklami życia. Dlatego w swojej praktyce staram się uwzględniać również te aspekty, tworząc zajęcia, które wspierają harmonię ciała i wewnętrzną równowagę.</p>
         </div>
-        <div class="person">
-          <div class="portrait"><img src="assets/img/photos/pati-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></div>
-          <h3>Pati</h3>
-          <p>Nauczycielka jogi</p>
-        </div>
+        <a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Grafik zajęć w Fitssey</a>
       </div>
     </div>
   </section>

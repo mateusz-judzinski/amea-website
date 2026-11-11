@@ -476,17 +476,45 @@ html:has(.booking[open]) { overflow: hidden; }
 
 /* ---------- Team ---------- */
 
-/* 5 people: one row of 5, then 3 + 2 and 2 + 2 + 1; flex centres the shorter last row */
+/* People are disclosure buttons (aria-expanded): nothing open at first, a click shows that person's .bio below the row,
+   the same click again hides it. 5 people: one row of 5, 3 + 2 up to 1099 px (flex centres the shorter row),
+   on a phone one row of small arches with first names. */
 .team { --gap: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 28px var(--gap); margin-top: var(--head-gap); }
-.person { flex: 0 1 calc((100% - 4 * var(--gap)) / 5); display: grid; gap: 10px; min-width: 0; text-align: center; justify-items: center; align-content: start; }
+.person { flex: 0 1 calc((100% - 4 * var(--gap)) / 5); display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; text-align: center; justify-items: center; align-content: start;
+  background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 @media (max-width: 1099px) { .person { flex-basis: calc((100% - 2 * var(--gap)) / 3); } }
-@media (max-width: 600px) { .team { --gap: 16px; } .person { flex-basis: calc((100% - var(--gap)) / 2); } }
 .portrait { width: 100%; max-width: 280px; aspect-ratio: 3 / 4; border-radius: var(--arch); background: linear-gradient(160deg, var(--bg), var(--soft)); display: grid; place-items: center; overflow: hidden; margin-bottom: 4px; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; }
 .portrait .emblem { width: 22%; background: var(--muted); opacity: .45; } /* placeholder until a photo arrives */
-.person h3 { font-size: 1.4rem; }
-.person p { color: var(--muted); font-size: .92rem; }
-@media (max-width: 400px) { .person h3 { font-size: 1.2rem; } .person p { font-size: .85rem; } }
+.person .portrait { outline: 1px solid transparent; outline-offset: 0px; transition: opacity .25s ease-out, outline-color .3s ease-out, outline-offset .3s ease-out; }
+.person[aria-expanded="true"] .portrait { outline-color: var(--soft); outline-offset: 8px; } /* the arch line, as on the framed photos */
+.team.has-open .person[aria-expanded="false"] .portrait { opacity: .62; } /* the others step back while a bio is open */
+@media (hover: hover) {
+  .person[aria-expanded="false"]:hover .portrait { opacity: 1; outline-color: color-mix(in srgb, var(--soft) 60%, transparent); outline-offset: 8px; }
+}
+.person:focus-visible { outline: 0; }
+.person:focus-visible .portrait { outline: 2px solid var(--accent); outline-offset: 4px; opacity: 1; }
+.person-name { font-family: var(--f-display); font-size: 1.4rem; line-height: 1.2; transition: color .2s; }
+.person[aria-expanded="true"] .person-name { color: var(--accent); }
+.person-role { color: var(--muted); font-size: .92rem; }
+.team-hint { margin-top: 32px; text-align: center; color: var(--muted); font-size: .92rem; }
+
+.bio { max-width: 44rem; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid var(--line); display: grid; gap: 12px; justify-items: center; text-align: center; }
+.bio h3 { font-size: 2rem; margin-bottom: 8px; }
+.bio-text { display: grid; gap: 14px; line-height: 1.7; text-align: left; margin-bottom: 8px; }
+
+@media (max-width: 600px) {
+  .team { --gap: 8px; flex-wrap: nowrap; }
+  .person { flex: 1 1 0; gap: 6px; }
+  .person-role, .person-last { display: none; }
+  .person-name { font-size: .75rem; white-space: nowrap; } /* equal arches; a long name may reach into the gap */
+  .person[aria-expanded="true"] .portrait { outline-offset: 4px; }
+  .person:focus-visible .portrait { outline-offset: 2px; }
+  .team-hint { margin-top: 20px; font-size: .85rem; }
+  .bio { margin-top: 28px; padding-top: 28px; }
+  .bio h3 { font-size: 1.7rem; }
+}
+@media (max-width: 359px) { .person-name { font-size: .68rem; } }
 
 /* ---------- Reviews ---------- */
 
@@ -611,7 +639,7 @@ html:has(.booking[open]) { overflow: hidden; }
   .divider.reveal.is-in::before, .divider.reveal.is-in::after { scale: 1; }
 
   /* Answers to a click: the chosen offer panel and the mobile menu fade in, the price list unfolds */
-  .panel:not([hidden]) { animation: rise .35s ease-out; }
+  .panel:not([hidden]), .bio:not([hidden]) { animation: rise .35s ease-out; }
   @media (max-width: 1000px) { .nav.open { animation: rise .25s ease-out; } }
   details.more { interpolate-size: allow-keywords; }
   details.more::details-content { block-size: 0; overflow: hidden; transition: block-size .35s ease, content-visibility .35s allow-discrete; }

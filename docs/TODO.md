@@ -13,8 +13,9 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
   - Do potwierdzenia: Renata jako właścicielka zostaje z nazwiskiem („Renata Judzińska” w Zespole, w opisie zdjęcia hero i w stopce)?
 - [ ] **2. Krótkie bio** każdej? **Odpowiedź: tak, Renata zaraz podeśle** (razem ze zdjęciami, materiały pkt 3).
   - Otrzymane 11.11.2026 (wklejone w rozmowie, WhatsApp od Renaty): bio Pati (joga), Oli (makijaż permanentny), Ani (rytuały i masaże, pisane w 3. osobie) i Katarzyny (fizjoterapia, bez imienia w tekście). **Brak bio Renaty.**
-  - Do zrobienia: sposób pokazania (bio są długie, Oli ok. 170 słów) – prototyp na zrzutach, np. 1–2 zdania pod imieniem i pełny tekst po kliknięciu. Teksty dosłownie, najwyżej skrócone na granicy zdania.
-  - Do ustalenia: imiona – na stronie „Aleksandra”, w bio „Ola”; obok „Katarzyna” (pełne) i „Ania”, „Pati” (zdrobnienia).
+  - Zrobione 11.11.2026: bio na stronie, wariant B – na start nic nie jest otwarte, kliknięcie osoby pokazuje jej bio pod rzędem zdjęć, ponowne kliknięcie zwija (prototypy A/B/C na zrzutach; użytkownik może jeszcze przejść na A – panel z boku). Teksty dosłownie.
+  - Do poproszenia: **bio Renaty** (teraz jej panel ma tylko rolę i link do oferty).
+  - Do ustalenia: imiona – na stronie „Aleksandra”, w bio „Ola”; obok „Katarzyna” (pełne) i „Ania”, „Pati” (zdrobnienia). Ania pisze o sobie w 3. osobie, reszta w 1. – czy ujednolicić (tylko za zgodą salonu).
 - [ ] **3. Bon upominkowy**: jak kupić? **Odpowiedź: przez Booksy, telefonicznie i na miejscu w Améa.**
   - Zrobione 10.11.2026: w sekcji Bon „Kupisz go na miejscu w salonie albo telefonicznie: 791 103 551”, przycisk „Zadzwoń po bon” (`tel:`).
   - Do dopytania: zakup „przez Booksy” – w Booksy salonu sprzedaż bonów online jest wyłączona (`has_online_vouchers: false`, `accept_booksy_gift_cards: false`), więc nie ma czego podlinkować. Czy Renata chce ją włączyć w panelu Booksy? Wtedy przycisk „Kup bon online” (`TODO(bon)` w `index.html`).
