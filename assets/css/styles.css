@@ -506,7 +506,6 @@ html:has(.booking[open]) { overflow: hidden; }
 @media (max-width: 1099px) { .person-name { font-size: 1.4rem; } }
 .person[aria-expanded="true"] .person-name { color: var(--accent); }
 .person-role { color: var(--muted); font-size: .92rem; }
-.person-last { display: none; } /* first names only on the cards, like the others; the full name heads the bio */
 .team-hint { margin-top: 32px; text-align: center; color: var(--muted); font-size: .92rem; }
 
 .bio { max-width: 44rem; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid var(--line); display: grid; gap: 12px; justify-items: center; text-align: center; }

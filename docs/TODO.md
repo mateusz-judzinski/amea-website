@@ -4,35 +4,14 @@ Sekcje idą w kolejności, w jakiej najlepiej je robić: najpierw zebrać odpowi
 
 ## 0. Wiadomość do klientki z 10.11.2026 – odpowiedzi i materiały
 
-Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia), przerabiane po kolei. Przy każdym punkcie: odpowiedź i co z niej wynika na stronie. Po wdrożeniu punkt idzie do „Zrobione”. Zaznaczone [x] już nie wymagają pracy.
+Odpowiedzi Renaty na wiadomość z 10.11.2026 są wdrożone; zostały tylko otwarte sprawy (zamknięte usunięte 15.11.2026).
 
-### Pytania
+### Pytania – otwarte
 
-- [ ] **1. Nazwiska dziewczyn** na stronie? **Odpowiedź: tylko imię.**
-  - Zrobione 10.11.2026: specjalistki są z samego imienia, „nazwiska” zniknęły z `TODO(zespół)`.
-  - Do potwierdzenia: Renata jako właścicielka zostaje z nazwiskiem („Renata Judzińska” w nagłówku jej bio w Zespole, w opisie zdjęcia hero i w stopce)? Na kartach w Zespole od 15.11.2026 same imiona (układ Beauty | Wellbeing, nazwisko łamało linię).
-- [ ] **2. Krótkie bio** każdej? **Odpowiedź: tak, Renata zaraz podeśle** (razem ze zdjęciami, materiały pkt 3).
-  - Otrzymane 11.11.2026 (wklejone w rozmowie, WhatsApp od Renaty): bio Pati (joga), Oli (makijaż permanentny), Ani (rytuały i masaże, pisane w 3. osobie) i Katarzyny (fizjoterapia, bez imienia w tekście). **Brak bio Renaty.**
-  - Zrobione 11.11.2026: bio na stronie, wariant B – na start nic nie jest otwarte, kliknięcie osoby pokazuje jej bio pod rzędem zdjęć, ponowne kliknięcie zwija (prototypy A/B/C na zrzutach; użytkownik może jeszcze przejść na A – panel z boku). Teksty dosłownie.
-  - Zrobione 15.11.2026: bio Renaty (przysłane 15.11.2026, 312 słów) – na stronie skrót z jej zdań (133 słowa, wybór użytkownika z trzech wersji na zrzutach); pełny tekst w `docs/bio-renata-pelne.md`. **Do akceptacji Renaty: który fragment zostaje.**
-  - Do ustalenia: w karcie Renaty „Kosmetolog, założycielka AMÉA”, a ona sama pisze o sobie „Założycielka AMÉA | Zaawansowane terapie skóry · Procedury łączone · Skin Longevity” (tak jest w jej bio) – zostawić „Kosmetolog” w karcie?
-- [ ] **Kasia – nowa osoba w Zespole (15.11.2026)**: zdjęcie i bio przysłane, na stronie jako szósta osoba (bio dosłownie, dodane tylko brakujące spacje po kropkach).
-  - **Zdjęcie do wymiany** (użytkownik: „fatalne zdjęcie, nawet jej twarzy nie widać”): teraz kadr 3:4 z poziomego 720 × 405 px, sesja plenerowa, twarz odchylona do tyłu, w rogu podpis fotografa (wypadł przy kadrowaniu). Poprosić o pionowy portret przodem, z widoczną twarzą, w pełnej rozdzielczości (najlepiej w salonie albo na spokojnym tle) i zapytać, czy fotograf chce podpisu. Do czasu wymiany zostaje obecne (albo pusty łuk z emblematem – `.portrait .emblem`).
-  - Do ustalenia: jakie zajęcia prowadzi w AMÉA i gdzie się zapisać (15.11.2026 nie ma jej w grafiku Fitssey, a pole dance i treningu personalnego nie ma w ofercie). Rola w karcie wzięta z jej bio, link w bio prowadzi do zakładki Ruch i wellbeing.  - Do ustalenia: imiona – na stronie „Aleksandra”, w bio „Ola”; obok „Katarzyna” (pełne) i „Ania”, „Pati” (zdrobnienia). Ania pisze o sobie w 3. osobie, reszta w 1. – czy ujednolicić (tylko za zgodą salonu).
-- [ ] **3. Bon upominkowy**: jak kupić? **Odpowiedź: przez Booksy, telefonicznie i na miejscu w Améa.**
-  - Zrobione 10.11.2026: w sekcji Bon „Kupisz go na miejscu w salonie albo telefonicznie: 791 103 551”, przycisk „Zadzwoń po bon” (`tel:`).
-  - Do dopytania: zakup „przez Booksy” – w Booksy salonu sprzedaż bonów online jest wyłączona (`has_online_vouchers: false`, `accept_booksy_gift_cards: false`), więc nie ma czego podlinkować. Czy Renata chce ją włączyć w panelu Booksy? Wtedy przycisk „Kup bon online” (`TODO(bon)` w `index.html`).
-- [x] **4. Stylizacja paznokci**: **Odpowiedź: nie pokazujemy, Renata usunie ją z Booksy.**
-  - Na stronie jej nie ma; komentarz `TODO(oferta): stylizacja paznokci` usunięty 10.11.2026.
-- [x] **5. Kącik z fotelem i misą do stóp**: **Odpowiedź: to rytuał dla stóp – AMÉA Women's Ritual „Lekkość”, jest na Booksy, pokazywać.**
-  - Na stronie już jest (kafelek „Lekkość” w Masażach). Zostaje zdjęcie kącika przy sesji (sekcja 2).
-- [x] **6. Gabinet z urządzeniem do zabiegów na ciało**: **Odpowiedź: na ciało są rytuały, masaże (relaksacyjne i drenaż limfatyczny), fizjoterapia, a z zabiegów urządzeniem – RF mikroigłowa (jest na Booksy).**
-  - Na stronie wszystko już jest (RF mikroigłowa Ellisys Plus w cenniku zabiegów pojedynczych i w Skin Lift Premium – także brzuch i blizna po cesarskim cięciu). Zostaje zdjęcie gabinetu przy sesji (sekcja 2).
-- [ ] **7. „Zajęcia sensualne”**: **Odpowiedź: współpraca z Karoliną się skończyła, salon szuka kogoś na zastępstwo** (zapisy spadły). Pilates na razie zostaje – Renata rozmawia z prowadzącą, na przyszły tydzień są zapisy.
-  - Zrobione 10.11.2026: „Zajęcia sensualne” zdjęte ze strony (karta w zakładce Ruch i wiersz w liście w sekcji Zajęcia, razem z ich `TODO(zajęcia)`); wrócą, gdy będzie nowa prowadząca.
-  - Do obserwowania: pilates – czy zostaje po rozmowie Renaty z prowadzącą (karta w Ruchu, lista w Zajęciach, opinia Natalii o pilatesie w sekcji Opinie).
-- [x] **8. „Kameralne zajęcia dla mam i dzieci”**: **Odpowiedź: tych zajęć ostatecznie nie ma, Renata usunie je z Fitssey.**
-  - Na stronie ich nie ma, nic do zrobienia.
+- [ ] **Zespół – bio Ani i Kasi w 1. osobie do pokazania im**: 15.11.2026 przerobione z 3. osoby (tylko formy czasowników i zaimków), żeby wszystkie bio były w 1. osobie (decyzja użytkownika). Przesłać Ani i Kasi wersję ze strony.
+  - Ustalone 15.11.2026 i wdrożone: skrót bio Renaty zaakceptowany; „Kosmetolog, założycielka AMÉA” zostaje (karta i nad bio); Renata z samego imienia w Zespole, nazwisko w stopce; „Aleksandra” i „Patrycja” w karcie i nagłówku bio, w treści bio „Ola” i „Pati”; „Kasia” zostaje.
+- [ ] **Bon online**: w Booksy sprzedaż bonów online jest wyłączona – czy Renata ją włączy? Wtedy przycisk „Kup bon online” (`TODO(bon)`).
+- [ ] **Pilates**: czy zostaje po rozmowie Renaty z prowadzącą (karta w Ruchu, lista w Zajęciach, opinia Natalii). Zajęcia sensualne wrócą, gdy będzie nowa prowadząca.
 
 ### Materiały
 
@@ -51,14 +30,17 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
   Wykorzystane w `polityka-prywatnosci.html` (11.11.2026); co jeszcze zostało – sekcja 4.
 - [x] **3. Reszta zdjęć dziewczyn z opisami i spis całego zespołu**: otrzymane 11.11.2026 (8 zdjęć: Pati w sali jogi i dwa wycięte, Ola w studiu, Katarzyna i Ania przy szyldzie i wycięte).
   - Zrobione 11.11.2026: w Zespole pięć osób – doszła Pati (nauczycielka jogi), Aleksandra ma zdjęcie. Zdjęcia z własnym tłem (wariant A, wybór użytkownika); szczegóły w CLAUDE.md, „Zdjęcia”.
-  - Bio – pytanie 2.
+  - Kasia (szósta osoba, 15.11.2026) – sekcja 1.
 
 ## 1. Do ustalenia z salonem – jeszcze nie wysłane
 
 Tego nie było w wiadomości z 10.11.2026 (sekcja 0) – dosłać przy okazji.
 
-- [ ] **Prowadzące zajęcia z Fitssey**: Pati jest w Zespole od 11.11.2026 (Renata przysłała jej zdjęcia i bio). Karoliny już nie ma (pytanie 7 w sekcji 0); przy pilatesie poczekać, kto będzie prowadził.
-- [ ] **Bon upominkowy**: jakie wartości lub rodzaje (sposób zakupu – pytanie 3 w sekcji 0).
+- [ ] **Kasia – nowa osoba w Zespole (15.11.2026)**: zdjęcie i bio przysłane w rozmowie, na stronie jako szósta osoba w grupie Wellbeing (bio z jej tekstu, przerobione na 1. osobę – patrz sekcja 0).
+  - **Zdjęcie do wymiany** (użytkownik: „fatalne zdjęcie, nawet jej twarzy nie widać”): teraz kadr 3:4 z poziomego 720 × 405 px, sesja plenerowa, twarz odchylona do tyłu, w rogu podpis fotografa (wypadł przy kadrowaniu). Poprosić o pionowy portret przodem, z widoczną twarzą, w pełnej rozdzielczości (najlepiej w salonie albo na spokojnym tle) i zapytać, czy fotograf chce podpisu. Do czasu wymiany zostaje obecne (albo pusty łuk z emblematem – `.portrait .emblem`).
+  - **Jakie zajęcia prowadzi w AMÉA i gdzie się zapisać** – 15.11.2026 nie ma jej w grafiku Fitssey, a pole dance i treningu personalnego nie ma w ofercie. Rola w karcie wzięta z jej bio, link w bio prowadzi do zakładki Ruch i wellbeing. Jeśli prowadzi zajęcia, których nie ma na stronie – nowa karta w Ruchu i wiersz w liście w Zajęciach (może zastępuje zajęcia sensualne?).
+- [ ] **Prowadzące zajęcia z Fitssey**: Pati jest w Zespole od 11.11.2026, Kasia od 15.11.2026 (wyżej). Karoliny (zajęcia sensualne) już nie ma; przy pilatesie poczekać, kto będzie prowadził – ta osoba też do Zespołu (grupa Wellbeing).
+- [ ] **Bon upominkowy**: jakie wartości lub rodzaje (kupuje się na miejscu i telefonicznie; bon online – sekcja 0).
 - [ ] **Nowe pozycje w cenniku Fitssey** bez opisu (stan 10.11.2026): „Glow & Balance Experience” (179 zł, 1 sesja) i „Śpiewoczucie” (65 zł, 1 sesja). Co to jest, czy pokazać na stronie (np. przy warsztatach)? „Joga + warsztaty matcha” z 24.10 nadal jest w cenniku, choć termin minął.
 - [ ] **Panel usług**
   - opisy w panelu (skrót z opisów na Booksy) – salon czyta i poprawia;
@@ -81,7 +63,7 @@ Jak fotografować:
 
 | Miejsce na stronie | Kadr | Co pokazać |
 |---|---|---|
-| Zespół | pion 3:4 | Od 11.11.2026 każda osoba ma zdjęcie z własnym tłem (wybór użytkownika). Przy sesji: **Kasia przodem, z widoczną twarzą** (obecne do wymiany, patrz sekcja 0), Renata w lepszej rozdzielczości (obecne ma 480 × 640 px), ewentualnie Aleksandra i Pati w salonie |
+| Zespół | pion 3:4 | Od 11.11.2026 każda osoba ma zdjęcie z własnym tłem (wybór użytkownika). Przy sesji: **Kasia przodem, z widoczną twarzą** (obecne do wymiany, patrz sekcja 1), Renata w lepszej rozdzielczości (obecne ma 480 × 640 px), ewentualnie Aleksandra i Pati w salonie |
 | O nas | pion 4:5, łuk | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku; albo gabinet z muralem jak teraz, lepiej |
 | Przestrzeń – łuk | pion 3:4 | Strefa relaksu przy oknie: kanapa, stolik, rośliny, pusty wieszak |
 | Przestrzeń – szerokie ×2 | poziom 16:9 | Gabinet zabiegowy; sala ruchu (maty, pufy, lustro) |
@@ -89,7 +71,7 @@ Jak fotografować:
 | Kontakt | pion 4:5, łuk | Szyld albo wejście od ulicy, żeby łatwo trafić |
 | Hero (opcjonalnie) | pion 4:5 | Pionowy portret Renaty; obecny `renata.webp` jest poziomy i kadrowany w CSS |
 | Podgląd linku | poziom 1200×630 | Najładniejsze wnętrze w poziomie (patrz sekcja 4) |
-| Nowe miejsca | pion i poziom | Kącik do stóp z wejścia, bez zasłony (rytuał „Lekkość”, pytanie 5 w sekcji 0); gabinet z urządzeniem do RF mikroigłowej w całości (pytanie 6); strefa konsultacji przy oknie; sala z łóżkiem do masażu |
+| Nowe miejsca | pion i poziom | Kącik do stóp z wejścia, bez zasłony (rytuał „Lekkość” – salon potwierdził 10.11.2026); gabinet z urządzeniem do RF mikroigłowej w całości; strefa konsultacji przy oknie; sala z łóżkiem do masażu |
 | Detale (zapas) | dowolny | Kosmetyki, ampułki, ręcznik, roślina, świece – martwa natura |
 
 ## 3. Nowe funkcje na stronie
@@ -124,7 +106,8 @@ Tuż przed publikacją, żeby wszystko było świeże.
 
 - [x] Wizytówka Google (10.11.2026): karta trasy w Kontakcie prowadzi do profilu salonu w Mapach, w hero i Opiniach wspólna ocena „5.0 · 72 opinie na Booksy i w Google”, w Opiniach jedna lista cytatów z obu źródeł i linki do obu, w JSON-LD `sameAs`, `hasMap` i współrzędne
 - [x] Przegląd usług z Booksy i Fitssey (10.11.2026): ceny i czasy w panelu zgodne z Booksy; nowe karty SKIN AGE (zmarszczki) i Trychologia; „od” tylko przy kilku cenach (także w wierszach poziomów) i najniższa cena we wstępie każdej zakładki; „Dla niego” jako ostatnia zakładka; wstępy zakładek najwyżej 2 linie; bez ogólnego przycisku w Fizjoterapii (karty otwierają panel); link dla posiadaczy bonu prosto do usługi „Bon upominkowy” w Booksy
-- [x] Panel usługi (10.11.2026): „Umów” w ofercie (także 18 wierszy cennika zabiegów pojedynczych), Diagnostyce i Fizjoterapii otwiera wysuwany panel z opisem z Booksy, wyborem opcji i obszaru/czasu, ceną i czasem; „Wybierz termin” otwiera w nowej karcie Booksy od razu na tej usłudze. Przy okazji ceny, które Booksy zmienił (konsultacja 3D, fizjoterapia, borowina, drenaż)
+- [x] Zespół – bio i układ (11–15.11.2026): bio każdej osoby po kliknięciu zdjęcia (na start nic nie jest otwarte, ponowne kliknięcie zwija), bio Renaty jako skrót; sześć osób w dwóch grupach Beauty | Wellbeing (wybór z czterech prototypów), na kartach same imiona
+- [x] Panel usługi (10.11.2026): „Umów” w ofercie (także 18 wierszy cennika zabiegów pojedynczych), Diagnostyce i Fizjoterapii otwiera wysuwany panel z opisem z Booksy, wyborem opcji i obszaru/czasu, ceną i czasem; „Wybierz termin” otwiera na środku okno rezerwacji z widżetem Booksy od razu na tej usłudze (najpierw była nowa karta Booksy). Przy okazji ceny, które Booksy zmienił (konsultacja 3D, fizjoterapia, borowina, drenaż)
 - [x] Zdjęcia od klientki (paczki z 3 i 5.11.2026): na stronę trafiły robocze zdjęcia do O nas, Przestrzeni (trzy różne miejsca) i Zespołu (Ania). Reszta odrzucona; zdjęcia zostaną zrobione osobiście (sekcja 2)
 - [x] Zajęcia ruchowe → Fitssey: przyciski w sekcji Zajęcia, karty z „od 50 zł” w zakładce Ruch, stopka oferty z Fitssey, Kontakt, stopka strony, JSON-LD; karta „Zdrowy kręgosłup” (3.11.2026)
 - [x] Telefon 791 103 551, e-mail kontakt@amea-beauty.pl, Instagram i Facebook na stronie (3.11.2026)
