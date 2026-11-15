@@ -45,7 +45,7 @@ Tego nie było w wiadomości z 10.11.2026 (sekcja 0) – dosłać przy okazji.
   - w Booksy Katarzyna (fizjoterapeutka) jest przypisana m.in. do Clear Skin, Skin Lift, Skin Age i Cosmelanu – czy to celowe?
   - fizjoterapia: czy zawsze zaczyna się od wizyty diagnostycznej (tak mówi panel), czy można od razu zapisać się na terapię;
   - Retix C i Green Sea Peel są w Booksy dwa razy (w „Zabiegach na twarz” i w „Przebarwieniach”, Green Sea Peel z innym czasem: 1 h 30 min i 1 h) – która wersja jest właściwa, czy jedną usunąć.
-- [ ] **Wizytówka w Google** (Renata w panelu Profilu Firmy w Google): godziny pokazują „Czynne całą dobę” – ustawić pon.–sob. 8:00–21:00, niedziela nieczynne; po publikacji strony wpisać jej adres („Dodaj witrynę”, patrz sekcja 4). Opcjonalnie link „Poproś o opinie” (g.page/r/…/review) – dałoby się dodać „Napisz opinię w Google” pod cytatami.
+- [ ] **Wizytówka w Google** (Renata w panelu Profilu Firmy w Google): godziny pokazują „Czynne całą dobę” – ustawić pon.–sob. 8:00–21:00, niedziela nieczynne; po publikacji strony wpisać jej adres („Dodaj witrynę”, patrz sekcja 4). Link „Poproś o opinie” przyszedł 15.11.2026 i jest na stronie („Napisz opinię w Google” pod cytatami); ten sam link salon może wysyłać klientkom po wizycie albo wydrukować jako kod QR przy recepcji.
 
 ## 2. Zdjęcia – wizyta w salonie
 

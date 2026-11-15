@@ -532,11 +532,18 @@ html:has(.booking[open]) { overflow: hidden; }
 
 /* Heading left, one score right: the sum of Booksy and Google reviews, as in the hero */
 .reviews-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px 32px; }
-.score { display: flex; align-items: center; gap: 16px; }
+.score { display: flex; align-items: last baseline; gap: 16px; } /* the sources line sits on the number's baseline */
 .score b { font-family: var(--f-display); font-size: 3.6rem; font-weight: 400; line-height: 1; }
-.score div { display: grid; gap: 2px; }
+.score div { display: grid; gap: 3px; }
 .score span { color: var(--muted); }
 .score .stars { color: var(--accent); font-size: 1rem; }
+/* Two lines next to the number: stars with the count, then the sources */
+.score .score-line { display: flex; align-items: baseline; gap: 10px; }
+.score .score-count { color: var(--ink); font-size: 1.05rem; }
+.score .score-src { font-size: .92rem; }
+/* "Booksy" and "Google" in the count read all reviews; quiet underline so the line still reads as one sentence */
+.score a { color: inherit; text-decoration: underline; text-decoration-color: var(--soft); text-underline-offset: 3px; transition: color .2s, text-decoration-color .2s; }
+.score a:hover { color: var(--ink); text-decoration-color: var(--ink); }
 /* Four quotes: one row, 2 × 2 on laptops and tablets (no lone card in a second row), one column on phones */
 .quotes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: var(--head-gap); }
 @media (max-width: 1100px) { .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -545,7 +552,9 @@ html:has(.booking[open]) { overflow: hidden; }
 .quotes blockquote::before { content: "\201C"; font-family: var(--f-display); font-size: 3.4rem; line-height: 1; height: .5em; color: var(--soft); }
 .quotes p { font-family: var(--f-display); font-size: 1.15rem; line-height: 1.45; font-style: italic; }
 .quotes footer { font-size: .85rem; color: var(--muted); }
-.reviews-more { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px 32px; }
+/* One action under the quotes: write a review (reading them is linked from the score above) */
+.reviews-write { margin-top: 32px; display: flex; justify-content: center; }
+@media (max-width: 600px) { .reviews-write .btn { width: 100%; } }
 
 /* ---------- Voucher ---------- */
 
