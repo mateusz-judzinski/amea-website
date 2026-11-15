@@ -8,8 +8,6 @@ Odpowiedzi Renaty na wiadomość z 10.11.2026 są wdrożone; zostały tylko otwa
 
 ### Pytania – otwarte
 
-- [ ] **Zespół – bio Ani i Kasi w 1. osobie do pokazania im**: 15.11.2026 przerobione z 3. osoby (tylko formy czasowników i zaimków), żeby wszystkie bio były w 1. osobie (decyzja użytkownika). Przesłać Ani i Kasi wersję ze strony.
-  - Ustalone 15.11.2026 i wdrożone: skrót bio Renaty zaakceptowany; „Kosmetolog, założycielka AMÉA” zostaje (karta i nad bio); Renata z samego imienia w Zespole, nazwisko w stopce; „Aleksandra” i „Patrycja” w karcie i nagłówku bio, w treści bio „Ola” i „Pati”; „Kasia” zostaje.
 - [ ] **Bon online**: w Booksy sprzedaż bonów online jest wyłączona – czy Renata ją włączy? Wtedy przycisk „Kup bon online” (`TODO(bon)`).
 - [ ] **Pilates**: czy zostaje po rozmowie Renaty z prowadzącą (karta w Ruchu, lista w Zajęciach, opinia Natalii). Zajęcia sensualne wrócą, gdy będzie nowa prowadząca.
 
@@ -106,6 +104,7 @@ Tuż przed publikacją, żeby wszystko było świeże.
 
 - [x] Wizytówka Google (10.11.2026): karta trasy w Kontakcie prowadzi do profilu salonu w Mapach, w hero i Opiniach wspólna ocena „5.0 · 72 opinie na Booksy i w Google”, w Opiniach jedna lista cytatów z obu źródeł i linki do obu, w JSON-LD `sameAs`, `hasMap` i współrzędne
 - [x] Przegląd usług z Booksy i Fitssey (10.11.2026): ceny i czasy w panelu zgodne z Booksy; nowe karty SKIN AGE (zmarszczki) i Trychologia; „od” tylko przy kilku cenach (także w wierszach poziomów) i najniższa cena we wstępie każdej zakładki; „Dla niego” jako ostatnia zakładka; wstępy zakładek najwyżej 2 linie; bez ogólnego przycisku w Fizjoterapii (karty otwierają panel); link dla posiadaczy bonu prosto do usługi „Bon upominkowy” w Booksy
+- [x] Zespół – ustalenia salonu (15.11.2026): skrót bio Renaty zaakceptowany; „Kosmetolog, założycielka AMÉA” w karcie i nad bio; wszystkie osoby z samego imienia (nazwisko Renaty tylko w stopce); „Aleksandra” i „Patrycja” w karcie i nagłówku bio, w treści bio „Ola” i „Pati”; „Kasia” zostaje; wszystkie bio w 1. osobie – bio Ani i Kasi przerobione z 3. osoby i przekazane im przez użytkownika (gdyby poprawiły – podmienić)
 - [x] Zespół – bio i układ (11–15.11.2026): bio każdej osoby po kliknięciu zdjęcia (na start nic nie jest otwarte, ponowne kliknięcie zwija), bio Renaty jako skrót; sześć osób w dwóch grupach Beauty | Wellbeing (wybór z czterech prototypów), na kartach same imiona
 - [x] Panel usługi (10.11.2026): „Umów” w ofercie (także 18 wierszy cennika zabiegów pojedynczych), Diagnostyce i Fizjoterapii otwiera wysuwany panel z opisem z Booksy, wyborem opcji i obszaru/czasu, ceną i czasem; „Wybierz termin” otwiera na środku okno rezerwacji z widżetem Booksy od razu na tej usłudze (najpierw była nowa karta Booksy). Przy okazji ceny, które Booksy zmienił (konsultacja 3D, fizjoterapia, borowina, drenaż)
 - [x] Zdjęcia od klientki (paczki z 3 i 5.11.2026): na stronę trafiły robocze zdjęcia do O nas, Przestrzeni (trzy różne miejsca) i Zespołu (Ania). Reszta odrzucona; zdjęcia zostaną zrobione osobiście (sekcja 2)
