@@ -10,7 +10,7 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
 
 - [ ] **1. Nazwiska dziewczyn** na stronie? **Odpowiedź: tylko imię.**
   - Zrobione 10.11.2026: specjalistki są z samego imienia, „nazwiska” zniknęły z `TODO(zespół)`.
-  - Do potwierdzenia: Renata jako właścicielka zostaje z nazwiskiem („Renata Judzińska” w Zespole, w opisie zdjęcia hero i w stopce)?
+  - Do potwierdzenia: Renata jako właścicielka zostaje z nazwiskiem („Renata Judzińska” w nagłówku jej bio w Zespole, w opisie zdjęcia hero i w stopce)? Na kartach w Zespole od 15.11.2026 same imiona (układ Beauty | Wellbeing, nazwisko łamało linię).
 - [ ] **2. Krótkie bio** każdej? **Odpowiedź: tak, Renata zaraz podeśle** (razem ze zdjęciami, materiały pkt 3).
   - Otrzymane 11.11.2026 (wklejone w rozmowie, WhatsApp od Renaty): bio Pati (joga), Oli (makijaż permanentny), Ani (rytuały i masaże, pisane w 3. osobie) i Katarzyny (fizjoterapia, bez imienia w tekście). **Brak bio Renaty.**
   - Zrobione 11.11.2026: bio na stronie, wariant B – na start nic nie jest otwarte, kliknięcie osoby pokazuje jej bio pod rzędem zdjęć, ponowne kliknięcie zwija (prototypy A/B/C na zrzutach; użytkownik może jeszcze przejść na A – panel z boku). Teksty dosłownie.
@@ -18,8 +18,7 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
   - Do ustalenia: w karcie Renaty „Kosmetolog, założycielka AMÉA”, a ona sama pisze o sobie „Założycielka AMÉA | Zaawansowane terapie skóry · Procedury łączone · Skin Longevity” (tak jest w jej bio) – zostawić „Kosmetolog” w karcie?
 - [ ] **Kasia – nowa osoba w Zespole (15.11.2026)**: zdjęcie i bio przysłane, na stronie jako szósta osoba (bio dosłownie, dodane tylko brakujące spacje po kropkach).
   - **Zdjęcie do wymiany** (użytkownik: „fatalne zdjęcie, nawet jej twarzy nie widać”): teraz kadr 3:4 z poziomego 720 × 405 px, sesja plenerowa, twarz odchylona do tyłu, w rogu podpis fotografa (wypadł przy kadrowaniu). Poprosić o pionowy portret przodem, z widoczną twarzą, w pełnej rozdzielczości (najlepiej w salonie albo na spokojnym tle) i zapytać, czy fotograf chce podpisu. Do czasu wymiany zostaje obecne (albo pusty łuk z emblematem – `.portrait .emblem`).
-  - Do ustalenia: jakie zajęcia prowadzi w AMÉA i gdzie się zapisać (15.11.2026 nie ma jej w grafiku Fitssey, a pole dance i treningu personalnego nie ma w ofercie). Rola w karcie wzięta z jej bio, link w bio prowadzi do zakładki Ruch i wellbeing.
-  - Do ustalenia: imiona – na stronie „Aleksandra”, w bio „Ola”; obok „Katarzyna” (pełne) i „Ania”, „Pati” (zdrobnienia). Ania pisze o sobie w 3. osobie, reszta w 1. – czy ujednolicić (tylko za zgodą salonu).
+  - Do ustalenia: jakie zajęcia prowadzi w AMÉA i gdzie się zapisać (15.11.2026 nie ma jej w grafiku Fitssey, a pole dance i treningu personalnego nie ma w ofercie). Rola w karcie wzięta z jej bio, link w bio prowadzi do zakładki Ruch i wellbeing.  - Do ustalenia: imiona – na stronie „Aleksandra”, w bio „Ola”; obok „Katarzyna” (pełne) i „Ania”, „Pati” (zdrobnienia). Ania pisze o sobie w 3. osobie, reszta w 1. – czy ujednolicić (tylko za zgodą salonu).
 - [ ] **3. Bon upominkowy**: jak kupić? **Odpowiedź: przez Booksy, telefonicznie i na miejscu w Améa.**
   - Zrobione 10.11.2026: w sekcji Bon „Kupisz go na miejscu w salonie albo telefonicznie: 791 103 551”, przycisk „Zadzwoń po bon” (`tel:`).
   - Do dopytania: zakup „przez Booksy” – w Booksy salonu sprzedaż bonów online jest wyłączona (`has_online_vouchers: false`, `accept_booksy_gift_cards: false`), więc nie ma czego podlinkować. Czy Renata chce ją włączyć w panelu Booksy? Wtedy przycisk „Kup bon online” (`TODO(bon)` w `index.html`).

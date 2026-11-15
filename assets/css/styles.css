@@ -476,13 +476,21 @@ html:has(.booking[open]) { overflow: hidden; }
 
 /* ---------- Team ---------- */
 
-/* People are disclosure buttons (aria-expanded): nothing open at first, a click shows that person's .bio below the row,
-   the same click again hides it. 6 people: one row of 6, 3 + 3 up to 1099 px (flex centres a shorter last row),
-   on a phone 3 + 3 small arches with first names only. */
-.team { --gap: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 28px var(--gap); margin-top: var(--head-gap); }
-.person { flex: 0 1 calc((100% - 5 * var(--gap)) / 6); display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; text-align: center; justify-items: center; align-content: start;
+/* Two groups, as the two sides of the brand: Beauty | Wellbeing, three people each, side by side with a hairline between
+   (stacked below 1100 px). People are disclosure buttons (aria-expanded): nothing open at first, a click shows that
+   person's .bio below both groups, the same click again hides it. On a phone small arches with first names only. */
+.team { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0 clamp(24px, 4vw, 56px); align-items: start; margin-top: var(--head-gap); }
+.team-group { display: grid; gap: 22px; justify-items: center; }
+.team-sep { width: 1px; align-self: stretch; margin-top: 6px; background: var(--line); }
+.team-label { font-family: var(--f-display); font-style: italic; font-size: 1.9rem; line-height: 1; text-align: center; } /* no description: the roles under each person say it */
+.team-row { display: flex; gap: 18px; width: 100%; }
+@media (max-width: 1099px) {
+  .team { grid-template-columns: minmax(0, 1fr); gap: 40px; max-width: 760px; margin-inline: auto; }
+  .team-sep { display: none; }
+  .team-sep + .team-group { padding-top: 36px; border-top: 1px solid var(--line); }
+}
+.person { flex: 1 1 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; text-align: center; justify-items: center; align-content: start;
   background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-@media (max-width: 1099px) { .person { flex-basis: calc((100% - 2 * var(--gap)) / 3); } }
 .portrait { width: 100%; max-width: 280px; aspect-ratio: 3 / 4; border-radius: var(--arch); background: linear-gradient(160deg, var(--bg), var(--soft)); display: grid; place-items: center; overflow: hidden; margin-bottom: 4px; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; }
 .portrait .emblem { width: 22%; background: var(--muted); opacity: .45; } /* placeholder until a photo arrives */
@@ -498,6 +506,7 @@ html:has(.booking[open]) { overflow: hidden; }
 @media (max-width: 1099px) { .person-name { font-size: 1.4rem; } }
 .person[aria-expanded="true"] .person-name { color: var(--accent); }
 .person-role { color: var(--muted); font-size: .92rem; }
+.person-last { display: none; } /* first names only on the cards, like the others; the full name heads the bio */
 .team-hint { margin-top: 32px; text-align: center; color: var(--muted); font-size: .92rem; }
 
 .bio { max-width: 44rem; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid var(--line); display: grid; gap: 12px; justify-items: center; text-align: center; }
@@ -505,9 +514,13 @@ html:has(.booking[open]) { overflow: hidden; }
 .bio-text { display: grid; gap: 14px; line-height: 1.7; text-align: left; margin-bottom: 8px; }
 
 @media (max-width: 600px) {
-  .team { --gap: 12px; row-gap: 18px; }
+  .team { gap: 28px; }
+  .team-group { gap: 14px; }
+  .team-sep + .team-group { padding-top: 26px; }
+  .team-label { font-size: 1.5rem; }
+  .team-row { gap: 12px; }
   .person { gap: 6px; }
-  .person-role, .person-last { display: none; }
+  .person-role { display: none; }
   .person-name { font-size: .95rem; }
   .person[aria-expanded="true"] .portrait { outline-offset: 5px; }
   .person:focus-visible .portrait { outline-offset: 2px; }

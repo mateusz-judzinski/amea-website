@@ -1117,37 +1117,50 @@
         <p class="eyebrow">Zespół</p>
         <h2>Specjaliści, którzy pracują razem</h2>
       </div>
+      <!-- Dwie grupy jak dwie strony marki (Beauty & Wellbeing w O nas), po trzy osoby; na komputerze obok siebie z linią
+           pośrodku, węziej jedna pod drugą. Nowa osoba trafia do swojej grupy; przy 4 w grupie sprawdzić szerokość łuków. -->
       <div class="team">
-        <button class="person" type="button" aria-expanded="false" aria-controls="bio-renata">
-          <span class="portrait"><img src="assets/img/photos/renata-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
-          <span class="person-name">Renata<span class="person-last"> Judzińska</span></span>
-          <span class="person-role">Kosmetolog, założycielka AMÉA</span>
-        </button>
-        <button class="person" type="button" aria-expanded="false" aria-controls="bio-katarzyna">
-          <span class="portrait"><img src="assets/img/photos/katarzyna-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
-          <span class="person-name">Katarzyna</span>
-          <span class="person-role">Fizjoterapeutka</span>
-        </button>
-        <button class="person" type="button" aria-expanded="false" aria-controls="bio-aleksandra">
-          <span class="portrait"><img src="assets/img/photos/aleksandra-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
-          <span class="person-name">Aleksandra</span>
-          <span class="person-role">Specjalistka makijażu permanentnego</span>
-        </button>
-        <button class="person" type="button" aria-expanded="false" aria-controls="bio-ania">
-          <span class="portrait"><img src="assets/img/photos/ania-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
-          <span class="person-name">Ania</span>
-          <span class="person-role">Kosmetolog, rytuały pielęgnacyjne i masaże</span>
-        </button>
-        <button class="person" type="button" aria-expanded="false" aria-controls="bio-pati">
-          <span class="portrait"><img src="assets/img/photos/pati-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
-          <span class="person-name">Pati</span>
-          <span class="person-role">Nauczycielka jogi</span>
-        </button>
-        <button class="person" type="button" aria-expanded="false" aria-controls="bio-kasia">
-          <span class="portrait"><img src="assets/img/photos/kasia-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
-          <span class="person-name">Kasia</span>
-          <span class="person-role">Instruktorka pole dance, trenerka personalna</span>
-        </button>
+        <div class="team-group" role="group" aria-labelledby="team-beauty">
+          <p class="team-label" id="team-beauty">Beauty</p>
+          <div class="team-row">
+            <button class="person" type="button" aria-expanded="false" aria-controls="bio-renata">
+              <span class="portrait"><img src="assets/img/photos/renata-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+              <span class="person-name">Renata<span class="person-last"> Judzińska</span></span>
+              <span class="person-role">Kosmetolog, założycielka AMÉA</span>
+            </button>
+            <button class="person" type="button" aria-expanded="false" aria-controls="bio-aleksandra">
+              <span class="portrait"><img src="assets/img/photos/aleksandra-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+              <span class="person-name">Aleksandra</span>
+              <span class="person-role">Specjalistka makijażu permanentnego</span>
+            </button>
+            <button class="person" type="button" aria-expanded="false" aria-controls="bio-ania">
+              <span class="portrait"><img src="assets/img/photos/ania-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+              <span class="person-name">Ania</span>
+              <span class="person-role">Kosmetolog, rytuały pielęgnacyjne i masaże</span>
+            </button>
+          </div>
+        </div>
+        <span class="team-sep" aria-hidden="true"></span>
+        <div class="team-group" role="group" aria-labelledby="team-wellbeing">
+          <p class="team-label" id="team-wellbeing">Wellbeing</p>
+          <div class="team-row">
+            <button class="person" type="button" aria-expanded="false" aria-controls="bio-katarzyna">
+              <span class="portrait"><img src="assets/img/photos/katarzyna-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+              <span class="person-name">Katarzyna</span>
+              <span class="person-role">Fizjoterapeutka</span>
+            </button>
+            <button class="person" type="button" aria-expanded="false" aria-controls="bio-pati">
+              <span class="portrait"><img src="assets/img/photos/pati-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+              <span class="person-name">Pati</span>
+              <span class="person-role">Nauczycielka jogi</span>
+            </button>
+            <button class="person" type="button" aria-expanded="false" aria-controls="bio-kasia">
+              <span class="portrait"><img src="assets/img/photos/kasia-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+              <span class="person-name">Kasia</span>
+              <span class="person-role">Instruktorka pole dance, trenerka personalna</span>
+            </button>
+          </div>
+        </div>
       </div>
       <p class="team-hint" hidden>Wybierz osobę, aby przeczytać o niej więcej.</p>
 
