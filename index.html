@@ -1103,7 +1103,7 @@
   </section>
 
   <!-- ZESPÓŁ -->
-  <!-- TODO(zespół): bio Renaty (jej panel ma na razie tylko rolę i link do oferty); imiona: na stronie „Aleksandra”, w bio „Ola” –
+  <!-- TODO(zespół): bio Renaty to skrót do jej akceptacji; zdjęcie Kasi do wymiany; imiona: na stronie „Aleksandra”, w bio „Ola” –
        ustalić formy. Ania pisze o sobie w 3. osobie, reszta w 1. – ewentualne ujednolicenie tylko za zgodą salonu.
        Specjalistki tylko z imienia (decyzja salonu 10.11.2026). Zdjęcia z własnym tłem, każde z innego miejsca (wybór użytkownika 11.11.2026). -->
   <!-- Osoby to przyciski rozwijania (aria-expanded, main.js): na start nic nie jest otwarte; kliknięcie pokazuje bio pod rzędem zdjęć,
@@ -1143,12 +1143,27 @@
           <span class="person-name">Pati</span>
           <span class="person-role">Nauczycielka jogi</span>
         </button>
+        <button class="person" type="button" aria-expanded="false" aria-controls="bio-kasia">
+          <span class="portrait"><img src="assets/img/photos/kasia-zespol.webp" width="480" height="640" alt="" loading="lazy" decoding="async"></span>
+          <span class="person-name">Kasia</span>
+          <span class="person-role">Instruktorka pole dance, trenerka personalna</span>
+        </button>
       </div>
       <p class="team-hint" hidden>Wybierz osobę, aby przeczytać o niej więcej.</p>
 
+      <!-- Bio Renaty: skrót z jej tekstu (15.11.2026) – całe zdania wybrane z 312 słów, do akceptacji Renaty; pełny tekst
+           w docs/bio-renata-pelne.md (gdyby wracać do wersji „dwa akapity + Czytaj całość”). Nagłówek z jej tekstu rozbity na
+           eyebrow i hasło pod imieniem; literówka „Pracuje” → „Pracuję” była tylko w pominiętym akapicie. -->
       <div class="bio" id="bio-renata" hidden>
-        <p class="eyebrow">Kosmetolog, założycielka AMÉA</p>
+        <p class="eyebrow">Założycielka AMÉA</p>
         <h3>Renata Judzińska</h3>
+        <p class="bio-tagline">Zaawansowane terapie skóry · Procedury łączone · Skin Longevity</p>
+        <div class="bio-text">
+          <p>Od ponad 15 lat pracuję w branży beauty, łącząc wieloletnią praktykę gabinetową z doświadczeniem w prowadzeniu własnej działalności w Chorzowie i Katowicach. Dziś to doświadczenie stanowi fundament AMÉA – miejsca, w którym zaawansowana pielęgnacja skóry spotyka się z wiedzą specjalistów z zakresu fizjoterapii, masażu i świadomego ruchu.</p>
+          <p>Specjalizuję się w zaawansowanych procedurach łączonych. Kluczową kompetencją jest dla mnie umiejętność określenia, kiedy zastosować daną metodę, jak połączyć ją z innymi procedurami i kiedy dać skórze czas na regenerację.</p>
+          <p>Bliska jest mi filozofia Skin Longevity – długofalowego dbania o kondycję skóry, jej funkcje ochronne i zdolność do regeneracji. Moim celem jest poprawa kondycji skóry z poszanowaniem jej fizjologii i naturalnego wyglądu.</p>
+          <p>Prywatnie jestem mamą trzech synów. Z własnego doświadczenia wiem, jak ważna jest przestrzeń na odpoczynek, odzyskanie energii i zadbanie o siebie. Taką przestrzeń tworzę w AMÉA.</p>
+        </div>
         <a class="link" href="#oferta" data-tab="t-skora">Pielęgnacja skóry – oferta</a>
       </div>
       <div class="bio" id="bio-katarzyna" hidden>
@@ -1196,6 +1211,20 @@
           <p>Moje sesje koncentrują się na pogłębianiu połączenia z ciałem, podążaniu za naturalnym rytmem oddechu oraz budowaniu poczucia stabilności i ugruntowania. Wierzę, że nasze ciało pozostaje w głębokiej relacji z naturą – z rytmem pór roku, energią zmieniających się faz księżyca oraz naturalnymi cyklami życia. Dlatego w swojej praktyce staram się uwzględniać również te aspekty, tworząc zajęcia, które wspierają harmonię ciała i wewnętrzną równowagę.</p>
         </div>
         <a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Grafik zajęć w Fitssey</a>
+      </div>
+      <!-- TODO(zespół): Kasia – jakie zajęcia prowadzi w AMÉA i gdzie się na nie zapisać (15.11.2026 nie ma jej w grafiku Fitssey ani
+           pole dance / treningu personalnego w ofercie); rola w karcie wzięta z jej bio, link na razie do zakładki Ruch i wellbeing.
+           Zdjęcie DO WYMIANY (twarzy nie widać): kadr 3:4 z poziomego 720 × 405, twarz odchylona, w rogu podpis fotografa –
+           poprosić o pionowy portret przodem w pełnej rozdzielczości (docs/TODO.md, sekcja 0). -->
+      <div class="bio" id="bio-kasia" hidden>
+        <p class="eyebrow">Instruktorka pole dance, trenerka personalna</p>
+        <h3>Kasia</h3>
+        <div class="bio-text">
+          <p>Certyfikowana instruktorka Pole Dance (Iron Convent Instructor Course, Pro Calisthenics Academy) oraz trenerka personalna (GSA). Swoje doświadczenie i wiedzę rozwijała podczas licznych szkoleń i warsztatów z zakresu przygotowania motorycznego, kalisteniki, treningu siłowego, mobilności i pracy z ciałem, m.in. pod okiem specjalistów związanych z Caliproject, FlexPro, StrongFirst Poland, Riznyk Street Workout School oraz Polskim Związkiem Kalisteniki i Street Workoutu.</p>
+          <p>W swojej pracy łączy doświadczenie sportowe z holistycznym podejściem do ruchu. Stawia na budowanie solidnych fundamentów siłowych, rozwijanie mobilności, stabilizacji, elastyczności i świadomości ciała.</p>
+          <p>Wierzy, że sprawne ciało to nie tylko efekt treningu, ale przede wszystkim inwestycja w jakość życia na lata. Dlatego w swoich zajęciach łączy różne metody pracy z ciałem, inspirując do odkrywania własnych możliwości, czerpania przyjemności z ruchu i budowania sprawności, która zostaje z nami na długo.</p>
+        </div>
+        <a class="link" href="#oferta" data-tab="t-ruch">Ruch i wellbeing – oferta</a>
       </div>
     </div>
   </section>

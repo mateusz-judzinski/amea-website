@@ -477,10 +477,10 @@ html:has(.booking[open]) { overflow: hidden; }
 /* ---------- Team ---------- */
 
 /* People are disclosure buttons (aria-expanded): nothing open at first, a click shows that person's .bio below the row,
-   the same click again hides it. 5 people: one row of 5, 3 + 2 up to 1099 px (flex centres the shorter row),
-   on a phone one row of small arches with first names. */
+   the same click again hides it. 6 people: one row of 6, 3 + 3 up to 1099 px (flex centres a shorter last row),
+   on a phone 3 + 3 small arches with first names only. */
 .team { --gap: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 28px var(--gap); margin-top: var(--head-gap); }
-.person { flex: 0 1 calc((100% - 4 * var(--gap)) / 5); display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; text-align: center; justify-items: center; align-content: start;
+.person { flex: 0 1 calc((100% - 5 * var(--gap)) / 6); display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; text-align: center; justify-items: center; align-content: start;
   background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 @media (max-width: 1099px) { .person { flex-basis: calc((100% - 2 * var(--gap)) / 3); } }
 .portrait { width: 100%; max-width: 280px; aspect-ratio: 3 / 4; border-radius: var(--arch); background: linear-gradient(160deg, var(--bg), var(--soft)); display: grid; place-items: center; overflow: hidden; margin-bottom: 4px; }
@@ -494,27 +494,28 @@ html:has(.booking[open]) { overflow: hidden; }
 }
 .person:focus-visible { outline: 0; }
 .person:focus-visible .portrait { outline: 2px solid var(--accent); outline-offset: 4px; opacity: 1; }
-.person-name { font-family: var(--f-display); font-size: 1.4rem; line-height: 1.2; transition: color .2s; }
+.person-name { font-family: var(--f-display); font-size: 1.3rem; line-height: 1.2; transition: color .2s; }
+@media (max-width: 1099px) { .person-name { font-size: 1.4rem; } }
 .person[aria-expanded="true"] .person-name { color: var(--accent); }
 .person-role { color: var(--muted); font-size: .92rem; }
 .team-hint { margin-top: 32px; text-align: center; color: var(--muted); font-size: .92rem; }
 
 .bio { max-width: 44rem; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid var(--line); display: grid; gap: 12px; justify-items: center; text-align: center; }
 .bio h3 { font-size: 2rem; margin-bottom: 8px; }
+.bio-tagline { margin: -10px 0 6px; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); } /* like the service panel's tagline */
 .bio-text { display: grid; gap: 14px; line-height: 1.7; text-align: left; margin-bottom: 8px; }
 
 @media (max-width: 600px) {
-  .team { --gap: 8px; flex-wrap: nowrap; }
-  .person { flex: 1 1 0; gap: 6px; }
+  .team { --gap: 12px; row-gap: 18px; }
+  .person { gap: 6px; }
   .person-role, .person-last { display: none; }
-  .person-name { font-size: .75rem; white-space: nowrap; } /* equal arches; a long name may reach into the gap */
-  .person[aria-expanded="true"] .portrait { outline-offset: 4px; }
+  .person-name { font-size: .95rem; }
+  .person[aria-expanded="true"] .portrait { outline-offset: 5px; }
   .person:focus-visible .portrait { outline-offset: 2px; }
   .team-hint { margin-top: 20px; font-size: .85rem; }
   .bio { margin-top: 28px; padding-top: 28px; }
   .bio h3 { font-size: 1.7rem; }
 }
-@media (max-width: 359px) { .person-name { font-size: .68rem; } }
 
 /* ---------- Reviews ---------- */
 

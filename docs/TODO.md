@@ -14,7 +14,11 @@ Pytania i prośby wysłane Renacie 10.11.2026 i jej odpowiedzi (tego samego dnia
 - [ ] **2. Krótkie bio** każdej? **Odpowiedź: tak, Renata zaraz podeśle** (razem ze zdjęciami, materiały pkt 3).
   - Otrzymane 11.11.2026 (wklejone w rozmowie, WhatsApp od Renaty): bio Pati (joga), Oli (makijaż permanentny), Ani (rytuały i masaże, pisane w 3. osobie) i Katarzyny (fizjoterapia, bez imienia w tekście). **Brak bio Renaty.**
   - Zrobione 11.11.2026: bio na stronie, wariant B – na start nic nie jest otwarte, kliknięcie osoby pokazuje jej bio pod rzędem zdjęć, ponowne kliknięcie zwija (prototypy A/B/C na zrzutach; użytkownik może jeszcze przejść na A – panel z boku). Teksty dosłownie.
-  - Do poproszenia: **bio Renaty** (teraz jej panel ma tylko rolę i link do oferty).
+  - Zrobione 15.11.2026: bio Renaty (przysłane 15.11.2026, 312 słów) – na stronie skrót z jej zdań (133 słowa, wybór użytkownika z trzech wersji na zrzutach); pełny tekst w `docs/bio-renata-pelne.md`. **Do akceptacji Renaty: który fragment zostaje.**
+  - Do ustalenia: w karcie Renaty „Kosmetolog, założycielka AMÉA”, a ona sama pisze o sobie „Założycielka AMÉA | Zaawansowane terapie skóry · Procedury łączone · Skin Longevity” (tak jest w jej bio) – zostawić „Kosmetolog” w karcie?
+- [ ] **Kasia – nowa osoba w Zespole (15.11.2026)**: zdjęcie i bio przysłane, na stronie jako szósta osoba (bio dosłownie, dodane tylko brakujące spacje po kropkach).
+  - **Zdjęcie do wymiany** (użytkownik: „fatalne zdjęcie, nawet jej twarzy nie widać”): teraz kadr 3:4 z poziomego 720 × 405 px, sesja plenerowa, twarz odchylona do tyłu, w rogu podpis fotografa (wypadł przy kadrowaniu). Poprosić o pionowy portret przodem, z widoczną twarzą, w pełnej rozdzielczości (najlepiej w salonie albo na spokojnym tle) i zapytać, czy fotograf chce podpisu. Do czasu wymiany zostaje obecne (albo pusty łuk z emblematem – `.portrait .emblem`).
+  - Do ustalenia: jakie zajęcia prowadzi w AMÉA i gdzie się zapisać (15.11.2026 nie ma jej w grafiku Fitssey, a pole dance i treningu personalnego nie ma w ofercie). Rola w karcie wzięta z jej bio, link w bio prowadzi do zakładki Ruch i wellbeing.
   - Do ustalenia: imiona – na stronie „Aleksandra”, w bio „Ola”; obok „Katarzyna” (pełne) i „Ania”, „Pati” (zdrobnienia). Ania pisze o sobie w 3. osobie, reszta w 1. – czy ujednolicić (tylko za zgodą salonu).
 - [ ] **3. Bon upominkowy**: jak kupić? **Odpowiedź: przez Booksy, telefonicznie i na miejscu w Améa.**
   - Zrobione 10.11.2026: w sekcji Bon „Kupisz go na miejscu w salonie albo telefonicznie: 791 103 551”, przycisk „Zadzwoń po bon” (`tel:`).
@@ -78,7 +82,7 @@ Jak fotografować:
 
 | Miejsce na stronie | Kadr | Co pokazać |
 |---|---|---|
-| Zespół | pion 3:4 | Od 11.11.2026 każda osoba ma zdjęcie z własnym tłem (wybór użytkownika). Przy sesji: Renata w lepszej rozdzielczości (obecne ma 480 × 640 px), ewentualnie Aleksandra i Pati w salonie |
+| Zespół | pion 3:4 | Od 11.11.2026 każda osoba ma zdjęcie z własnym tłem (wybór użytkownika). Przy sesji: **Kasia przodem, z widoczną twarzą** (obecne do wymiany, patrz sekcja 0), Renata w lepszej rozdzielczości (obecne ma 480 × 640 px), ewentualnie Aleksandra i Pati w salonie |
 | O nas | pion 4:5, łuk | Zabieg w trakcie: dłonie specjalistki, klientka na łóżku; albo gabinet z muralem jak teraz, lepiej |
 | Przestrzeń – łuk | pion 3:4 | Strefa relaksu przy oknie: kanapa, stolik, rośliny, pusty wieszak |
 | Przestrzeń – szerokie ×2 | poziom 16:9 | Gabinet zabiegowy; sala ruchu (maty, pufy, lustro) |
@@ -127,7 +131,7 @@ Tuż przed publikacją, żeby wszystko było świeże.
 - [x] Telefon 791 103 551, e-mail kontakt@amea-beauty.pl, Instagram i Facebook na stronie (3.11.2026)
 - [x] Godziny otwarcia pon.–sob. 8:00–21:00, niedziela nieczynne – potwierdzone przez salon (3.11.2026)
 - [x] Cała oferta zsynchronizowana z Booksy: Women's Ritual (7), Men's Skin (3), Men's Ritual (3), makijaż permanentny i henna pudrowa (6), pełny cennik zabiegów pojedynczych (3.11.2026)
-- [x] Zespół: zdjęcia Renaty, Katarzyny i Ani; Aleksandra dodana do zespołu (3–5.11.2026); zdjęcie Aleksandry i Pati jako piąta osoba (11.11.2026)
+- [x] Zespół: zdjęcia Renaty, Katarzyny i Ani; Aleksandra dodana do zespołu (3–5.11.2026); zdjęcie Aleksandry i Pati jako piąta osoba (11.11.2026); Kasia jako szósta i bio Renaty (15.11.2026)
 - [x] Hero: portret Renaty (`renata.webp`)
 - [x] Favicon (`favicon.ico` 16–48 px, `favicon-32.png`) + `apple-touch-icon` 180 px: czarny emblemat na białym tle
 - [x] Narzędzia do zdjęć: `tools/photo-look.ps1` (wspólny wygląd, HEIC, obrót), `tools/color-match.ps1`
