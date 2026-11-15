@@ -502,7 +502,6 @@ html:has(.booking[open]) { overflow: hidden; }
 
 .bio { max-width: 44rem; margin: 48px auto 0; padding-top: 40px; border-top: 1px solid var(--line); display: grid; gap: 12px; justify-items: center; text-align: center; }
 .bio h3 { font-size: 2rem; margin-bottom: 8px; }
-.bio-tagline { margin: -10px 0 6px; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); } /* like the service panel's tagline */
 .bio-text { display: grid; gap: 14px; line-height: 1.7; text-align: left; margin-bottom: 8px; }
 
 @media (max-width: 600px) {
