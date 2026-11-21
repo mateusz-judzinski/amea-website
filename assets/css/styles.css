@@ -273,9 +273,6 @@ a.pillar:hover, a.pillar:focus-visible { border-color: var(--soft); box-shadow: 
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 /* Ruch has four cards: one row, 2 × 2 on laptops and tablets, one column on phones (no lone card in a second row) */
-#p-ruch .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 1100px) { #p-ruch .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { #p-ruch .cards { grid-template-columns: 1fr; } }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .card h3 { font-size: 1.4rem; }
 .card .for { color: var(--muted); font-size: .92rem; }
@@ -444,6 +441,16 @@ html:has(.booking[open]) { overflow: hidden; }
   .booking-out { display: none; }
   .booking .sheet-close { border-color: var(--line); }
   .booking-card { flex: 1 1 auto; border-radius: 0; box-shadow: none; }
+}
+
+/* Schedule window (#classes-win): the booking window, wider for Fitssey's week grid. On a phone "Otwórz w Fitssey" stays
+   in the bar as the way out – logging in inside a frame can fail where the browser blocks third-party cookies. */
+.classes-win { --w: min(1060px, 100%); }
+/* Fitssey's page doesn't scroll in widget mode: the frame takes the height it reports and the card scrolls */
+.classes-win .booking-card { flex-basis: 900px; overflow-y: auto; overscroll-behavior: contain; }
+.classes-win .booking-card iframe { position: relative; inset: auto; display: block; min-height: 100%; }
+@media (max-width: 640px) {
+  .classes-win .booking-out { display: block; font-size: .66rem; letter-spacing: .14em; border-bottom-color: var(--line); }
 }
 
 /* ---------- Space gallery ---------- */

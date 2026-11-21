@@ -1,4 +1,4 @@
-// AMÉA – mobile menu, offer tabs, team bios, nav highlight, scroll reveal, service panel + Booksy booking window, footer year. No dependencies.
+// AMÉA – mobile menu, offer tabs, team bios, nav highlight, scroll reveal, service panel + Booksy booking window, Fitssey schedule window, footer year. No dependencies.
 (function () {
   'use strict';
 
@@ -312,6 +312,58 @@
         e.preventDefault();
         trigger = link;
       }
+    });
+  }
+
+  // Schedule window: Fitssey's FrontOffice in widget mode, without its top navigation, in an iframe, in a window like the
+  // booking one. A link with data-fitssey opens it; the frame loads only then and is removed on close (Fitssey sets a
+  // cookie and loads Google Tag Manager, see the privacy policy). Ctrl/middle click and no JS: the link opens Fitssey.
+  var classesWin = document.getElementById('classes-win');
+  if (classesWin && typeof classesWin.showModal === 'function') {
+    var classesCard = classesWin.querySelector('.booking-card');
+    var classesFrame = null, classesTimer = 0, classesTrigger = null;
+    var FITSSEY = 'https://app.fitssey.com/3329969456/frontoffice?widget=1&header=false';
+    var HEIGHT = 'com.lightenbody.widget.recalculateIframeHeight'; // what the frame keeps posting, as for Fitssey's own loader
+    var classesReady = function () { classesWin.classList.add('is-ready'); clearTimeout(classesTimer); };
+    var openClasses = function () {
+      var f = classesFrame = document.createElement('iframe');
+      f.title = 'Grafik zajęć w Fitssey';
+      f.src = FITSSEY;
+      f.addEventListener('load', function () { setTimeout(function () { if (classesFrame === f) classesReady(); }, 2500); }); // in case no height comes
+      classesWin.classList.remove('is-ready', 'is-late');
+      classesCard.appendChild(f);
+      clearTimeout(classesTimer);
+      classesTimer = setTimeout(function () { classesWin.classList.add('is-late'); }, 15000);
+      classesWin.showModal();
+      history.pushState({ ameaClasses: true }, ''); // the phone's back button closes the window
+    };
+    var closeClasses = function (fromHistory) {
+      if (!classesWin.open) return;
+      classesWin.close();
+      clearTimeout(classesTimer);
+      if (classesFrame) { classesFrame.remove(); classesFrame = null; }
+      if (!fromHistory && history.state && history.state.ameaClasses) history.back();
+      if (classesTrigger && classesTrigger.isConnected) classesTrigger.focus();
+    };
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[data-fitssey]');
+      if (!link || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // modifier: Fitssey in a new tab
+      e.preventDefault();
+      classesTrigger = link;
+      openClasses();
+    });
+    classesWin.querySelector('[data-classes-close]').addEventListener('click', function () { closeClasses(); });
+    classesWin.addEventListener('cancel', function (e) { e.preventDefault(); closeClasses(); });
+    window.addEventListener('popstate', function () { if (classesWin.open) closeClasses(true); });
+    // The frame reports its content height: give it that height (the card scrolls); the first report means it has drawn
+    window.addEventListener('message', function (e) {
+      if (!classesFrame || e.origin !== 'https://app.fitssey.com' || e.source !== classesFrame.contentWindow) return;
+      var d = e.data;
+      if (typeof d === 'string') { try { d = JSON.parse(d); } catch (err) { return; } }
+      var px = d && Math.ceil(+d[HEIGHT]);
+      if (!(px > 0)) return;
+      if (classesFrame.style.height !== px + 'px') classesFrame.style.height = px + 'px';
+      if (px > 300 && !classesWin.classList.contains('is-ready')) classesReady();
     });
   }
 

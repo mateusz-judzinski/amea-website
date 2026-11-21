@@ -13,10 +13,10 @@ Odpowiedzi Renaty na wiadomość z 10.11.2026 są wdrożone; zostały tylko otwa
 
 ### Materiały
 
-- [ ] **1. Dostęp do Fitssey** (login i hasło): Renata prześle, gdy odzyska hasło na komputerze (na telefonie nie umiała). Potem:
-  - w panelu Studio → Integracje → Widżety skopiować „kod bazowy” i kliknąć „Generuj kod” przy Grafiku (bez filtrów = wszystkie zajęcia), opcjonalnie to samo dla Cennika;
-  - wdrożyć wg sekcji 3;
-  - na koniec zaproponować Renacie zmianę hasła.
+- [ ] **1. Dostęp do Fitssey**: użytkownik zalogował się 21.11.2026 i przysłał kod widżetu grafiku (wdrożony – patrz „Zrobione”).
+  - Zaproponować Renacie zmianę hasła, jeśli użytkownik logował się jej danymi.
+  - **Usunąć niebieski pas „Zatrzymaj się na chwilę…”** (decyzja użytkownika 21.11.2026): to tekst salonu w panelu Fitssey, nie nasz kod – zrobić to można tylko w panelu (szukać w ustawieniach FrontOffice albo w opisie/profilu studia; instrukcji Fitssey nie znaleźliśmy – w razie czego support Fitssey). Pas zniknie też ze strony Fitssey AMÉA, więc dać znać Renacie, bo to jej tekst.
+  - Przy okazji w panelu: jeśli FrontOffice ma ustawienie koloru przewodniego – karmel `#9A6B42` zamiast niebieskiego (wnętrza ramki nie zmienimy z naszej strony).
 - [x] **2. Dane do polityki prywatności** – otrzymane 10.11.2026:
   - jednoosobowa działalność gospodarcza „Améa Renata Judzińska” (sprawdzone w CEIDG 11.11.2026, wpis aktywny);
   - adres: ul. Piłsudskiego 65, 41-902 Bytom; w CEIDG stałe miejsce wykonywania działalności to ul. Marszałka Józefa Piłsudskiego 65/9 (z numerem lokalu) – tak jest w polityce;
@@ -36,7 +36,8 @@ Tego nie było w wiadomości z 10.11.2026 (sekcja 0) – dosłać przy okazji.
 
 - [ ] **Kasia – nowa osoba w Zespole (15.11.2026)**: zdjęcie i bio przysłane w rozmowie, na stronie jako szósta osoba w grupie Wellbeing (bio z jej tekstu, przerobione na 1. osobę – patrz sekcja 0).
   - **Zdjęcie do wymiany** (użytkownik: „fatalne zdjęcie, nawet jej twarzy nie widać”): teraz kadr 3:4 z poziomego 720 × 405 px, sesja plenerowa, twarz odchylona do tyłu, w rogu podpis fotografa (wypadł przy kadrowaniu). Poprosić o pionowy portret przodem, z widoczną twarzą, w pełnej rozdzielczości (najlepiej w salonie albo na spokojnym tle) i zapytać, czy fotograf chce podpisu. Do czasu wymiany zostaje obecne (albo pusty łuk z emblematem – `.portrait .emblem`).
-  - **Jakie zajęcia prowadzi w AMÉA i gdzie się zapisać** – 15.11.2026 nie ma jej w grafiku Fitssey, a pole dance i treningu personalnego nie ma w ofercie. Rola w karcie wzięta z jej bio, link w bio prowadzi do zakładki Ruch i wellbeing. Jeśli prowadzi zajęcia, których nie ma na stronie – nowa karta w Ruchu i wiersz w liście w Zajęciach (może zastępuje zajęcia sensualne?).
+  - Zrobione 21.11.2026: Kasia prowadzi „Mobility for Longevity” (grafik Fitssey, piątek 27.11, 19:00–20:00) – karta w zakładce Ruch (skrót opisu z Fitssey), wiersz w liście w Zajęciach, link w jej bio otwiera grafik.
+  - **Do potwierdzenia: cena Mobility for Longevity** – czy obejmuje je wejście jednorazowe 50 zł (i karnet x4) z Fitssey; do tego czasu karta bez kwoty (`TODO(zajęcia)` w `index.html`). Rola w karcie Kasi wzięta z jej bio – ewentualnie dopasować do zajęć.
 - [ ] **Prowadzące zajęcia z Fitssey**: Pati jest w Zespole od 11.11.2026, Kasia od 15.11.2026 (wyżej). Karoliny (zajęcia sensualne) już nie ma; przy pilatesie poczekać, kto będzie prowadził – ta osoba też do Zespołu (grupa Wellbeing).
 - [ ] **Bon upominkowy**: jakie wartości lub rodzaje (kupuje się na miejscu i telefonicznie; bon online – sekcja 0).
 - [ ] **Nowe pozycje w cenniku Fitssey** bez opisu (stan 10.11.2026): „Glow & Balance Experience” (179 zł, 1 sesja) i „Śpiewoczucie” (65 zł, 1 sesja). Co to jest, czy pokazać na stronie (np. przy warsztatach)? „Joga + warsztaty matcha” z 24.10 nadal jest w cenniku, choć termin minął.
@@ -74,14 +75,14 @@ Jak fotografować:
 
 ## 3. Nowe funkcje na stronie
 
-- [ ] **Widżet grafiku Fitssey** (gdy przyjdzie dostęp do Fitssey, sekcja 0): w `#zajecia` pod listą zajęć (miejsce oznaczone `TODO(zajęcia)` w `index.html`); skrypt ładowany dopiero przy zbliżeniu do sekcji; styl w kolorach strony (Fitssey przyjmuje własny CSS); przyciski „Grafik i zapisy” / „Cennik i karnety” zostają jako zapas; zrzuty 1280 i 375 px przed decyzją.
+- [ ] **Grafik Fitssey – sprawdzić na prawdziwym iPhonie (Safari)**, po publikacji, na telefonie użytkownika (Claude nie ma dostępu do urządzenia; emulacja w przeglądarce nie odtwarza blokady cookies Safari): logowanie i zapis w okienku grafiku. Ramka Fitssey używa własnego cookie, a Safari blokuje cookies w ramkach z innych stron – jeśli zapis nie działa, klientka ma „Otwórz w Fitssey” w pasku okna (na telefonie też widoczne).
 
 ## 4. Przed publikacją
 
 - [ ] **Polityka prywatności – dokończyć** (strona `polityka-prywatnosci.html` jest od 11.11.2026):
   - po wyborze hostingu i poczty wpisać ich dostawców z nazwy (`TODO(domena)` w polityce, punkt 4);
   - przed publikacją dać ją do przejrzenia osobie znającej RODO; Renata czyta, czy okresy przechowywania i opis współpracy ze specjalistkami się zgadzają;
-  - przy każdej zmianie, która dotyka danych (widżet Fitssey, analityka, formularz), zaktualizować politykę i jej datę.
+  - przy każdej zmianie, która dotyka danych (analityka, formularz, nowy zewnętrzny skrypt), zaktualizować politykę i jej datę (grafik Fitssey dopisany 21.11.2026).
 - [ ] **Analityka?** Jeśli tak, potrzebny baner zgód cookies; bez analityki i widżetów strona może się bez niego obyć.
 - [ ] **Domena i hosting** (statyczny: Netlify / Cloudflare Pages / GitHub Pages / zwykły FTP). Adres e-mail kontakt@amea-beauty.pl sugeruje domenę amea-beauty.pl – potwierdzić.
 - [ ] **Po domenie**: `<link rel="canonical">`, absolutne `og:url` i `og:image`, `sitemap.xml`, `robots.txt` (`TODO(domena)`); adres strony w wizytówce Google, na Booksy, Instagramie i Facebooku.
@@ -100,6 +101,7 @@ Tuż przed publikacją, żeby wszystko było świeże.
 
 ## Zrobione
 
+- [x] Grafik Fitssey na stronie (21.11.2026): „Grafik i zapisy” w Zajęciach, „Zapisz się” / „Zobacz terminy” na kartach w zakładce Ruch i link w bio Patrycji otwierają okno jak rezerwacja Booksy z grafikiem Fitssey (wybór z dwóch prototypów: okno / blok w sekcji); ładuje się dopiero po kliknięciu, polityka prywatności uzupełniona (cookies Fitssey i Google Tag Manager w okienku)
 - [x] Polityka prywatności (11.11.2026): osobna strona `polityka-prywatnosci.html` w stylu strony (RODO art. 13: administrator, specjalistki jako odrębni administratorzy, cele i podstawy, Booksy i Fitssey, odbiorcy, okresy, prawa, cookies), link w stopce obu stron; fonty Playfair Display i Jost z naszego serwera (`assets/fonts`, licencje OFL obok) zamiast Google Fonts – przy wejściu na stronę nic nie idzie do zewnętrznych serwisów
 
 - [x] Wizytówka Google (10.11.2026): karta trasy w Kontakcie prowadzi do profilu salonu w Mapach, w hero i Opiniach wspólna ocena „5.0 · 72 opinie na Booksy i w Google”, w Opiniach jedna lista cytatów z obu źródeł i linki do obu, w JSON-LD `sameAs`, `hasMap` i współrzędne

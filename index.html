@@ -383,10 +383,13 @@
           <span class="from"><small>od</small>50 zł</span>
         </div>
         <div class="cards">
-          <article class="card"><h3>Joga</h3><p class="for">Praktyka dla różnych poziomów zaawansowania.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
-          <article class="card"><h3>Pilates</h3><p class="for">Siła głębokich mięśni, stabilizacja i postawa.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
-          <article class="card"><h3>Zdrowy kręgosłup</h3><p class="for">Joga ze stretchingiem i ćwiczeniami wzmacniającymi na napięcia i ból pleców. Także dla kobiet w ciąży.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zapisz się</a></div></article>
-          <article class="card"><h3>Warsztaty dla kobiet</h3><p class="for">Spotkania wokół ciała, piękna i równowagi.</p><div class="card-foot"><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Zobacz terminy</a></div></article>
+          <article class="card"><h3>Joga</h3><p class="for">Praktyka dla różnych poziomów zaawansowania.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Zapisz się</a></div></article>
+          <article class="card"><h3>Pilates</h3><p class="for">Siła głębokich mięśni, stabilizacja i postawa.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Zapisz się</a></div></article>
+          <article class="card"><h3>Zdrowy kręgosłup</h3><p class="for">Joga ze stretchingiem i ćwiczeniami wzmacniającymi na napięcia i ból pleców. Także dla kobiet w ciąży.</p><div class="card-foot"><span class="from"><small>od</small>50 zł</span><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Zapisz się</a></div></article>
+          <!-- Mobility for Longevity (Kasia, od 21.11.2026 w grafiku Fitssey): opis to skrót opisu zajęć z Fitssey. TODO(zajęcia): cena –
+               czy obejmuje je wejście jednorazowe 50 zł z Fitssey; do potwierdzenia karta bez kwoty -->
+          <article class="card"><h3>Mobility for Longevity</h3><p class="for">Mobility, delikatny stretching, Animal Flow i pilates: siła, mobilność i swoboda ruchu na lata.</p><div class="card-foot"><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Zapisz się</a></div></article>
+          <article class="card"><h3>Warsztaty dla kobiet</h3><p class="for">Spotkania wokół ciała, piękna i równowagi.</p><div class="card-foot"><a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Zobacz terminy</a></div></article>
         </div>
       </div>
 
@@ -1091,15 +1094,37 @@
           <li><b>Joga</b><span>zajęcia regularne</span></li>
           <li><b>Pilates</b><span>zajęcia regularne</span></li>
           <li><b>Zdrowy kręgosłup</b><span>także w ciąży</span></li>
+          <li><b>Mobility for Longevity</b><span>mobilność i stabilizacja</span></li>
           <li><b>Warsztaty i spotkania</b><span>terminy w Fitssey</span></li>
         </ul>
-        <!-- TODO(zajęcia): widżet grafiku Fitssey, kod z panelu (docs/TODO.md); miejsce pod .class-list -->
+        <!-- Linki do grafiku z data-fitssey (ten przycisk, karty w zakładce Ruch, bio Patrycji) otwierają okno grafiku niżej -->
         <div class="btn-row">
-          <a class="btn btn-solid" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Grafik i zapisy</a>
+          <a class="btn btn-solid" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Grafik i zapisy</a>
           <a class="btn btn-ghost" href="https://app.fitssey.com/3329969456/frontoffice/pricing/classes" target="_blank" rel="noopener">Cennik i karnety</a>
         </div>
       </div>
     </div>
+    <!-- Okno grafiku (21.11.2026, wybór użytkownika z dwóch prototypów): grafik Fitssey w oknie jak rezerwacja Booksy.
+         To ramka ich FrontOffice w trybie widżetu, bez górnej nawigacji (?widget=1&header=false) – jej wnętrza (kolory, fonty,
+         komunikat o cookies) nie da się ostylować; ładuje się dopiero po kliknięciu linku z data-fitssey (Fitssey ustawia cookie
+         i ładuje Google Tag Manager – patrz polityka prywatności), ramka znika po zamknięciu. Bez JS linki prowadzą do Fitssey. -->
+    <dialog class="booking classes-win" id="classes-win" aria-labelledby="classes-win-name">
+      <div class="booking-bar">
+        <p class="booking-name"><span class="eyebrow">Grafik i zapisy</span><b id="classes-win-name">Zajęcia w AMÉA</b></p>
+        <a class="booking-out" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Otwórz w Fitssey<span class="sr-only"> (nowa karta)</span></a>
+        <button class="sheet-close" type="button" data-classes-close aria-label="Zamknij grafik" autofocus></button>
+      </div>
+      <div class="booking-card">
+        <div class="booking-wait" role="status">
+          <span class="mask emblem" aria-hidden="true"></span>
+          <p class="booking-wait-text">Wczytujemy grafik</p>
+          <div class="booking-late">
+            <p>Grafik Fitssey wczytuje się dłużej niż zwykle.</p>
+            <a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Otwórz grafik w Fitssey</a>
+          </div>
+        </div>
+      </div>
+    </dialog>
   </section>
 
   <!-- ZESPÓŁ -->
@@ -1224,10 +1249,10 @@
           <p>W swojej pracy tworzę spokojną i bezpieczną przestrzeń, w której każda osoba może zatrzymać się na chwilę i skierować uwagę do swojego ciała. Podczas zajęć dużą wagę przykładam do uważności, oddechu oraz indywidualnego podejścia, tak aby każdy mógł praktykować w zgodzie ze swoimi możliwościami i potrzebami.</p>
           <p>Moje sesje koncentrują się na pogłębianiu połączenia z ciałem, podążaniu za naturalnym rytmem oddechu oraz budowaniu poczucia stabilności i ugruntowania. Wierzę, że nasze ciało pozostaje w głębokiej relacji z naturą – z rytmem pór roku, energią zmieniających się faz księżyca oraz naturalnymi cyklami życia. Dlatego w swojej praktyce staram się uwzględniać również te aspekty, tworząc zajęcia, które wspierają harmonię ciała i wewnętrzną równowagę.</p>
         </div>
-        <a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener">Grafik zajęć w Fitssey</a>
+        <a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Grafik zajęć w Fitssey</a>
       </div>
-      <!-- TODO(zespół): Kasia – jakie zajęcia prowadzi w AMÉA i gdzie się na nie zapisać (15.11.2026 nie ma jej w grafiku Fitssey ani
-           pole dance / treningu personalnego w ofercie); rola w karcie wzięta z jej bio, link na razie do zakładki Ruch i wellbeing.
+      <!-- TODO(zespół): Kasia prowadzi w AMÉA „Mobility for Longevity” (grafik Fitssey, 21.11.2026; karta w zakładce Ruch); link w bio
+           otwiera grafik. Rola w karcie wzięta z jej bio – ewentualnie dopasować do zajęć.
            Zdjęcie DO WYMIANY (twarzy nie widać): kadr 3:4 z poziomego 720 × 405, twarz odchylona, w rogu podpis fotografa –
            poprosić o pionowy portret przodem w pełnej rozdzielczości (docs/TODO.md, sekcja 1). -->
       <div class="bio" id="bio-kasia" hidden>
@@ -1238,7 +1263,7 @@
           <p>W swojej pracy łączę doświadczenie sportowe z holistycznym podejściem do ruchu. Stawiam na budowanie solidnych fundamentów siłowych, rozwijanie mobilności, stabilizacji, elastyczności i świadomości ciała.</p>
           <p>Wierzę, że sprawne ciało to nie tylko efekt treningu, ale przede wszystkim inwestycja w jakość życia na lata. Dlatego w swoich zajęciach łączę różne metody pracy z ciałem, inspirując do odkrywania własnych możliwości, czerpania przyjemności z ruchu i budowania sprawności, która zostaje z nami na długo.</p>
         </div>
-        <a class="link" href="#oferta" data-tab="t-ruch">Ruch i wellbeing – oferta</a>
+        <a class="link" href="https://app.fitssey.com/3329969456/frontoffice" target="_blank" rel="noopener" data-fitssey>Grafik zajęć w Fitssey</a>
       </div>
     </div>
   </section>
