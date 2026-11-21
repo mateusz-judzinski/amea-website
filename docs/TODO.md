@@ -13,10 +13,7 @@ Odpowiedzi Renaty na wiadomość z 10.11.2026 są wdrożone; zostały tylko otwa
 
 ### Materiały
 
-- [ ] **1. Dostęp do Fitssey**: użytkownik zalogował się 21.11.2026 i przysłał kod widżetu grafiku (wdrożony – patrz „Zrobione”).
-  - Zaproponować Renacie zmianę hasła, jeśli użytkownik logował się jej danymi.
-  - **Usunąć niebieski pas „Zatrzymaj się na chwilę…”** (decyzja użytkownika 21.11.2026): to tekst salonu w panelu Fitssey, nie nasz kod – zrobić to można tylko w panelu (szukać w ustawieniach FrontOffice albo w opisie/profilu studia; instrukcji Fitssey nie znaleźliśmy – w razie czego support Fitssey). Pas zniknie też ze strony Fitssey AMÉA, więc dać znać Renacie, bo to jej tekst.
-  - Przy okazji w panelu: jeśli FrontOffice ma ustawienie koloru przewodniego – karmel `#9A6B42` zamiast niebieskiego (wnętrza ramki nie zmienimy z naszej strony).
+- [x] **1. Dostęp do Fitssey**: użytkownik zalogował się 21.11.2026 i przysłał kod widżetu grafiku (wdrożony – patrz „Zrobione”); niebieski pas „Zatrzymaj się na chwilę…” (tekst salonu w Fitssey) usunął w panelu tego samego dnia.
 - [x] **2. Dane do polityki prywatności** – otrzymane 10.11.2026:
   - jednoosobowa działalność gospodarcza „Améa Renata Judzińska” (sprawdzone w CEIDG 11.11.2026, wpis aktywny);
   - adres: ul. Piłsudskiego 65, 41-902 Bytom; w CEIDG stałe miejsce wykonywania działalności to ul. Marszałka Józefa Piłsudskiego 65/9 (z numerem lokalu) – tak jest w polityce;
