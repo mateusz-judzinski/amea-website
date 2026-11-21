@@ -8,7 +8,6 @@ Odpowiedzi Renaty na wiadomość z 10.11.2026 są wdrożone; zostały tylko otwa
 
 ### Pytania – otwarte
 
-- [ ] **Bon online**: w Booksy sprzedaż bonów online jest wyłączona – czy Renata ją włączy? Wtedy przycisk „Kup bon online” (`TODO(bon)`).
 - [ ] **Pilates**: czy zostaje po rozmowie Renaty z prowadzącą (karta w Ruchu, lista w Zajęciach, opinia Natalii). Zajęcia sensualne wrócą, gdy będzie nowa prowadząca.
 
 ### Materiały
@@ -36,7 +35,6 @@ Tego nie było w wiadomości z 10.11.2026 (sekcja 0) – dosłać przy okazji.
   - Zrobione 21.11.2026: Kasia prowadzi „Mobility for Longevity” (grafik Fitssey, piątek 27.11, 19:00–20:00) – karta w zakładce Ruch (skrót opisu z Fitssey), wiersz w liście w Zajęciach, link w jej bio otwiera grafik.
   - **Do potwierdzenia: cena Mobility for Longevity** – czy obejmuje je wejście jednorazowe 50 zł (i karnet x4) z Fitssey; do tego czasu karta bez kwoty (`TODO(zajęcia)` w `index.html`). Rola w karcie Kasi wzięta z jej bio – ewentualnie dopasować do zajęć.
 - [ ] **Prowadzące zajęcia z Fitssey**: Pati jest w Zespole od 11.11.2026, Kasia od 15.11.2026 (wyżej). Karoliny (zajęcia sensualne) już nie ma; przy pilatesie poczekać, kto będzie prowadził – ta osoba też do Zespołu (grupa Wellbeing).
-- [ ] **Bon upominkowy**: jakie wartości lub rodzaje (kupuje się na miejscu i telefonicznie; bon online – sekcja 0).
 - [ ] **Nowe pozycje w cenniku Fitssey** bez opisu (stan 10.11.2026): „Glow & Balance Experience” (179 zł, 1 sesja) i „Śpiewoczucie” (65 zł, 1 sesja). Co to jest, czy pokazać na stronie (np. przy warsztatach)? „Joga + warsztaty matcha” z 24.10 nadal jest w cenniku, choć termin minął.
 - [ ] **Panel usług**
   - opisy w panelu (skrót z opisów na Booksy) – salon czyta i poprawia;
@@ -98,6 +96,7 @@ Tuż przed publikacją, żeby wszystko było świeże.
 
 ## Zrobione
 
+- [x] Bon online (21.11.2026): Renata włączyła sprzedaż bonów w Booksy – w sekcji Bon przycisk „Kup bon online” (profil Booksy, „Karty podarunkowe”: 10 kwot od 100 do 2500 zł, na wszystkie usługi i produkty) jako jedyny przycisk, pod nim wskazówka, gdzie szukać w Booksy; w tekście kwoty i numer telefonu (karta odchudzona – wersja A z prototypów)
 - [x] Grafik Fitssey na stronie (21.11.2026): „Grafik i zapisy” w Zajęciach, „Zapisz się” / „Zobacz terminy” na kartach w zakładce Ruch i link w bio Patrycji otwierają okno jak rezerwacja Booksy z grafikiem Fitssey (wybór z dwóch prototypów: okno / blok w sekcji); ładuje się dopiero po kliknięciu, polityka prywatności uzupełniona (cookies Fitssey i Google Tag Manager w okienku)
 - [x] Polityka prywatności (11.11.2026): osobna strona `polityka-prywatnosci.html` w stylu strony (RODO art. 13: administrator, specjalistki jako odrębni administratorzy, cele i podstawy, Booksy i Fitssey, odbiorcy, okresy, prawa, cookies), link w stopce obu stron; fonty Playfair Display i Jost z naszego serwera (`assets/fonts`, licencje OFL obok) zamiast Google Fonts – przy wejściu na stronę nic nie idzie do zewnętrznych serwisów
 

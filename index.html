@@ -1302,9 +1302,12 @@
   </section>
 
   <!-- BON UPOMINKOWY -->
-  <!-- Bon: zakup na miejscu w salonie i telefonicznie (salon, 10.11.2026); realizacja przez usługę „Bon upominkowy” w Booksy.
-       TODO(bon): Renata wymieniła też zakup przez Booksy, ale sprzedaż bonów online jest tam wyłączona (has_online_vouchers: false,
-       accept_booksy_gift_cards: false) – jeśli ją włączy, dodać przycisk „Kup bon online” z linkiem z Booksy. -->
+  <!-- Bon: zakup online w Booksy (salon włączył sprzedaż 21.11.2026: has_online_vouchers: true; „Karty podarunkowe” na profilu,
+       10 kwot od 100 do 2500 zł, na wszystkie usługi i produkty), na miejscu w salonie i telefonicznie (salon, 10.11.2026);
+       realizacja przez usługę „Bon upominkowy” w Booksy. Bezpośredniego adresu do kart podarunkowych Booksy nie ma (otwierają się
+       w okienku na profilu, ?do=… ich nie otwiera, widżet ich nie sprzedaje) – „Kup bon online” prowadzi na profil, a tekst mówi,
+       gdzie szukać (na telefonie ta sekcja jest na samym dole profilu). -->
+
 
   <section class="band band-tight" id="bon">
     <div class="wrap">
@@ -1313,10 +1316,13 @@
         <div class="stack">
           <p class="eyebrow">Bon upominkowy</p>
           <h2>Podaruj chwilę dla siebie</h2>
-          <p class="lead">Voucher na wybrany zabieg, masaż lub rytuał.<br>Kupisz go na miejscu w salonie albo telefonicznie: <a href="tel:+48791103551">791 103 551</a></p>
-          <p class="voucher-note">Masz już bon? <a href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom?do=open-widget&amp;variantId=21806188" target="_blank" rel="noopener">Zarezerwuj wizytę na Booksy</a> i wpisz w wiadomości numer lub rodzaj vouchera.</p>
+          <p class="lead">Voucher na wybrany zabieg, masaż lub rytuał albo na kwotę od&nbsp;100 do&nbsp;2500&nbsp;zł.<br>Kupisz go online, w&nbsp;salonie albo telefonicznie: <a href="tel:+48791103551">791 103 551</a></p>
+          <p class="voucher-note">Masz już bon? <a href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom?do=open-widget&amp;variantId=21806188" target="_blank" rel="noopener">Umów wizytę na Booksy</a> i wpisz w wiadomości numer lub rodzaj bonu.</p>
         </div>
-        <a class="btn btn-solid" href="tel:+48791103551">Zadzwoń po bon</a>
+        <div class="voucher-buy">
+          <a class="btn btn-solid" href="https://booksy.com/pl-pl/339658_amea-holistyczna-przestrzen-piekna-i-harmonii_salon-kosmetyczny_12355_bytom" target="_blank" rel="noopener">Kup bon online<span class="sr-only"> w Booksy (nowa karta)</span></a>
+          <p class="voucher-hint">W Booksy: „Karty podarunkowe”</p>
+        </div>
       </div>
     </div>
   </section>
